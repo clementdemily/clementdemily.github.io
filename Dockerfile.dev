@@ -11,6 +11,4 @@ RUN apk add --no-cache g++ gcc make musl-dev \
 
 COPY . .
 
-EXPOSE 32000
-
-CMD ["bundle", "exec", "jekyll", "serve", "-P", "32000"]
+CMD ["bundle", "exec", "jekyll", "serve"]

@@ -5,5 +5,4 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /app/_site
       - .:/app

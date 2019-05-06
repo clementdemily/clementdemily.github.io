@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Installer Ruby et RVM sur Ubuntu</title>
+	<title>Utiliser Docker & Traefik pour son environnement de développement 🐳</title>
 	
 	<meta name="author" content="Clément Demily">
 
@@ -180,7 +180,7 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<header>
-	<h1>Installer Ruby et RVM sur Ubuntu </h1>
+	<h1>Utiliser Docker & Traefik pour son environnement de développement 🐳 </h1>
 </header>
 
 <div>
@@ -188,49 +188,125 @@
 	<div class="col-sm-10">
 		<span class="post-date">
 			
-			March
-			15th,
+			May
+			6th,
 			
-			2014
+			2019
 		</span>
 		<div class="article_body">
-			<p>Bonjour tout le monde! Aujourd’hui nous allons voir comment installer Ruby et RVM.</p>
+			<p>Bonjour à tous 👋</p>
 
-<h2 id="quest-ce-que-rvm">Qu’est-ce que RVM?</h2>
+<p>Nous allons aujourd’hui voir comment utiliser Docker et Traefik afin d’avoir des noms de domaines personnalisés pour nos applications en développement. Pour se faire, nous allons utiliser traefik.</p>
 
-<p><strong>RVM</strong>, pour Ruby Version Manager permet comme son nom l’indique, de gérer différentes versions de ruby sur votre système.</p>
+<p>Traefik est un reverse proxy / load balancer. Il dispose de plein de fonctionnalités cool comme l’auto discovery, une configuration simplifiée pour des metrics ou encore une gestion facilité des certificats SSL ( let’s encrypt, ACME etc..) ce qui en fait un allié de choix pour pas mal de services d’orchestration de container ( Kubernetes, Mesos … ).</p>
 
-<p>En effet, certaines gems peuvent utiliser une version spécifique de <strong>Ruby</strong>, et inversement.</p>
+<p>Nous allons aujourd’hui voir comment on peut faire fonctionner tout ça ensemble.</p>
 
-<p>D’une même façon pour une application rails, la plupart du temps vous préciserez une version de <strong>Ruby</strong> accompagnée de toutes les configurations de vos gems dans le ficher Gemfile de votre application.</p>
+<h2 id="installation-et-configuration-de-dnsmasq">Installation et configuration de dnsmasq</h2>
 
-<p>Pour rappel, une gem est librairie externe, fourni par la communauté.</p>
+<p>Dnsmasq est un soft qui permet de fournir des services DNS. Nous allons le configurer pour qu’il redirige toutes les requêtes HTTP de la forme *.test vers le localhost.</p>
 
-<p>Voici la commande a éxecuter pour installer <strong>RVM</strong> et <strong>Ruby</strong></p>
+<p>Installation sur mac ( via brew ) :</p>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="n">curl</span> <span class="o">-</span><span class="n">sSL</span> <span class="s">"https://get.rvm.io"</span> <span class="o">|</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">stable</span> <span class="o">--</span><span class="n">ruby</span></code></pre></figure>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>dnsmasq
+</code></pre></div></div>
 
-<p>Après un petit temps de téléchargerment, <strong>RVM</strong> s’installera automatiquement.</p>
+<p>Ajout de la configuration de redirection :</p>
 
-<p>Vous pourrez ensuite regarder la version de <strong>Ruby</strong> que vous utilisez à l’aide de cette commande:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>bash <span class="nt">-c</span> <span class="s1">'echo "nameserver 127.0.0.1" &gt; /etc/resolver/test'</span>
+<span class="nb">sudo echo</span> <span class="s1">'address=/.test/127.0.0.1'</span> <span class="o">&gt;</span> <span class="k">$(</span>brew <span class="nt">--prefix</span><span class="k">)</span>/etc/dnsmasq.conf
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="n">ruby</span> <span class="o">-</span><span class="n">v</span></code></pre></figure>
+<p>Redémarrer le service :</p>
 
-<h2 id="installer-une-autre-version-de-ruby">Installer une autre version de Ruby</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>launchctl unload <span class="nt">-w</span> /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+<span class="nb">sudo </span>launchctl load <span class="nt">-w</span> /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+</code></pre></div></div>
 
-<p>Si vous désirez installer un autre version de <strong>Ruby</strong> (par exemple, la 2.0.0), faites le via <strong>RVM</strong>:</p>
+<h2 id="installation-et-configuration-de-traefik">Installation et configuration de traefik</h2>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="n">rvm</span> <span class="n">install</span> <span class="mf">2.0.0</span></code></pre></figure>
+<p>Voici deux fichiers de configuration nécessaire pour faire fonctionner traefik. J’utilise ici un fichier docker-compose mais il est tout à fait possible de lancer ce container en ligne de commande. Le deuxième fichier inclut la configuration minimale pour faire fonctionner traefik.</p>
 
-<p>puis:</p>
+<p>Comme vous pouvez le voir, les configurations de routing se fait grace aux labels. Vous retrouverez la liste des directives sur la documentations de traefik ( <a href="https://docs.traefik.io/configuration/backends/docker/#on-containers">https://docs.traefik.io/configuration/backends/docker/#on-containers</a> )</p>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="n">rvm</span> <span class="n">use</span> <span class="mf">2.0.0</span></code></pre></figure>
+<p>docker-compose-traefik.yml</p>
 
-<p>Sources:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3"</span>
+
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">proxy</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">traefik</span>
+    <span class="na">networks</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">traefik</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">80:80"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">8080:8080"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">443:443"</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">/var/run/docker.sock:/var/run/docker.sock"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">./traefik.toml:/traefik.toml"</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
+    <span class="na">labels</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.frontend.rule=Host:traefik.test"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.port=8080"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.backend=traefik"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.frontend.entryPoints=http"</span>
+
+<span class="na">networks</span><span class="pi">:</span>
+  <span class="na">traefik</span><span class="pi">:</span>
+    <span class="na">external</span><span class="pi">:</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">traefik</span>
+</code></pre></div></div>
+
+<p>traefik.toml</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">defaultEntryPoints</span> <span class="p">=</span> <span class="s">["http"]</span>
+
+<span class="nn">[entryPoints]</span>
+  <span class="nn">[entryPoints.http]</span>
+  <span class="py">address</span> <span class="p">=</span> <span class="s">":80"</span>
+
+<span class="nn">[web]</span>
+<span class="py">address</span> <span class="p">=</span> <span class="s">":8080"</span>
+<span class="nn">[web.auth.basic]</span>
+  <span class="py">users</span> <span class="p">=</span> <span class="s">["admin:$apr1$o1HmXW0i$wWgVewL1kLu9gaqmMDh6u/"]</span>
+
+<span class="nn">[docker]</span>
+<span class="py">endpoint</span> <span class="p">=</span> <span class="s">"unix:///var/run/docker.sock"</span>
+<span class="py">domain</span> <span class="p">=</span> <span class="s">"test"</span>
+<span class="py">watch</span> <span class="p">=</span> <span class="s">true</span>
+<span class="py">exposedbydefault</span> <span class="p">=</span> <span class="s">true</span>
+</code></pre></div></div>
+
+<p>Vous pouvez dès a présent lancer la commande <code class="highlighter-rouge">docker-compose -f docker-compose-traefik.yml up</code> pour démarrer le container.
+Une fois l’opération terminée, rendez-vous sur votre navigateur à l’adresse suivante : <a href="http://traefik.test">http://traefik.test</a>.</p>
+
+<p>Dans le fichier de configuration traefik.toml un auth basic est configuré ( login: admin, mdp: admin ).</p>
+
+<p>Vous devriez voir après ça le superbe dashboard de traefik ! 🎉🎊</p>
+
+<h2 id="utilisation-de-traefik">Utilisation de traefik</h2>
+
+<p>Vous allez pouvoir maintenant tester traefik. Pour cela, nous allons utiliser l’image <code class="highlighter-rouge">tutum/hello-world</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">--network</span><span class="o">=</span>traefik <span class="nt">--label</span><span class="o">=</span><span class="s2">"traefik.enable=true"</span> <span class="nt">--label</span><span class="o">=</span><span class="s2">"traefik.frontend.rule=Host:hello-world.test"</span> <span class="nt">--label</span><span class="o">=</span><span class="s2">"traefik.backend=hello-world"</span> <span class="nt">--label</span><span class="o">=</span><span class="s2">"traefik.port:26000"</span> <span class="nt">--label</span><span class="o">=</span><span class="s2">"traefik.frontend.entryPoints=http"</span> <span class="nt">-p</span> 26000:80 tutum/hello-world
+</code></pre></div></div>
+
+<p>A présent, à l’aide de votre navigateur, rendez-vous sur sur <a href="http://hello-world.test/">http://hello-world.test/</a></p>
+
+<p>Et voilà ! 👏</p>
+
+<h2 id="whats-next-">What’s next ?</h2>
+
+<p>Pour le prochain article, nous verrons comment générer un certificat SSL afin d’utiliser le HTTPS pour votre environnement de développement.</p>
+
+<h2 id="resources-et-liens-utiles">Resources et liens utiles</h2>
 
 <ul>
-  <li><a href="https://rvm.io/rvm/install">https://rvm.io/rvm/install</a></li>
-  <li><a href="https://rvm.io/rubies/installing">https://rvm.io/rubies/installing</a></li>
+  <li><a href="https://docs.docker.com/compose/">https://docs.docker.com/compose/</a></li>
+  <li><a href="https://docs.traefik.io/configuration/backends/docker">https://docs.traefik.io/configuration/backends/docker</a></li>
+  <li><a href="https://traefik.io/">https://traefik.io/</a></li>
+  <li><a href="https://wiki.debian.org/HowTo/dnsmasq">https://wiki.debian.org/HowTo/dnsmasq</a></li>
 </ul>
 
 		</div>
@@ -243,11 +319,6 @@
 			
 			<li><a href="/categories.html#tutoriel-ref">
 					tutoriel <span>(33)</span>
-					,
-				</a></li>
-			
-			<li><a href="/categories.html#ruby-ref">
-					ruby <span>(1)</span>
 					,
 				</a></li>
 			
@@ -267,22 +338,29 @@
 			
 			
 			<li>
-				<a href="/tags.html#gems-ref">
-					gems <span>(1)</span>
+				<a href="/tags.html#docker-ref">
+					docker <span>(1)</span>
 					,
 				</a>
 			</li>
 			
 			<li>
-				<a href="/tags.html#rvm-ref">
-					rvm <span>(1)</span>
+				<a href="/tags.html#traefik-ref">
+					traefik <span>(1)</span>
 					,
 				</a>
 			</li>
 			
 			<li>
-				<a href="/tags.html#ubuntu-ref">
-					ubuntu <span>(4)</span>
+				<a href="/tags.html#dnsmasq-ref">
+					dnsmasq <span>(1)</span>
+					,
+				</a>
+			</li>
+			
+			<li>
+				<a href="/tags.html#mac-ref">
+					mac <span>(2)</span>
 					
 				</a>
 			</li>
@@ -298,7 +376,7 @@
 			<section class="share col-sm-6">
 				<h4 class="section-title">Partager cet article</h4>
 				<a class="btn btn-default btn-sm twitter"
-					href="http://twitter.com/share?text=Installer Ruby et RVM sur Ubuntu&via=demily_clement"
+					href="http://twitter.com/share?text=Utiliser Docker & Traefik pour son environnement de développement 🐳&via=demily_clement"
 					onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
 					<i class="fa fa-twitter fa-lg"></i>
 				</a>
@@ -317,7 +395,7 @@
 				</a>
 
 				<a class="btn btn-default btn-sm linkedin"
-					href="mailto:?subject=Article sur clement-demily.fr: Installer Ruby et RVM sur Ubuntu&body=http://localhost:4000/2014/03/15/installer-ruby-et-rvm-sur-ubuntu.html">
+					href="mailto:?subject=Article sur clement-demily.fr: Utiliser Docker & Traefik pour son environnement de développement 🐳&body=http://localhost:4000/2019/05/06/utiliser-docker-traefik-pour-son-environnement-de-developpement.html">
 					<i class="fa fa-envelope fa-lg"></i>
 				</a>
 			</section>
@@ -333,13 +411,12 @@
 
 		<ul class="pager">
 			
-			<li class="previous"><a href="/2013/11/05/les-commandes-de-base-dun-systeme-unix.html"
-					title="Les commandes de base d'un système UNIX">&larr; Précedent</a></li>
+			<li class="previous"><a href="/2016/04/21/mettre-a-jour-postgresql-et-la-gem-pg-sur-ubuntu.html"
+					title="Mettre à jour postgresql et la gem pg sur ubuntu">&larr; Précedent</a></li>
 			
 			
-			<li class="next"><a href="/2014/05/07/l-objective-c-pour-un-developpeur-c++-introduction-type-et-syntaxe.html" title="L’Objective-C pour un développeur C++ 1 – Introduction, types et syntaxe">Suivant
-					&rarr;</a></li>
-			
+			<li class="next disabled"><a>Suivant &rarr;</a>
+				
 		</ul>
 
 		<hr />
