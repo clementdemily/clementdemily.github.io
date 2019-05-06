@@ -6,6 +6,7 @@ twitter_username: demily_clement
 github_username: clementdemily
 markdown: kramdown
 permalink: /:year/:month/:day/:title.html
+plugins: ["jekyll-paginate"]
 
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
