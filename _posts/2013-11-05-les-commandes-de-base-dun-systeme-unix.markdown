@@ -6,18 +6,18 @@ title: "Les commandes de base d'un système UNIX"
 author:
   display_name: Clément Demily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2013-11-05 10:35:34 +0100'
-date_gmt: '2013-11-05 08:35:34 +0100'
+author_url: https://clementdemily.github.io/
+date: "2013-11-05 10:35:34 +0100"
+date_gmt: "2013-11-05 08:35:34 +0100"
 categories:
-- tutoriel
-- unix
+  - tutoriel
+  - unix
 tags:
-- cli
-- bash
+  - cli
+  - bash
 comments: []
 ---
 
@@ -28,13 +28,13 @@ Ces commandes sont a entrer dans un terminale.
 
 Exemple d'utilisation: lister les données du dossier courant.
 {% highlight bash %}
-  ls -l
+ls -l
 {% endhighlight %}
 
 **cd**: permet de naviguer entre les dossiers. "cd -" permet de revenir au dossier précédent.
 Exemple d'utilisation: se déplacer a la racine du système.
 {% highlight bash %}
-  cd /
+cd /
 {% endhighlight %}
 
 **pwd**: affiche le chemin du dossier courant.
@@ -64,7 +64,7 @@ locate toto.txt
 mkdir nouveaudossier
 {% endhighlight %}
 
-**cat**: concatène les fichiers passés en entré puis les affiches sur le terminal. L'option -e permet d'afficher des "$" à chaque retours à la ligne.
+**cat**: concatène les fichiers passés en entré puis les affiches sur le terminal. L'option -e permet d'afficher des "\$" à chaque retours à la ligne.
 
 {% highlight bash %}
 cat fichier1.txt fichier2.txt

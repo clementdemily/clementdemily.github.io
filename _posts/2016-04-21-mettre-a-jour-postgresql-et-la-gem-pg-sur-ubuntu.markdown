@@ -5,28 +5,29 @@ published: true
 title: Mettre à jour postgresql et la gem pg sur ubuntu
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2016-04-21 03:01:04 +0100'
-date_gmt: '2016-04-21 01:01:04 +0100'
+author_url: https://clementdemily.github.io/
+date: "2016-04-21 03:01:04 +0100"
+date_gmt: "2016-04-21 01:01:04 +0100"
 categories:
-- tutoriel
-- unix
+  - tutoriel
+  - unix
 tags:
-- ubuntu
-- postgresql
-- ruby
-- gem
+  - ubuntu
+  - postgresql
+  - ruby
+  - gem
 comments: []
 ---
 
 Recemment j'ai du mettre à jour Postgresql pour profiter des dernières features tel que l'indexation des données au format json (jsonb).
 
-Voici un petit script qui permettra de mettre à jour postgresql (9.3 -> 9.5): 
+Voici un petit script qui permettra de mettre à jour postgresql (9.3 -> 9.5):
+
 <script src="https://gist.github.com/clementdemily/fd45ba8b13132103f0d3da1711838e6a.js"></script>
 
 Il vous faut maintenant modifier les configurations de bundler sur votre serveur:

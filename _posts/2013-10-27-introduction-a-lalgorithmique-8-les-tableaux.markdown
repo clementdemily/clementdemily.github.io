@@ -5,18 +5,18 @@ published: true
 title: Introduction à l'algorithmique 8 - Les tableaux
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2013-10-27 19:47:15 +0100'
-date_gmt: '2013-10-27 17:47:15 +0100'
+author_url: https://clementdemily.github.io/
+date: "2013-10-27 19:47:15 +0100"
+date_gmt: "2013-10-27 17:47:15 +0100"
 categories:
-- tutoriel
+  - tutoriel
 tags:
-- algorithmique
+  - algorithmique
 comments: []
 ---
 
@@ -28,25 +28,26 @@ Ce charabia veut dire qu'un tableau ne pourra contenir que des entiers, que des 
 
 <a href="{{ site.base_url }}/img/2013/10/Tableau_à_une_dimension.png"><img class="aligncenter size-full wp-image-308" alt="tableau" src="{{ site.base_url }}/img/2013/10/Tableau_à_une_dimension.png" width="697" height="230" /></a>
 
-Comme pour les *boucles*, je vais vous présenter un problème pour introduire cette nouvelle notion.
+Comme pour les _boucles_, je vais vous présenter un problème pour introduire cette nouvelle notion.
 
-On vous demande dans un programme de calculer une moyenne basée sur des notes. Chaque note sera contenue dans une variable. Dans notre *pseudo-code*, nous aurions à déclarer autant de variables que de notes comme ici :
+On vous demande dans un programme de calculer une moyenne basée sur des notes. Chaque note sera contenue dans une variable. Dans notre _pseudo-code_, nous aurions à déclarer autant de variables que de notes comme ici :
 {% highlight bash %}DÉBUT
-    note_a <- 17
-    note_b <- 20
-    note_c <- 11
-    note_d <- 15
-    note_e <- 13
+note_a <- 17
+note_b <- 20
+note_c <- 11
+note_d <- 15
+note_e <- 13
 
     ECRIRE "La moyenne des notes 17, 20, 11, 15 et 13:"
     moyenne <- (note_a + note_b + note_c + note_d + note_e) / 5
     ECRIRE moyenne
+
 FIN
 {% endhighlight %}
-Voici le même *pseudo-code* avec l'utilisation d'un tableau :
+Voici le même _pseudo-code_ avec l'utilisation d'un tableau :
 {% highlight bash %}DÉBUT
-    notes <- [17, 20, 11, 15, 13]
-    moyenne <- 0
+notes <- [17, 20, 11, 15, 13]
+moyenne <- 0
 
     POUR compteur = 1 JUSQU'À COMPTER(notes) FAIRE
         moyenne <- moyenne + notes[compteur]
@@ -54,13 +55,15 @@ Voici le même *pseudo-code* avec l'utilisation d'un tableau :
 
     moyenne <- moyenne / COMPTER(notes)
     ECRIRE moyenne
+
 FIN
 {% endhighlight %}
 
-* La fonction **COMPTER** nous sert à compter le nombre d'élément d'un tableau.
-* Je me sers de la boucle POUR pour boucler sur mon tableau. Je stocke dans la variable *moyenne* toutes les notes additionnées ensemble.
+- La fonction **COMPTER** nous sert à compter le nombre d'élément d'un tableau.
+- Je me sers de la boucle POUR pour boucler sur mon tableau. Je stocke dans la variable _moyenne_ toutes les notes additionnées ensemble.
 
 ça peut paraitre plus compliqué au premier abord, mais très pratique à l'utilisation !
+
 <blockquote>
 ! ATTENTION !Sur LARP vous pouvez constater que l'indice d'un tableau commence à 1. Or, dans la majorité (si ce n'est la totalité) des langages de programmation l'indice d'un tableau commence à 0. Soyez donc vigilent quand vous manipulerez des tableaux à l'avenir.
 </blockquote>

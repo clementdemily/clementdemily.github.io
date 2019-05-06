@@ -5,20 +5,20 @@ published: true
 title: Bien configurer Eclipse pour Symfony2
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2011-11-04 00:38:24 +0100'
-date_gmt: '2011-11-03 22:38:24 +0100'
+author_url: https://clementdemily.github.io/
+date: "2011-11-04 00:38:24 +0100"
+date_gmt: "2011-11-03 22:38:24 +0100"
 categories:
-- Tutoriel
+  - Tutoriel
 tags:
-- Eclipse
-- PHP
-- Symfony2
+  - Eclipse
+  - PHP
+  - Symfony2
 comments: []
 ---
 

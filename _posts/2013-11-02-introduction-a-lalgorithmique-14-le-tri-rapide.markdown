@@ -5,18 +5,18 @@ published: true
 title: Introduction à l'algorithmique 14 - Le tri rapide
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2013-11-02 10:00:21 +0100'
-date_gmt: '2013-11-02 08:00:21 +0100'
+author_url: https://clementdemily.github.io/
+date: "2013-11-02 10:00:21 +0100"
+date_gmt: "2013-11-02 08:00:21 +0100"
 categories:
-- tutoriel
+  - tutoriel
 tags:
-- algorithmique
+  - algorithmique
 comments: []
 ---
 
@@ -26,16 +26,17 @@ Cet algorithme est un peu plus exotique que celui du tri à bulles, il fait appe
 
 Le principe de cet algorithme est de placer un "pivot", puis de faire passer les valeurs plus petites que ce pivot à *gauche*et de faire passer les valeurs plus grandes à *droite*de celui-ci.
 
-On appellera cette étape le *partitionnement* du tableau. Cette étape est répétée récursivement, sur tous les sous-tableaux! "diviser pour régner"
+On appellera cette étape le _partitionnement_ du tableau. Cette étape est répétée récursivement, sur tous les sous-tableaux! "diviser pour régner"
 
 Pseudo-code de la fonction principale:
 
 {% highlight bash %}
 DéBUT
-    tab <- [5, 6, 42, 1, 5, 2, 121, 9, 8, 7, 3, 12, 0, 38, 33, 25, 23, 87, 96]
+tab <- [5, 6, 42, 1, 5, 2, 121, 9, 8, 7, 3, 12, 0, 38, 33, 25, 23, 87, 96]
 
     ECRIRE "Voici le tableau a trier", tab
     ECRIRE "Voici le tableau trié", QUICK_SORT(tab, 1, COMPTER(tab))
+
 FIN
 {% endhighlight %}
 
@@ -43,10 +44,10 @@ Pseudo-code de la fonction PARTITIONNER:
 
 {% highlight bash %}
 ENTRER REFERENCE tab, index_debut, taille
-    pivot <- tab[index_debut]
-    index_gauche <- p - 1
-    index_droite <- taille + 1
-    boucler <- 1
+pivot <- tab[index_debut]
+index_gauche <- p - 1
+index_droite <- taille + 1
+boucler <- 1
 
     TANTQUE boucler = 1 FAIRE
         RéPéTER
@@ -64,6 +65,7 @@ ENTRER REFERENCE tab, index_debut, taille
         FINSI
 
     FINTANTQUE
+
 RETOURNER index_droite
 
 {% endhighlight %}
@@ -72,7 +74,7 @@ Comme expliqué plus haut, le principe de l'algorithme réside en partie dans ce
 
 J'aimerais juste revenir sur le mot-clé **REFERENCE**. Vous avez du le remarquer: les paramètres des fonctions ne gardent pas les modifications que l'on fait dans le corps de la fonction. Les paramètres sont donc des variables **copiées**depuis la fonction principale. (dans ce cas)
 
-*Le seul moyen que l'on connaissait jusqu'à présent pour récupérer des informations d'une fonction était par la valeur de retour.*
+_Le seul moyen que l'on connaissait jusqu'à présent pour récupérer des informations d'une fonction était par la valeur de retour._
 
 Le mot-clé **REFERENCE** sert à contrer ce problème, maintenant toutes modifications sur la variable "tab" sera répercutée partout dans l'algorithme.
 
@@ -82,11 +84,11 @@ Pseudo-code de la fonction QUICK_SORT:
 
 {% highlight bash %}
 ENTRER tab, index_debut, taille
-    SI index_debut < taille ALORS
-        index_droite <- PARTITIONNER(tab, index_debut, taille)
-        QUICK_SORT(tab, index_debut, index_droite)
-        QUICK_SORT(tab, index_droite + 1, taille)
-    FINSI
+SI index_debut < taille ALORS
+index_droite <- PARTITIONNER(tab, index_debut, taille)
+QUICK_SORT(tab, index_debut, index_droite)
+QUICK_SORT(tab, index_droite + 1, taille)
+FINSI
 RETOURNER tab
 {% endhighlight %}
 
@@ -96,9 +98,9 @@ Je vous conseille une fois de plus de regarder **l'exécution pas à pas** pour 
 
 Un mot sur la complexité algorithmique du tri rapide:
 
- * Pour le meilleurs des cas (tableau trié): O(n)
- * Pour un cas moyen: O(nlog(n))
- * Pour le pire des cas: O(n&sup2;)
+- Pour le meilleurs des cas (tableau trié): O(n)
+- Pour un cas moyen: O(nlog(n))
+- Pour le pire des cas: O(n&sup2;)
 
 En vérité, la complexité algorithmique varie beaucoup selon la manière de la sélection du pivot: pour une sélection arbitraire, la complexité algorithmique tend plus vers le O(n&sup2;). En revanche, pour un pivot aléatoire ou un pivot optimal, la complexité algorithmique passe en O(nlog(n)).
 

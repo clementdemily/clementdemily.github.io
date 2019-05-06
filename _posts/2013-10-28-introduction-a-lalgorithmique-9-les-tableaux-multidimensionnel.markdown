@@ -5,18 +5,18 @@ published: true
 title: Introduction à l'algorithmique 9 - Les tableaux multidimensionnel
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2013-10-28 21:09:23 +0100'
-date_gmt: '2013-10-28 19:09:23 +0100'
+author_url: https://clementdemily.github.io/
+date: "2013-10-28 21:09:23 +0100"
+date_gmt: "2013-10-28 19:09:23 +0100"
 categories:
-- tutoriel
+  - tutoriel
 tags:
-- algorithmique
+  - algorithmique
 comments: []
 ---
 
@@ -30,7 +30,7 @@ Un tableau multidimensionnel est un tableau&hellip; de tableaux ! Pour imager un
 
 Pour un tableau unidimensionnel, on stocke une ligne. Dans un tableau multidimensionnel, on stocke les tableaux de ligne.
 
-Voici la syntaxe si on souhaite accéder à la tour noire en (0,0) : *Echiquier[0][0]*. La première paire de crochets permet de se positionner à l'indice 0 de notre échiquier. Nous avons donc sélectionné la première ligne, ensuite la deuxième paire de crochets nous positionne à l'indice 0 (la colonne).
+Voici la syntaxe si on souhaite accéder à la tour noire en (0,0) : _Echiquier[0][0]_. La première paire de crochets permet de se positionner à l'indice 0 de notre échiquier. Nous avons donc sélectionné la première ligne, ensuite la deuxième paire de crochets nous positionne à l'indice 0 (la colonne).
 
 Je n'ai malheureusement pas d'idée d'application à mettre en avant pour aujourd'hui. Laisser un commentaire si vous en avez une !
 

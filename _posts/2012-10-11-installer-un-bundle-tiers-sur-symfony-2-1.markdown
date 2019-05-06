@@ -5,19 +5,19 @@ published: true
 title: Installer un Bundle tiers sur Symfony 2.1
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2012-10-11 16:18:25 +0200'
-date_gmt: '2012-10-11 14:18:25 +0200'
+author_url: https://clementdemily.github.io/
+date: "2012-10-11 16:18:25 +0200"
+date_gmt: "2012-10-11 14:18:25 +0200"
 categories:
-- tutoriel
+  - tutoriel
 tags:
-- PHP
-- Symfony2
+  - PHP
+  - Symfony2
 comments: []
 ---
 
@@ -31,7 +31,7 @@ Copier le fichier composer.phar à la racine du projet.
 
 On édite ensuite le fichier composer.json et on ajoute dans la section "require" la ligne suivante :
 
-"friendsofsymfony/jsrouting-bundle": "*"
+"friendsofsymfony/jsrouting-bundle": "\*"
 
 (Je vous conseille de prendre une version fixe du bundle tiers que vous voulez installer. )
 

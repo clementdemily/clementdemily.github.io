@@ -5,20 +5,21 @@ published: true
 title: CV
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
+author_url: https://clementdemily.github.io/
 wordpress_id: 16
 wordpress_url: http://www.zen-dev.net/?page_id=16
-date: '2011-04-05 13:19:00 +0200'
-date_gmt: '2011-04-05 11:19:00 +0200'
+date: "2011-04-05 13:19:00 +0200"
+date_gmt: "2011-04-05 11:19:00 +0200"
 categories: []
 tags: []
 comments: []
 ---
+
 <article class="hresume">
   <p class="summary">
     Je m'appelle <strong>Clément Demily</strong>, je suis développeur web depuis plus de 7 ans et maintenant spécialisé sur le framework <strong>Ruby on Rails</strong>.<br />
@@ -41,6 +42,7 @@ comments: []
     <li class="experience vevent"><span class="summary">Developpeur web</span>, <span class="location">Roubaix</span>.<br />
       <abbr class="dtstart" title="2011-03-01">Mars 2011</abbr> - <abbr title="2011-08-01">Aout 2011</abbr>
     </li>
+
   </ol>
 
   <h4>Parcours scolaire</h4>
@@ -94,6 +96,7 @@ comments: []
       </div>
       (<abbr class="dtstart" title="2005-09-01">2005</abbr> - <abbr class="dtend" title="2008-05-25">2008</abbr>)
     </li>
+
   </ol>
 
   <h4>Compétences</h4>

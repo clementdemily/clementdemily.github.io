@@ -1,22 +1,21 @@
 title: Clément Demily
 email: demily.clement@gmail.com
 baseurl: ""
-url: "http://clement-demily.fr" 
+url: "https://clementdemily.github.io/"
 twitter_username: demily_clement
-github_username:  clementdemily
+github_username: clementdemily
 markdown: kramdown
 permalink: /:year/:month/:day/:title.html
 
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
-highlighter: pygments
+highlighter: rouge
 
 BASE_PATH: ""
 
 defaults:
-  -
-    scope:
+  - scope:
       path: "" # empty string for all files
     values:
       title: Clément Demily
@@ -25,13 +24,12 @@ description: Notes d'un développeur
 
 author:
   name: Clément Demily
-  email: demily.clement@gmail.com
+  email: demily.clement+blog@gmail.com
   github: clementdemily
   twitter: demily_clement
   linkedin: clementdemily
-  bio: Développeur Freelance
+  bio: Développeur Lillois
   email_md5: a4c48bb0b9e041ad0a5299f82b2b16d9
-
 
 categories_path: categories.html
 tags_path: tags.html

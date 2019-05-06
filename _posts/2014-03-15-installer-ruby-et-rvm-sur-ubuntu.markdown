@@ -6,27 +6,26 @@ title: Installer Ruby et RVM sur Ubuntu
 author:
   display_name: Clément Demily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2014-03-15 22:00:00 +0200'
-date_gmt: '2014-03-15 20:00:00 +0200'
+author_url: https://clementdemily.github.io/
+date: "2014-03-15 22:00:00 +0200"
+date_gmt: "2014-03-15 20:00:00 +0200"
 categories:
-- tutoriel
-- ruby
-- unix
+  - tutoriel
+  - ruby
+  - unix
 tags:
-- gems
-- rvm
-- ubuntu
+  - gems
+  - rvm
+  - ubuntu
 comments: []
 ---
 
 Bonjour tout le monde! Aujourd’hui nous allons voir comment installer Ruby et RVM.
 
-Qu’est-ce que RVM?
----
+## Qu’est-ce que RVM?
 
 **RVM**, pour Ruby Version Manager permet comme son nom l’indique, de gérer différentes versions de ruby sur votre système.
 
@@ -43,27 +42,25 @@ Voici la commande a éxecuter pour installer **RVM** et **Ruby**
 curl -sSL "https://get.rvm.io" | bash -s stable --ruby
 
 {% endhighlight %}
- 
+
 Après un petit temps de téléchargerment, **RVM** s’installera automatiquement.
 
 Vous pourrez ensuite regarder la version de **Ruby** que vous utilisez à l’aide de cette commande:
 
-{% highlight C++ %} 
+{% highlight C++ %}
 
 ruby -v
 
 {% endhighlight %}
 
- 
-Installer une autre version de Ruby
----
+## Installer une autre version de Ruby
 
 Si vous désirez installer un autre version de **Ruby** (par exemple, la 2.0.0), faites le via **RVM**:
 
 {% highlight C++ %}
 
 rvm install 2.0.0
- 
+
 {% endhighlight %}
 
 puis:
@@ -73,8 +70,8 @@ puis:
 rvm use 2.0.0
 
 {% endhighlight %}
- 
-Sources: 
+
+Sources:
 
 - [https://rvm.io/rvm/install](https://rvm.io/rvm/install)
 - [https://rvm.io/rubies/installing](https://rvm.io/rubies/installing)

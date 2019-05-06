@@ -5,19 +5,19 @@ published: true
 title: Semaine de lecture
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2013-10-29 23:53:15 +0100'
-date_gmt: '2013-10-29 21:53:15 +0100'
+author_url: https://clementdemily.github.io/
+date: "2013-10-29 23:53:15 +0100"
+date_gmt: "2013-10-29 21:53:15 +0100"
 categories:
-- etudes
+  - etudes
 tags:
-- ulaval
-- epitech
+  - ulaval
+  - epitech
 comments: []
 ---
 

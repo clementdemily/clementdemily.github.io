@@ -5,20 +5,20 @@ published: true
 title: Quelques nouvelles!
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2013-10-19 20:23:35 +0200'
-date_gmt: '2013-10-19 18:23:35 +0200'
+author_url: https://clementdemily.github.io/
+date: "2013-10-19 20:23:35 +0200"
+date_gmt: "2013-10-19 18:23:35 +0200"
 categories:
-- etudes
+  - etudes
 tags:
-- epitech
-- québec
-- ulaval
+  - epitech
+  - québec
+  - ulaval
 comments: []
 ---
 
@@ -36,9 +36,9 @@ Pour ma part, j'ai choisi l'université **Laval**, au Québec (Canada). J'y étu
 
 <span style="line-height: 1.5;">J'ai choisi les modules suivants pour la session d'automne : </span>
 
- * Algorithmie et structure de données;
- * Interface Homme-Machine;
- * Programmation de jeux vidéo;
- * Marketing;
+- Algorithmie et structure de données;
+- Interface Homme-Machine;
+- Programmation de jeux vidéo;
+- Marketing;
 
-Voilà voilà, je projette également  de revenir plus régulièrement mettre à jour mon blog. :)
+Voilà voilà, je projette également de revenir plus régulièrement mettre à jour mon blog. :)

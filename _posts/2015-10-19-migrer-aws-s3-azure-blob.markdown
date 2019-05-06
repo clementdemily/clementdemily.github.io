@@ -6,24 +6,23 @@ title: Migrer de Amazon Web Service S3 vers Microsoft Azure Blob
 author:
   display_name: Clément Demily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2015-10-15 12:00:00 +0200'
-date_gmt: '2015-10-15 10:00:00 +0200'
+author_url: https://clementdemily.github.io/
+date: "2015-10-15 12:00:00 +0200"
+date_gmt: "2015-10-15 10:00:00 +0200"
 categories:
-- tutoriel
-- microsoft azure
+  - tutoriel
+  - microsoft azure
 tags:
-- cloud
-- s3
-- blob
+  - cloud
+  - s3
+  - blob
 comments: []
 ---
 
-Backups des buckets S3
----
+## Backups des buckets S3
 
 Dans un premier temps, nous ferons une copie locale de nos buckets **S3**.
 
@@ -31,17 +30,17 @@ Pour cela, nous devrons utiliser l'utilitaire **awscli** qui nous permet de mani
 
 Installation de awscli sur mac (via homebrew):
 {% highlight bash %}
-  $> brew install awscli
+\$> brew install awscli
 {% endhighlight %}
 
 Installation de awscli sur unix (via pip):
 {% highlight bash %}
-  $> pip install awscli
+\$> pip install awscli
 {% endhighlight %}
 
 Une fois installé, configurons notre utilitaire:
 {% highlight bash %}
-$> aws configure
+\$> aws configure
 AWS Access Key ID [None]:
 AWS Secret Access Key [None]:
 Default region name [None]:
@@ -56,18 +55,17 @@ Vous pouvez dès à présent créer un nouveau dossier et effectuer une copie lo
 {% highlight bash %}
 $> mkdir buckets-backup
 $> cd buckets-backup
-$> aws s3 sync s3://mon-bucket .
+\$> aws s3 sync s3://mon-bucket .
 {% endhighlight %}
 
-Si un message d'erreur en rapport avec une erreur de droit apparait (*AccessDenied*), verifier bien que l'utilisateur associé a votre configuration dispose des droits nécessaire sur le service **S3** de votre compte **AWS**. [Lien vers IAM](https://console.aws.amazon.com/iam/home).
+Si un message d'erreur en rapport avec une erreur de droit apparait (_AccessDenied_), verifier bien que l'utilisateur associé a votre configuration dispose des droits nécessaire sur le service **S3** de votre compte **AWS**. [Lien vers IAM](https://console.aws.amazon.com/iam/home).
 
 Si le problème persiste, créer un nouvel utilisateur lui attribuant le droit "**AdministratorAccess**" ou "**AmazonS3FullAccess**".
 
 Utiliser ensuite ses identifiants pour reconfigurer **awscli**.
 ![IAM]({{ site.base_url }}/img/2015/10/IAM.png){: .center-image }
 
-Transfert des buckets vers Microsoft Blob
----
+## Transfert des buckets vers Microsoft Blob
 
 Nous disposons de plusieurs outils pour transférer des fichiers sur Microsoft Blob (powershell, AzCopy, ...)
 
@@ -84,7 +82,7 @@ Le champ "Nom d'utilisateur" correspond au champ "Account Storage Name". Le cham
 
 Une fois la connexion établie, il ne vous restera plus qu'a effectuer un "glisser-déposer" dans la fenêtre qui est apparue.
 
-Pour finir, aller sur votre portail et verifier que vos **Containers** (alias buckets) ont bien les droits que vous souhaitez attribuer. 
+Pour finir, aller sur votre portail et verifier que vos **Containers** (alias buckets) ont bien les droits que vous souhaitez attribuer.
 Les containers sont privés par défaut, si vous désirer les rendre public, changer la règle d'accès du container avec la valeur "Container".
 
 ![containers]({{ site.base_url }}/img/2015/10/containers.png){: .center-image }

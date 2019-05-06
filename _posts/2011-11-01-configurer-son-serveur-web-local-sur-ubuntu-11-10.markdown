@@ -5,21 +5,21 @@ published: true
 title: Configurer son serveur web local sur Ubuntu 11.10
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2011-11-01 03:01:04 +0100'
-date_gmt: '2011-11-01 01:01:04 +0100'
+author_url: https://clementdemily.github.io/
+date: "2011-11-01 03:01:04 +0100"
+date_gmt: "2011-11-01 01:01:04 +0100"
 categories:
-- tutoriel
-- unix
+  - tutoriel
+  - unix
 tags:
-- PHP
-- Symfony2
-- ubuntu
+  - PHP
+  - Symfony2
+  - ubuntu
 comments: []
 ---
 
@@ -35,11 +35,12 @@ Vous pouvez dès maintenant tester si apache2 fonctionne (dans votre navigateur 
 
 test.php
 {% highlight php %}
+
 <?php
   phpinfo();
 ?>
+
 {% endhighlight %}
- 
 
 Relancer votre serveur apache2 à l'aide de cette commande : **sudo /etc/init.d/apache2 restart**
 
@@ -66,7 +67,5 @@ Si vous n'avez pas mis de mot de passe root lors de l'installation de phpmyadmin
 **// $cfg['Servers'][$i]['AllowNoPassword'] = TRUE;**
 
 Pour plus de détails sur ce fichier :<a title="config" href="http://wiki.phpmyadmin.net/pma/Config/Servers" target="_blank"> http://wiki.phpmyadmin.net/pma/Config/Servers</a>
-
- 
 
 Voilà ! J'espère que j'ai été assez clair pour ce premier petit tutoriel.

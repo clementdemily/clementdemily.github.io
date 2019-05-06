@@ -5,14 +5,14 @@ published: true
 title: Portfolio
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2011-04-05 13:22:06 +0200'
-date_gmt: '2011-04-05 11:22:06 +0200'
+author_url: https://clementdemily.github.io/
+date: "2011-04-05 13:22:06 +0200"
+date_gmt: "2011-04-05 11:22:06 +0200"
 categories: []
 tags: []
 comments: []
@@ -129,7 +129,7 @@ comments: []
 
   <h4>Clément-demily.fr (Blog professionnel)</h4>
   <p class="mb30">
-    Création et maintenance du site <a href="http://www.clement-demily.fr" rel="nofollow" target="_blank">http://www.clement-demily.fr</a>.
+    Création et maintenance du site <a href="https://clementdemily.github.io/" rel="nofollow" target="_blank">https://clementdemily.github.io/</a>.
     <ul>
       <li>Configuration du serveur</li>
       <li>Personnalisation du design</li>
@@ -154,6 +154,7 @@ comments: []
       <li>Travail sur le SEO</li>
     </ul>
     Réalisé en 2012.
+
   </p>
 
 </article>

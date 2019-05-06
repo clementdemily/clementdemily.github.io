@@ -5,14 +5,14 @@ published: true
 title: Contact
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2011-04-05 13:19:30 +0200'
-date_gmt: '2011-04-05 11:19:30 +0200'
+author_url: https://clementdemily.github.io/
+date: "2011-04-05 13:19:30 +0200"
+date_gmt: "2011-04-05 11:19:30 +0200"
 categories: []
 tags: []
 comments: []

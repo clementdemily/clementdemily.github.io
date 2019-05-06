@@ -5,19 +5,19 @@ published: true
 title: Un dépôt Github pour les sources LARP
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2013-11-03 10:00:07 +0100'
-date_gmt: '2013-11-03 08:00:07 +0100'
+author_url: https://clementdemily.github.io/
+date: "2013-11-03 10:00:07 +0100"
+date_gmt: "2013-11-03 08:00:07 +0100"
 categories:
-- tutoriel
+  - tutoriel
 tags:
-- algorithmique
-- dépôt
+  - algorithmique
+  - dépôt
 comments: []
 ---
 

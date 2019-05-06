@@ -5,24 +5,25 @@ published: true
 title: Introduction à l'algorithmique 12 - Le tri à bulles
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2013-10-31 09:00:52 +0100'
-date_gmt: '2013-10-31 07:00:52 +0100'
+author_url: https://clementdemily.github.io/
+date: "2013-10-31 09:00:52 +0100"
+date_gmt: "2013-10-31 07:00:52 +0100"
 categories:
-- tutoriel
+  - tutoriel
 tags:
-- algorithmique
+  - algorithmique
 comments: []
 ---
 
 Bonjour à tous ! Aujourd'hui nous allons aborder notre premier algorithme de tri ! Grâce à cet algorithme nous allons revoir les notions suivantes : Les structures conditionnelles, les boucles, les tableaux et les fonctions. C'est un bon exercice !
 
 Tout d'abord, un algorithme de tri permet de trier une structure de données (ici un tableau). Le tri à bulles et l'un des algorithmes de tri les plus connu, son principe est simple.
+
 <ol>
  * L'algorithme parcourt le tableau et compare des pairs de valeurs. (tab[0] et tab[1], puis tab[1] et tab[2]&hellip;)
  * Lorsque deux éléments successifs ne sont pas dans l'ordre, on les échanges.
@@ -38,25 +39,25 @@ Vous devez avoir une vague idée de la manière dont on va s'y prendre pour le f
 
 Pseudo-code du module principal :
 {% highlight bash %}DÉBUT
-    atrier <- [6, 5, 1, 2, 8, 9, 3, 7, 4]
-    ECRIRE "Voici le tableau a trier: ", atrier
-    ECRIRE "Voici le tableau trié:", TRI_A_BULLES(atrier)
+atrier <- [6, 5, 1, 2, 8, 9, 3, 7, 4]
+ECRIRE "Voici le tableau a trier: ", atrier
+ECRIRE "Voici le tableau trié:", TRI_A_BULLES(atrier)
 FIN
 {% endhighlight %}
 Pseudo-code du module TRI_A_BULLES
 {% highlight bash %}ENTRER tab
-    echange <- 1
-    TANTQUE echange = 1 FAIRE
-           echange <- 0
-           POUR compteur = 1 JUSQU'À COMPTER(tab) - 1 FAIRE
-               SI tab[compteur] > tab[compteur + 1] ALORS
-                    tmp <- tab[compteur + 1]
-                    tab[compteur + 1] <- tab[compteur]
-                    tab[compteur] <- tmp
-                    echange <- 1
-               FINSI
-           FINPOUR
-    FINTANTQUE
+echange <- 1
+TANTQUE echange = 1 FAIRE
+echange <- 0
+POUR compteur = 1 JUSQU'À COMPTER(tab) - 1 FAIRE
+SI tab[compteur] > tab[compteur + 1] ALORS
+tmp <- tab[compteur + 1]
+tab[compteur + 1] <- tab[compteur]
+tab[compteur] <- tmp
+echange <- 1
+FINSI
+FINPOUR
+FINTANTQUE
 RETOURNER tab
 {% endhighlight %}
 L'algorithme du tri à bulles est l'un des premiers vrais algorithmes que vous apprendrez en cours de programmation. Toutefois sa **complexité** informatique est élevée. Nous verrons ce que cela signifie&hellip; demain !

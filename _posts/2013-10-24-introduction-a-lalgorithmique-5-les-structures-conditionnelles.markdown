@@ -5,42 +5,44 @@ published: true
 title: Introduction à l'algorithmique 5 - Les structures conditionnelles
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2013-10-24 00:16:39 +0200'
-date_gmt: '2013-10-23 22:16:39 +0200'
+author_url: https://clementdemily.github.io/
+date: "2013-10-24 00:16:39 +0200"
+date_gmt: "2013-10-23 22:16:39 +0200"
 categories:
-- tutoriel
+  - tutoriel
 tags:
-- algorithmique
+  - algorithmique
 comments: []
 ---
 
 Bonjour ! Aujourd'hui nous allons aborder les premières difficultés de l'algorithmique : Les structures conditionnelles !
+
 <blockquote>
 <span style="text-decoration: underline;">Rappel</span> : nous allons avoir besoin des opérateurs logique pour continuer, je vous invite à jeter un rapide coup d'&oelig;il <a title="Introduction à l'algorithmique 2 - Quelques notions-clé" href="{{ site.base_url }}/2013/10/21/introduction-a-lalgorithmique-2/">ici</a>, partie opérateurs de comparaison et opérateurs logique.</blockquote>
 <span style="text-decoration: underline;">Qu'est-ce que c'est ?</span> C'est une **instruction **qui permet de tester si une condition est **VRAIE** ou **FAUSSE** (en informatique ça se traduit par **1** ou **0**).
 
 <span style="text-decoration: underline;">A quoi ça sert ?</span> Cela va nous permettre d'adapter le comportement de notre algorithme en fonction de la valeur de nos variables.
 
-<span style="text-decoration: underline;">A quoi ça ressemble </span>? Il existe deux syntaxes la plus commune étant le **SI ***conditions* **ALORS **&hellip; **FINSI **; L'autre étant plus rare, j'en donnerai un exemple plus tard dans cet article.
+<span style="text-decoration: underline;">A quoi ça ressemble </span>? Il existe deux syntaxes la plus commune étant le **SI \***conditions\* **ALORS **&hellip; **FINSI **; L'autre étant plus rare, j'en donnerai un exemple plus tard dans cet article.
 
-Plutôt que de me lancer dans de longues explications, je vous propose de voir ensemble un petit bout de *pseudo-code* :
+Plutôt que de me lancer dans de longues explications, je vous propose de voir ensemble un petit bout de _pseudo-code_ :
 {% highlight bash %}DÉBUT
-    ECRIRE "Quel est votre âge?"
-    LIRE AGE
-    SI AGE >= 18 ALORS
-        ECRIRE "Vous êtes majeur!"
-    SINON
-        ECRIRE "Vous êtes mineur!"
-    FINSI
+ECRIRE "Quel est votre âge?"
+LIRE AGE
+SI AGE >= 18 ALORS
+ECRIRE "Vous êtes majeur!"
+SINON
+ECRIRE "Vous êtes mineur!"
+FINSI
 FIN
 {% endhighlight %}
 Analysons ça ensemble :
+
 <ol>
  * Vous commencez à être familier avec la fonction **ECRIRE**, je ne vais pas revenir là-dessus ; on affiche juste un texte invitant l'utilisateur à entrer son âge.
  * Nous stockons dans la variable *AGE* la valeur récupérée à l'aide de la fonction **LIRE**
@@ -50,22 +52,23 @@ Vous êtes toujours ici ? Parfait ! Sachez que comprendre les **structures condi
 
 Je vous propose un autre algorithme pour vous montrer les **structures conditionnelles imbriquées **:
 {% highlight bash %}DÉBUT
-    ECRIRE "Bonjour, veuillez taper un chiffre en 1 et 3"
-    LIRE CHIFFRE
-    SI CHIFFRE < 1 OU CHIFFRE > 3 ALORS
-        ECRIRE "Ce n'est pas un chiffre entre 1 et 3!"
-    SINON
-        SI CHIFFRE = 1 ALORS
-            ECRIRE "Vous avez tapé le chiffre 1"
-        SINON SI CHIFFRE = 2 ALORS
-            ECRIRE "Vous avez tapé le chiffre 2"
-        SINON
-            ECRIRE "Vous avez tapé le chiffre 3"
-        FINSI
-    FINSI
+ECRIRE "Bonjour, veuillez taper un chiffre en 1 et 3"
+LIRE CHIFFRE
+SI CHIFFRE < 1 OU CHIFFRE > 3 ALORS
+ECRIRE "Ce n'est pas un chiffre entre 1 et 3!"
+SINON
+SI CHIFFRE = 1 ALORS
+ECRIRE "Vous avez tapé le chiffre 1"
+SINON SI CHIFFRE = 2 ALORS
+ECRIRE "Vous avez tapé le chiffre 2"
+SINON
+ECRIRE "Vous avez tapé le chiffre 3"
+FINSI
+FINSI
 FIN
 {% endhighlight %}
 Une petite explication :
+
 <ol>
  * Comme pour l'algorithme précédent, nous demandons a l'utilisateur de saisir une donnée ; en l'occurrence ici c'est un chiffre entre 1 et 3.
  * Cette saisie est stockée dans la variable *CHIFFRE*.

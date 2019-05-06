@@ -5,18 +5,19 @@ published: true
 title: Mentions Légales
 author:
   display_name: Clément Demily
-  login: devilslug
+  login: cdemily
   email: demily.clement@gmail.com
-  url: http://www.clement-demily.fr
-author_login: devilslug
+  url: https://clementdemily.github.io/
+author_login: cdemily
 author_email: demily.clement@gmail.com
-author_url: http://www.clement-demily.fr
-date: '2013-10-23 01:07:24 +0200'
-date_gmt: '2013-10-22 23:07:24 +0200'
+author_url: https://clementdemily.github.io/
+date: "2013-10-23 01:07:24 +0200"
+date_gmt: "2013-10-22 23:07:24 +0200"
 categories: []
 tags: []
 comments: []
 ---
+
 <article id="post-99">
   <h4>Responsable de la publication</h4>
 
