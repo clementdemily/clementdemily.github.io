@@ -43,3 +43,5 @@ author:
 categories_path: categories.html
 tags_path: tags.html
 pages_path: pages.html
+
+theme: jekyll-theme-cayman
