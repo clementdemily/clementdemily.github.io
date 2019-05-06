@@ -1,24 +1,15 @@
-# FROM node:11.14.0-alpine as builder
+FROM ruby:2.6.3-alpine3.8
+WORKDIR /app
+COPY Gemfile .
 
-# ARG REACT_APP_ENV
-# ENV REACT_APP_ENV ${REACT_APP_ENV}
+RUN apk add --no-cache g++ gcc make musl-dev && \
+  bundle install && \
+	gem install eventmachine && \
+  bundle update
 
-# WORKDIR '/app'
+COPY . .
 
-# COPY package.json .
+EXPOSE 4000
+EXPOSE 35729
 
-# RUN npm install -g yarn && yarn install
-
-# COPY . .
-
-# RUN yarn build:env
-
-# FROM nginx
-
-# COPY --from=builder /app/build /usr/share/nginx/html
-
-# COPY deploy/nginx.conf /etc/nginx/nginx.conf
-
-# EXPOSE 80
-
-# ENTRYPOINT ["nginx","-g","daemon off;"]
+CMD [ "bundle", "exec", "jekyll", "serve", "--force_polling", "-H", "0.0.0.0", "-P", "4000", "--livereload" ]

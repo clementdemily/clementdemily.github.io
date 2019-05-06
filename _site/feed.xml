@@ -3,15 +3,15 @@
   <channel>
     <title>Clément Demily</title>
     <description>Notes d'un développeur</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 May 2019 16:29:22 +0200</pubDate>
-    <lastBuildDate>Mon, 06 May 2019 16:29:22 +0200</lastBuildDate>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 06 May 2019 19:19:58 +0000</pubDate>
+    <lastBuildDate>Mon, 06 May 2019 19:19:58 +0000</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Utiliser Docker &amp; Traefik pour son environnement de développement 🐳</title>
-        <description>&lt;p&gt;Bonjour à tous 👋&lt;/p&gt;
+        <description>&lt;p&gt;Bonjour à tous ! 👋&lt;/p&gt;
 
 &lt;p&gt;Nous allons aujourd’hui voir comment utiliser Docker et Traefik afin d’avoir des noms de domaines personnalisés pour nos applications en développement. Pour se faire, nous allons utiliser traefik.&lt;/p&gt;
 
@@ -126,9 +126,9 @@ Une fois l’opération terminée, rendez-vous sur votre navigateur à l’adres
   &lt;li&gt;&lt;a href=&quot;https://wiki.debian.org/HowTo/dnsmasq&quot;&gt;https://wiki.debian.org/HowTo/dnsmasq&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 06 May 2019 04:01:04 +0200</pubDate>
-        <link>http://localhost:4000/2019/05/06/utiliser-docker-traefik-pour-son-environnement-de-developpement.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/05/06/utiliser-docker-traefik-pour-son-environnement-de-developpement.html</guid>
+        <pubDate>Mon, 06 May 2019 02:01:04 +0000</pubDate>
+        <link>http://0.0.0.0:4000/2019/05/06/utiliser-docker-traefik-pour-son-environnement-de-developpement.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2019/05/06/utiliser-docker-traefik-pour-son-environnement-de-developpement.html</guid>
         
         <category>docker</category>
         
@@ -168,9 +168,9 @@ bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;gem uninstall pg
 bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
-        <pubDate>Thu, 21 Apr 2016 04:01:04 +0200</pubDate>
-        <link>http://localhost:4000/2016/04/21/mettre-a-jour-postgresql-et-la-gem-pg-sur-ubuntu.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/04/21/mettre-a-jour-postgresql-et-la-gem-pg-sur-ubuntu.html</guid>
+        <pubDate>Thu, 21 Apr 2016 02:01:04 +0000</pubDate>
+        <link>http://0.0.0.0:4000/2016/04/21/mettre-a-jour-postgresql-et-la-gem-pg-sur-ubuntu.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2016/04/21/mettre-a-jour-postgresql-et-la-gem-pg-sur-ubuntu.html</guid>
         
         <category>ubuntu</category>
         
@@ -249,9 +249,9 @@ Les containers sont privés par défaut, si vous désirer les rendre public, cha
 
 &lt;p&gt;&lt;img src=&quot;/img/2015/10/containers.png&quot; alt=&quot;containers&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 15 Oct 2015 12:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2015/10/15/migrer-aws-s3-azure-blob.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/10/15/migrer-aws-s3-azure-blob.html</guid>
+        <pubDate>Thu, 15 Oct 2015 10:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/2015/10/15/migrer-aws-s3-azure-blob.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2015/10/15/migrer-aws-s3-azure-blob.html</guid>
         
         <category>cloud</category>
         
@@ -340,9 +340,9 @@ Dans cet exemple, j’utilise la valeur ‘*’ pour écouter toutes les adresse
 
 &lt;p&gt;IP_INSTANCE_DB correspond à l’IP de votre instance serveur postgresql, celle que nous avons créé au début de cet article.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 15 Oct 2015 12:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2015/10/15/creer-un-serveur-postgresql-sur-microsoft-azure.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/10/15/creer-un-serveur-postgresql-sur-microsoft-azure.html</guid>
+        <pubDate>Thu, 15 Oct 2015 10:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/2015/10/15/creer-un-serveur-postgresql-sur-microsoft-azure.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2015/10/15/creer-un-serveur-postgresql-sur-microsoft-azure.html</guid>
         
         <category>cloud</category>
         
@@ -396,9 +396,9 @@ Il existe déjà un framework web &lt;a href=&quot;http://www.phoenixframework.o
 
 &lt;p&gt;Et voilà! :)&lt;/p&gt;
 </description>
-        <pubDate>Fri, 11 Sep 2015 12:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2015/09/11/installer-elixir-sur-mac.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/09/11/installer-elixir-sur-mac.html</guid>
+        <pubDate>Fri, 11 Sep 2015 10:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/2015/09/11/installer-elixir-sur-mac.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2015/09/11/installer-elixir-sur-mac.html</guid>
         
         <category>mac</category>
         
@@ -433,9 +433,9 @@ Il existe déjà un framework web &lt;a href=&quot;http://www.phoenixframework.o
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/cN_DpYBzKso&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>Tue, 30 Jun 2015 12:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2015/06/30/rob-pike-concurrency-is-not-parallelism.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/06/30/rob-pike-concurrency-is-not-parallelism.html</guid>
+        <pubDate>Tue, 30 Jun 2015 10:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/2015/06/30/rob-pike-concurrency-is-not-parallelism.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2015/06/30/rob-pike-concurrency-is-not-parallelism.html</guid>
         
         <category>parallelism</category>
         
@@ -475,9 +475,9 @@ Il existe déjà un framework web &lt;a href=&quot;http://www.phoenixframework.o
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;usermod &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-G&lt;/span&gt; www-data clement&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
-        <pubDate>Mon, 29 Jun 2015 12:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2015/06/29/ajouter-un-utilisateur-au-groupe-www-data.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/06/29/ajouter-un-utilisateur-au-groupe-www-data.html</guid>
+        <pubDate>Mon, 29 Jun 2015 10:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/2015/06/29/ajouter-un-utilisateur-au-groupe-www-data.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2015/06/29/ajouter-un-utilisateur-au-groupe-www-data.html</guid>
         
         <category>apache2</category>
         
@@ -530,9 +530,9 @@ Jekyll était donc tout à fait capable de repondre a mes besoin.&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;http://import.jekyllrb.com/docs/wordpress/&quot;&gt;http://import.jekyllrb.com/docs/wordpress/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Fri, 26 Jun 2015 22:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2015/06/26/refonte-du-site.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/06/26/refonte-du-site.html</guid>
+        <pubDate>Fri, 26 Jun 2015 20:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/2015/06/26/refonte-du-site.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2015/06/26/refonte-du-site.html</guid>
         
         <category>jekyll</category>
         
@@ -671,9 +671,9 @@ Vous pourrez voir où ce place les &lt;em&gt;tags&lt;/em&gt; en regardant l’ex
 
 &lt;p&gt;Ici rien de particulier, cela ressembles fortement a la directive &lt;em&gt;before&lt;/em&gt;, utilisable avec &lt;strong&gt;rspec&lt;/strong&gt;. Sachez tout de même qu’il existe d’autres types de block, comme &lt;em&gt;After&lt;/em&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 23 May 2014 12:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2014/05/23/le-behavior-driven-development-avec-cucumber.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2014/05/23/le-behavior-driven-development-avec-cucumber.html</guid>
+        <pubDate>Fri, 23 May 2014 10:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/2014/05/23/le-behavior-driven-development-avec-cucumber.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2014/05/23/le-behavior-driven-development-avec-cucumber.html</guid>
         
         <category>cucumber</category>
         
@@ -742,9 +742,9 @@ Vous pourrez voir où ce place les &lt;em&gt;tags&lt;/em&gt; en regardant l’ex
 
 &lt;p&gt;Il n’y a pas grand chose a dire de plus sur les protocols, si ce n’est que contrairement à l’héritage, vous pouvez choisir d’en respecter plusieurs en même temps.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 09 May 2014 22:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2014/05/09/l-objective-c-pour-un-developpeur-c++-les-protocols.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2014/05/09/l-objective-c-pour-un-developpeur-c++-les-protocols.html</guid>
+        <pubDate>Fri, 09 May 2014 20:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/2014/05/09/l-objective-c-pour-un-developpeur-c++-les-protocols.html</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2014/05/09/l-objective-c-pour-un-developpeur-c++-les-protocols.html</guid>
         
         <category>apple</category>
         

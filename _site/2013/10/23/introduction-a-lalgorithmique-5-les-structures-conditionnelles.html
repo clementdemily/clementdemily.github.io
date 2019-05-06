@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Bien configurer Eclipse pour Symfony2</title>
+	<title>Introduction à l'algorithmique 5 - Les structures conditionnelles</title>
 	
 	<meta name="author" content="Clément Demily">
 
@@ -180,7 +180,7 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<header>
-	<h1>Bien configurer Eclipse pour Symfony2 </h1>
+	<h1>Introduction à l'algorithmique 5 - Les structures conditionnelles </h1>
 </header>
 
 <div>
@@ -188,27 +188,102 @@
 	<div class="col-sm-10">
 		<span class="post-date">
 			
-			November
-			4th,
+			October
+			23rd,
 			
-			2011
+			2013
 		</span>
 		<div class="article_body">
-			<p>Je vous propose dans cet article de configurer Eclipse afin d’avoir un IDE prenant en charge l’autocompletion de twig et Symfony2.</p>
+			<p>Bonjour ! Aujourd’hui nous allons aborder les premières difficultés de l’algorithmique : Les structures conditionnelles !</p>
 
-<p>Tout d’abord, il vous faut Eclipse, pas sorcier télécharger sa dernière version sur le site officiel puis installé-le. ( <a title="eclipse" href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a> )
-Ensuite, lancer-le, aller dans l’onglet “Help”, puis dans “Install New Software…”</p>
+<blockquote>
+<span style="text-decoration: underline;">Rappel</span> : nous allons avoir besoin des opérateurs logique pour continuer, je vous invite à jeter un rapide coup d'&oelig;il <a title="Introduction à l'algorithmique 2 - Quelques notions-clé" href="/2013/10/21/introduction-a-lalgorithmique-2/">ici</a>, partie opérateurs de comparaison et opérateurs logique.</blockquote>
+<p><span style="text-decoration: underline;">Qu’est-ce que c’est ?</span> C’est une <strong>instruction **qui permet de tester si une condition est **VRAIE</strong> ou <strong>FAUSSE</strong> (en informatique ça se traduit par <strong>1</strong> ou <strong>0</strong>).</p>
 
-<p>Arrivé sur la nouvelle fenêtre, appuyer sur “Add…” et ajouter le lien suivant dans le champ “location” : <a title="Symfony-2-Eclipse-Plugin" href="http://pulse00.github.com/Symfony-2-Eclipse-Plugin/" target="_blank">http://pulse00.github.com/Symfony-2-Eclipse-Plugin/</a>
-Télécharger les deux plugins qui apparaissent alors.</p>
+<p><span style="text-decoration: underline;">A quoi ça sert ?</span> Cela va nous permettre d’adapter le comportement de notre algorithme en fonction de la valeur de nos variables.</p>
 
-<p>Il vous faut maintenant un éditeur YAML, voici un autre plugin que vous pouvez obtenir en répétant l’opération précédente a cette adresse-ci : <a title="yedit" href="http://dadacoalition.org/yedit/" target="_blank">http://dadacoalition.org/yedit/</a></p>
+<p><span style="text-decoration: underline;">A quoi ça ressemble </span>? Il existe deux syntaxes la plus commune étant le <strong>SI *</strong>conditions* **ALORS **… **FINSI **; L’autre étant plus rare, j’en donnerai un exemple plus tard dans cet article.</p>
 
-<p>Quelques précisions : pour activer la prise en compte de projet symfony2, ouvrer la vue de gestion de projet, un clique droit sur votre projet et cliquer ensuite sur “Symfony-&gt;Add/Remove Symfony Nature”, pareil pour Twig. (le logo Sf devrais apparaitre en haut a droite de l’icône de votre projet)</p>
+<p>Plutôt que de me lancer dans de longues explications, je vous propose de voir ensemble un petit bout de <em>pseudo-code</em> :</p>
 
-<p>Bonne chance et bon développement !</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+ECRIRE <span class="s2">"Quel est votre âge?"</span>
+LIRE AGE
+SI AGE <span class="o">&gt;=</span> 18 ALORS
+ECRIRE <span class="s2">"Vous êtes majeur!"</span>
+SINON
+ECRIRE <span class="s2">"Vous êtes mineur!"</span>
+FINSI
+FIN</code></pre></figure>
 
-<p>(PS : j’ai du m’y prendre a plusieurs reprise pour bien faire fonctionner les plugins sur Ubuntu, veuillez prendre Eclipse sur le site officiel et non via les paquets puis exécuté Eclipse avec la commande <strong>sudo</strong>)</p>
+<p>Analysons ça ensemble :</p>
+
+<ol>
+ * Vous commencez à être familier avec la fonction **ECRIRE**, je ne vais pas revenir là-dessus ; on affiche juste un texte invitant l'utilisateur à entrer son âge.
+ * Nous stockons dans la variable *AGE* la valeur récupérée à l'aide de la fonction **LIRE**
+ * Voici le fameux branchement logique ! Vous voyez entre le **SI** et le **ALORS **la **condition **suivante : *AGE* *&gt;= 18*. Au moment où l'ordinateur exécute cette ligne, il **teste** si la valeur contenue dans *AGE* est supérieure ou égale à 18. Si c'est le cas, **alors** on exécute le bloc de *pseudo-code* suivant (entre **ALORS** et **SINON**), **sinon **c'est le bloc de pseudo-code entre **SINON** et **FINSI** qui est exécuté.
+</ol>
+<p>Vous êtes toujours ici ? Parfait ! Sachez que comprendre les <strong>structures conditionnelles</strong> et les <strong>conditions</strong> est essentielle dans l’algorithmique, n’hésitez pas à vous entrainer.</p>
+
+<p>Je vous propose un autre algorithme pour vous montrer les **structures conditionnelles imbriquées **:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+ECRIRE <span class="s2">"Bonjour, veuillez taper un chiffre en 1 et 3"</span>
+LIRE CHIFFRE
+SI CHIFFRE &lt; 1 OU CHIFFRE <span class="o">&gt;</span> 3 ALORS
+ECRIRE <span class="s2">"Ce n'est pas un chiffre entre 1 et 3!"</span>
+SINON
+SI CHIFFRE <span class="o">=</span> 1 ALORS
+ECRIRE <span class="s2">"Vous avez tapé le chiffre 1"</span>
+SINON SI CHIFFRE <span class="o">=</span> 2 ALORS
+ECRIRE <span class="s2">"Vous avez tapé le chiffre 2"</span>
+SINON
+ECRIRE <span class="s2">"Vous avez tapé le chiffre 3"</span>
+FINSI
+FINSI
+FIN</code></pre></figure>
+
+<p>Une petite explication :</p>
+
+<ol>
+ * Comme pour l'algorithme précédent, nous demandons a l'utilisateur de saisir une donnée ; en l'occurrence ici c'est un chiffre entre 1 et 3.
+ * Cette saisie est stockée dans la variable *CHIFFRE*.
+ * La variable *CHIFFRE* est soumise cette fois ci à **deux conditions **! **SI** la valeur de *CHIFFRE* est inférieure à 1 **OU** si la valeur de *CHIFFRE* est supérieure à 3, **ALORS** on informe l'utilisateur que sa saisie est incorrecte.
+ * **SINON**, on passe à l'exécution du bloc suivant : à cet endroit, nous savons que la valeur de la variable est bien comprise entre 2 et 3. **SI** la valeur de *CHIFFRE* est **égale** à 1, **ALORS** on écrit sur la console que l'utilisateur à tapé le chiffre 1 **SINON SI** la valeur de *CHIFFRE *est **égale** à 2, **ALORS** on écrit que l'utilisateur a tapé le chiffre 2 (et enfin) **SINON **on écrit tout simplement que l'utilisateur a tapé le chiffre 3.
+</ol>
+<p>Vous trouvez ça peu lisible et pas forcément compréhensible (de premier abord ?) ? Moi aussi ! Mais heureusement, il existe une structure conditionnelle pour palier a ce genre d’écriture fastidieuse… et j’ai l’exemple parfait pour illustrer tout ça !</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+    ECRIRE <span class="s2">"Bonjour, veuillez séléctionner le plat que vous désirez: (1-6)"</span>
+    ECRIRE <span class="s2">"1. Pâtes à la bolognaise"</span>
+    ECRIRE <span class="s2">"2. Steak Frites"</span>
+    ECRIRE <span class="s2">"3. Pizza"</span>
+    ECRIRE <span class="s2">"4. Hot-Dog"</span>
+    ECRIRE <span class="s2">"5. Soupe"</span>
+    ECRIRE <span class="s2">"6. Quitter"</span>
+    LIRE PLAT
+    SÉLECTIONNER PLAT
+        <span class="s1">'1'</span> : RESULTAT &lt;- <span class="s2">"Des pâtes? Pas de problème!"</span>
+        <span class="s1">'2'</span> : RESULTAT &lt;- <span class="s2">"Saignant le steak?"</span>
+        <span class="s1">'3'</span> : RESULTAT &lt;- <span class="s2">"Et une bonne pizza, une!"</span>
+        <span class="s1">'4'</span> : RESULTAT &lt;- <span class="s2">"Miam un bon Hot-dog!"</span>
+        <span class="s1">'5'</span> : RESULTAT &lt;- <span class="s2">"Une bonne soupe maison, il n'y a que ça de vrai!"</span>
+     SINON
+        RESULTAT &lt;- <span class="s2">"Rien du tout?"</span>
+    FINSÉLECTIONNER
+    ECRIRE RESULTAT
+FIN</code></pre></figure>
+
+<p>Voyons ensemble :</p>
+<ol>
+ * 7 appels à la fonction **ECRIRE** ; j'écris le " menu " pour que l'utilisateur soit au courant des possibilités qui s'offrent à lui.
+ * On utilise la fonction **LIRE** pour stocker la valeur saisie par l'utilisateur dans la variable *PLAT *;
+ * Une nouveauté : La structure conditionnelle **SELECTIONNER **! En observant bien, vous pouvez déduire son fonctionnement. Selon la valeur contenue dans la variable *PLAT*, la structure détermine le bloc de *pseudo-code* qui sera exécuté ; une petite attention sur le **SINON** à la fin : en effet, si la valeur contenu dans la variable *PLAT* ne correspond à aucune des valeurs que nous avons retenu,  alors on exécutera le bloc de pseudo-code entre **SINON** et **FINSELECTIONNER**.  Chacun des blocs exécute le même type d'instruction : on affecte une chaine de caractère à la variable *RESULTAT*.
+ * Pour finir, on écrit le contenu de la variable *RESULTAT*.
+</ol>
+<p>Ouf ! Eh bien, je n’aimerai pas à avoir à faire le même algorithme rien qu’avec des** SI-ALORS-SINON-SI**… !</p>
+
+<p>J’espère avoir été assez clair dans mes explications. Retenez bien les **conditions **et tout ce qu’on a vu ensemble aujourd’hui de façon générale, demain on passe à la vitesse supérieure !</p>
 
 		</div>
 
@@ -218,8 +293,8 @@ Télécharger les deux plugins qui apparaissent alors.</p>
 			
 			
 			
-			<li><a href="/categories.html#Tutoriel-ref">
-					Tutoriel <span>(1)</span>
+			<li><a href="/categories.html#tutoriel-ref">
+					tutoriel <span>(33)</span>
 					
 				</a></li>
 			
@@ -234,22 +309,8 @@ Télécharger les deux plugins qui apparaissent alors.</p>
 			
 			
 			<li>
-				<a href="/tags.html#Eclipse-ref">
-					Eclipse <span>(1)</span>
-					,
-				</a>
-			</li>
-			
-			<li>
-				<a href="/tags.html#PHP-ref">
-					PHP <span>(5)</span>
-					,
-				</a>
-			</li>
-			
-			<li>
-				<a href="/tags.html#Symfony2-ref">
-					Symfony2 <span>(6)</span>
+				<a href="/tags.html#algorithmique-ref">
+					algorithmique <span>(16)</span>
 					
 				</a>
 			</li>
@@ -265,7 +326,7 @@ Télécharger les deux plugins qui apparaissent alors.</p>
 			<section class="share col-sm-6">
 				<h4 class="section-title">Partager cet article</h4>
 				<a class="btn btn-default btn-sm twitter"
-					href="http://twitter.com/share?text=Bien configurer Eclipse pour Symfony2&via=demily_clement"
+					href="http://twitter.com/share?text=Introduction à l'algorithmique 5 - Les structures conditionnelles&via=demily_clement"
 					onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
 					<i class="fa fa-twitter fa-lg"></i>
 				</a>
@@ -284,7 +345,7 @@ Télécharger les deux plugins qui apparaissent alors.</p>
 				</a>
 
 				<a class="btn btn-default btn-sm linkedin"
-					href="mailto:?subject=Article sur clement-demily.fr: Bien configurer Eclipse pour Symfony2&body=http://localhost:4000/2011/11/04/bien-configurer-eclipse-pour-symfony2.html">
+					href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 5 - Les structures conditionnelles&body=http://0.0.0.0:4000/2013/10/23/introduction-a-lalgorithmique-5-les-structures-conditionnelles.html">
 					<i class="fa fa-envelope fa-lg"></i>
 				</a>
 			</section>
@@ -300,11 +361,11 @@ Télécharger les deux plugins qui apparaissent alors.</p>
 
 		<ul class="pager">
 			
-			<li class="previous"><a href="/2011/11/01/installer-symfony2-sur-ubuntu.html"
-					title="Installer Symfony2 sur Ubuntu">&larr; Précedent</a></li>
+			<li class="previous"><a href="/2013/10/23/introduction-a-lalgorithmique-4-manipulation-de-variable.html"
+					title="Introduction à l'algorithmique 4 - Manipulation de variable">&larr; Précedent</a></li>
 			
 			
-			<li class="next"><a href="/2011/11/18/configuration-dun-virtual-host-pour-symfony2.html" title="Configuration d'un virtual host pour symfony2">Suivant
+			<li class="next"><a href="/2013/10/25/introduction-a-lalgorithmique-6-les-boucles.html" title="Introduction à l'algorithmique 6 - Les boucles">Suivant
 					&rarr;</a></li>
 			
 		</ul>
