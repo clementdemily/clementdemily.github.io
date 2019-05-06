@@ -4,18 +4,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    ports:
-      - "32000:32000"
     networks:
       - traefik
     labels:
       - "traefik.enable=true"
       - "traefik.backend=clement-blog"
       - "traefik.frontend.rule=Host:clement.test"
-      # - "traefik.port=80"
+      - "traefik.port=4000"
       - "traefik.frontend.entryPoints=http,https"
       - "traefik.docker.network=traefik"
-
 networks:
   traefik:
     external:
