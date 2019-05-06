@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>L’Objective-C pour un développeur C++ 1 – Introduction, types et syntaxe</title>
+	
+	<meta name="author" content="Clément Demily">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/clementdemily">
+				<i class="fa fa-github"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/demily_clement">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="https://fr.linkedin.com/in/clementdemily">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+			
+
+
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9?s=35" class="img-circle" />
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Accueil</a></li>
+				<li><a href="/categories.html">Catégories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/">Accueil</a></li>
+			<li class="divider"></li>
+			<li><a href="/categories.html">Catégories</a></li>
+			<li><a href="/tags.html">Tags</a></li>
+			<li class="divider"></li>
+			<li>
+				<a href="/portfolio/" title="portfolio">Portfolio</a>
+			</li>
+			<li>
+				<a href="/cv/" title="cv">CV</a>
+			</li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Haut de page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+		<a href="/">Clément Demily</a>
+	</h3>
+</header>
+
+
+<h4 id="bio" class="text-center">
+	Notes d'un développeur
+</h4>
+
+
+<div id="pages-list" class="text-center">
+	<ul>
+		<li>
+			<a href="/" title="Accueil">Accueil</a>
+		</li>
+		<li> | </li>
+		<li>
+			<a href="/portfolio/" title="portfolio">Portfolio</a>
+		</li>
+		<li> | </li>
+		<li>
+			<a href="/cv/" title="cv">CV</a>
+		</li>
+	</ul>
+</div>
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/clementdemily">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/demily_clement">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://fr.linkedin.com/in/clementdemily">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+
+<!-- sidebar.html end -->
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<header>
+	<h1>L’Objective-C pour un développeur C++ 1 – Introduction, types et syntaxe </h1>
+</header>
+
+<div>
+
+	<div class="col-sm-10">
+		<span class="post-date">
+			
+			May
+			7th,
+			
+			2014
+		</span>
+		<div class="article_body">
+			<p>Je vous propose une approche originale pour appréhender l’Objective-C en me mettant à la place d’un développeur C++.</p>
+
+<p>On va voir dans cette suite de billets les principales différences et ressemblances entre ces deux langages.</p>
+
+<h2 id="historique">Historique</h2>
+
+<p>L’Objective-C, comme le C++ est un langage orienté objet basé sur le C. Il est utilisé par la société NeXT (fondée par Steve Jobs) pour créer l’OS nommé NeXTSTEP. NeXT fut racheté par Apple et l’OS deviendra la base de Mac OS X. Source</p>
+
+<p>Quelques différences au niveau des types du langage</p>
+
+<p>Le type boolean (<em>bool</em> en C++) s’écrit <em>BOOL</em> et il prend les valeurs <em>YES</em> ou <em>NO</em>.</p>
+
+<p>Il existe un pointeur générique d’objet: id. (grossomodo l’équivalent du void* en C++)</p>
+
+<p>nil est préférable a NULL.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="err">\</span><span class="o">*</span><span class="n">voidPointer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span></code></pre></figure>
+
+<p>versus</p>
+
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c">BOOL b = YES;
+BOOL b = NO;
+
+id MyObject = [[NSString alloc] init];
+int \*integerPointer = nil;</code></pre></figure>
+
+<h2 id="cocoa">Cocoa</h2>
+
+<p>C’est la librairie native utilisée par Apple pour l’Objective-C, on y trouve des classes comme NSString, NSArray, NSLog. On peut y voir une équivalence sur certains points de la STL en C++.</p>
+
+<p>Appels de méthode (envoi de messages)</p>
+
+<p>Comme tout langage objet, vous écrirez des méthodes dans vos classes. Seulement l’Objective-C possède une syntaxe assez particulière pour faire appelle a celles-ci:</p>
+
+<p>prog.cpp</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="n">MyClass</span> <span class="err">\</span><span class="o">*</span><span class="n">my</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">();</span>
+<span class="n">my</span><span class="o">-&gt;</span><span class="n">method</span><span class="p">();</span></code></pre></figure>
+
+<p>versus</p>
+
+<p>prog.m</p>
+
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c">MyClass \*my = [[MyClass alloc]init][my method]</code></pre></figure>
+
+<h2 id="la-gestion-de-mémoire">La gestion de mémoire</h2>
+
+<p>Le compilateur de l’Objective-C nous propose une feature plutôt cool: l’Automatic Reference Counting (ARC pour les intimes)</p>
+
+<p>Cette fonctionnalité permet au compilateur de savoir exactement où libérer la mémoire des objets que vous allouez dans votre code.
+<em>CE N’EST PAS UN GARBAGE COLLECTOR!</em> Le compilateur sait avec certitude a quel moment votre objet n’est plus utilisé et donc libérer son allocation mémoire en toute sécurité. L’avantage est que vous n’aurez pas à vous souciez de savoir si vous avez bien delete toutes vos resources, le défaut est que vous perdez totalement la main sur la dés-allocation mémoire.</p>
+
+<p>Nous verrons dans un prochain billet la création de classe en Objective-C.</p>
+
+		</div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+			<li><i class="fa fa-folder-open"></i></li>
+			
+			
+			
+			<li><a href="/categories.html#tutoriel-ref">
+					tutoriel <span>(32)</span>
+					,
+				</a></li>
+			
+			<li><a href="/categories.html#Objective-C-ref">
+					Objective-C <span>(3)</span>
+					
+				</a></li>
+			
+			
+		</ul>
+		
+
+		
+		<ul class="list-inline">
+			<li><i class="fa fa-tags"></i></li>
+			
+			
+			
+			<li>
+				<a href="/tags.html#apple-ref">
+					apple <span>(3)</span>
+					,
+				</a>
+			</li>
+			
+			<li>
+				<a href="/tags.html#ios-ref">
+					ios <span>(3)</span>
+					,
+				</a>
+			</li>
+			
+			<li>
+				<a href="/tags.html#cocoa-ref">
+					cocoa <span>(3)</span>
+					,
+				</a>
+			</li>
+			
+			<li>
+				<a href="/tags.html#c++-ref">
+					c++ <span>(3)</span>
+					
+				</a>
+			</li>
+			
+			
+			
+		</ul>
+		
+
+		<hr>
+
+		<div>
+			<section class="share col-sm-6">
+				<h4 class="section-title">Partager cet article</h4>
+				<a class="btn btn-default btn-sm twitter"
+					href="http://twitter.com/share?text=L’Objective-C pour un développeur C++ 1 – Introduction, types et syntaxe&via=demily_clement"
+					onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+					<i class="fa fa-twitter fa-lg"></i>
+				</a>
+				<a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+					onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+					<i class="fa fa-facebook fa-lg"></i>
+				</a>
+				<a class="btn btn-default btn-sm gplus"
+					onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+					<i class="fa fa-google-plus fa-lg"></i>
+				</a>
+
+				<a class="btn btn-default btn-sm linkedin"
+					onclick="window.open('https://www.linkedin.com/cws/share?url='+window.location.href, 'linkedin-share', 'width=490,height=530');return false;">
+					<i class="fa fa-linkedin fa-lg"></i>
+				</a>
+
+				<a class="btn btn-default btn-sm linkedin"
+					href="mailto:?subject=Article sur clement-demily.fr: L’Objective-C pour un développeur C++ 1 – Introduction, types et syntaxe&body=http://localhost:4000/2014/05/07/l-objective-c-pour-un-developpeur-c++-introduction-type-et-syntaxe.html">
+					<i class="fa fa-envelope fa-lg"></i>
+				</a>
+			</section>
+
+			<section class="col-sm-6 author">
+				<img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
+				<h4 class="section-title author-name">Clément Demily</h4>
+				<p class="author-bio">Développeur Lillois</p>
+			</section>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<ul class="pager">
+			
+			<li class="previous"><a href="/2014/03/15/installer-ruby-et-rvm-sur-ubuntu.html"
+					title="Installer Ruby et RVM sur Ubuntu">&larr; Précedent</a></li>
+			
+			
+			<li class="next"><a href="/2014/05/08/l-objective-c-pour-un-developpeur-c++-declaration-d-une-classe.html" title="L'Objective-C pour un développeur C++ 2 – déclaration de classe">Suivant
+					&rarr;</a></li>
+			
+		</ul>
+
+		<hr />
+
+		<div id="disqus_thread"></div>
+
+		<script type="text/javascript">
+			var disqus_shortname = 'zendev';
+			(function () {
+				var dsq = document.createElement('script');
+				dsq.type = 'text/javascript';
+				dsq.async = true;
+				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+
+		<noscript>
+			Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by
+				Disqus.</a>
+		</noscript>
+
+
+	</div>
+
+	<div class="col-sm-2 sidebar-2">
+
+	</div>
+</div>
+<div class="clearfix"></div>
+
+
+		<footer>
+			<hr />
+			<p>
+				<a href="/mentions-legales/" title="mentions-legales">Mentions légales</a>
+				|
+				<a href="/about/" title="about">À propos</a>
+				<br />
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com"
+					rel="nofollow" class="jekyll-link">Jekyll</a>.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+
+	<script type="text/javascript">
+		/* * * CONFIGURATION VARIABLES * * */
+		var disqus_shortname = 'zendev';
+
+		/* * * DON'T EDIT BELOW THIS LINE * * */
+		(function () {
+			var s = document.createElement('script');
+			s.async = true;
+			s.type = 'text/javascript';
+			s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		}());
+	</script>
+
+	<script type="text/javascript">
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-47963410-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+</body>
+
+</html>

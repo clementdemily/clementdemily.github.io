@@ -4,18 +4,22 @@
 		<img src="http://www.gravatar.com/avatar/{{site.author.email_md5}}?s=150" class="img-circle" />
 	</a>
 	<h3 class="title">
-    <a href="{{ site.BASE_PATH }}/">{{ site.title }}</a>
-  </h3>
+		<a href="{{ site.BASE_PATH }}/">{{ site.title }}</a>
+	</h3>
 </header>
 
 {% if site.description %}
-<div id="bio" class="text-center">
+<h4 id="bio" class="text-center">
 	{{ site.description }}
-</div>
+</h4>
 {% endif %}
 
 <div id="pages-list" class="text-center">
 	<ul>
+		<li>
+			<a href="{{ site.base_url }}/" title="Accueil">Accueil</a>
+		</li>
+		<li> | </li>
 		<li>
 			<a href="{{ site.base_url }}/portfolio/" title="portfolio">Portfolio</a>
 		</li>
@@ -23,7 +27,7 @@
 		<li>
 			<a href="{{ site.base_url }}/cv/" title="cv">CV</a>
 		</li>
-	</ul>	
+	</ul>
 </div>
 
 <div id="contact-list" class="text-center">

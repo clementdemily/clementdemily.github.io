@@ -1,0 +1,10 @@
+BEGIN:VCARD
+N:Demily;Clément;;;
+EMAIL;TYPE=Email:demily.clement@gmail.com
+TITLE:Etudiant & Développeur web
+ORG:ZenDev
+PHOTO;VALUE=URL;TYPE=JPG:/wp-content/uploads/2013/10/2b42149.jpg
+URL;TYPE=Twitter:https://twitter.com/demily_clement
+URL;TYPE=LinkedIn:http://www.linkedin.com/profile/view?id=222399627
+ADR;INTL;PARCEL;WORK:;;;Picardie;Saint-Quentin;02100;France
+END:VCARD

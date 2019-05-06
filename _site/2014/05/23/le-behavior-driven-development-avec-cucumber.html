@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Le Behavior Driven-Development avec Cucumber</title>
+	
+	<meta name="author" content="Clément Demily">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<!-- Update these with your own images
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/clementdemily">
+				<i class="fa fa-github"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/demily_clement">
+				<i class="fa fa-twitter"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
+				<i class="fa fa-envelope"></i>
+			</a>
+			
+			
+			<a type="button" class="navbar-toggle nav-link" href="https://fr.linkedin.com/in/clementdemily">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+			
+
+
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9?s=35" class="img-circle" />
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Accueil</a></li>
+				<li><a href="/categories.html">Catégories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/">Accueil</a></li>
+			<li class="divider"></li>
+			<li><a href="/categories.html">Catégories</a></li>
+			<li><a href="/tags.html">Tags</a></li>
+			<li class="divider"></li>
+			<li>
+				<a href="/portfolio/" title="portfolio">Portfolio</a>
+			</li>
+			<li>
+				<a href="/cv/" title="cv">CV</a>
+			</li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Haut de page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+		<a href="/">Clément Demily</a>
+	</h3>
+</header>
+
+
+<h4 id="bio" class="text-center">
+	Notes d'un développeur
+</h4>
+
+
+<div id="pages-list" class="text-center">
+	<ul>
+		<li>
+			<a href="/" title="Accueil">Accueil</a>
+		</li>
+		<li> | </li>
+		<li>
+			<a href="/portfolio/" title="portfolio">Portfolio</a>
+		</li>
+		<li> | </li>
+		<li>
+			<a href="/cv/" title="cv">CV</a>
+		</li>
+	</ul>
+</div>
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/clementdemily">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/demily_clement">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://fr.linkedin.com/in/clementdemily">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+
+<!-- sidebar.html end -->
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<header>
+	<h1>Le Behavior Driven-Development avec Cucumber </h1>
+</header>
+
+<div>
+
+	<div class="col-sm-10">
+		<span class="post-date">
+			
+			May
+			23rd,
+			
+			2014
+		</span>
+		<div class="article_body">
+			<p>Aujourd’hui nous allons parler du <em>Behavior-Driven Development</em>, plus particulièrement son utilisation dans <strong>RubyOnRails</strong> grâce à la gem <strong>cucumber</strong>.</p>
+
+<h1 id="cest-quoi-le-bdd">C’est quoi le BDD?</h1>
+
+<p>le <a href="http://www.wikiwand.com/fr/Behavior_Driven_Development">Behavior-Driven Development</a> est une méthode agile qui met l’accent sur le travail en collaboration entre des personnes techniques (comme des ingénieurs) avec des personnes non techniques.</p>
+
+<p>La particularité de cette méthode de travail est qu’elle est très “verbeuse”: On décrit une fonctionnalité (<em>feature</em>) en langage naturel, puis on écrit des scénarios d’acceptation (toujours en langage naturel) pour illustrer celle-ci. Chaque scénario est composé de plusieurs étapes (<em>steps</em>) qui commencent toutes par un mot-clé significatif: <em>Given</em>, <em>When</em>, et <em>Then</em> qui peuvent être liés par le mot-clé <em>And</em>.</p>
+
+<h1 id="et-donc-que-fait-cucumber-dans-lhistoire">Et donc, que fait cucumber dans l’histoire?</h1>
+
+<p><a href="http://cukes.info/">Cucumber</a> est une gem qui permet de rédiger et d’exécuter ce type de test d’acceptation de manière automatique.</p>
+
+<p><img src="/img/2014/05/cucumber-logo.png" alt="Logo-cucumber" class="center-image" /></p>
+
+<p>Nous décrivons notre fonctionnalité dans un fichier .feature, puis nous implémentons chaque steps dans un fichier à part.</p>
+
+<p>Tout d’abord, installons <strong>cucumber</strong> et <strong>capybara</strong> via notre gemfile:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">group</span> <span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span> <span class="k">do</span>
+<span class="n">gem</span> <span class="s1">'cucumber-rails'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.1'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+<span class="n">gem</span> <span class="s1">'database_cleaner'</span><span class="p">,</span> <span class="s1">'~&gt; 1.2.0'</span>
+<span class="n">gem</span> <span class="s1">'capybara'</span><span class="p">,</span> <span class="s1">'~&gt; 2.2.1'</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Noter que j’utilise <strong>cucumber</strong> dans un projet <strong>rails</strong>, je peux donc directement utiliser la gem <strong>cucumber-rails</strong>. On nous renseigne sur le dépôt github qu’il est fortement recommandé d’installer la gem <strong>database_cleaner</strong>.</p>
+
+<p>Installer les nouvelles gems via la commande suivante:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">bundle <span class="nb">install</span></code></pre></figure>
+
+<p>Ensuite, vous pouvez exécuter la commande suivante :</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">rails g cucumber:install</code></pre></figure>
+
+<p>Cette commande installeras les fichiers et dossiers nécessaire au fonctionnement de <strong>cucumber</strong>.</p>
+
+<p>En exécutant la commande cucumber vous pourrez lancer les tests d’acceptation que vous aurez préalablement rédigé.</p>
+
+<h1 id="notre-première-feature">Notre première feature</h1>
+
+<p>Pour illustrer le fonctionnement de cucumber je vais utiliser l’exemple d’un formulaire d’authentification.
+Nous partons du postulat que nous avons un formulaire d’authentification fonctionnel et que celui à besoin d’être testé et de figurer dans notre répertoire de tests d’acceptations.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Authentication</span><span class="p">.</span><span class="nf">feature</span>
+
+<span class="no">Feature</span><span class="p">:</span> <span class="no">Authentication</span>
+<span class="no">In</span> <span class="n">order</span> <span class="n">to</span> <span class="n">be</span> <span class="n">authenticated</span> <span class="n">on</span> <span class="n">the</span> <span class="n">website</span>
+<span class="no">A</span> <span class="n">visitor</span>
+<span class="no">Should</span> <span class="n">use</span> <span class="n">an</span> <span class="n">authentication</span> <span class="n">form</span>
+
+<span class="vi">@authentication_form</span>
+<span class="no">Scenario</span><span class="p">:</span> <span class="no">Authentication</span> <span class="n">via</span> <span class="n">sign</span> <span class="k">in</span> <span class="n">form</span>
+<span class="no">Given</span> <span class="no">I</span><span class="s1">'m a guest on the sign in page
+And I fill in "user_email" with "mymail@mail.com"
+And I fill in "user_password" with "mysecretpassword"
+When I press "Sign in"
+Then I should be authenticate
+
+@authentication_form
+Scenario: Authentication attempt via sign in form (password error)
+Given I'</span><span class="n">m</span> <span class="n">a</span> <span class="n">guest</span> <span class="n">on</span> <span class="n">the</span> <span class="n">sign</span> <span class="k">in</span> <span class="n">page</span>
+<span class="no">And</span> <span class="no">I</span> <span class="n">fill</span> <span class="k">in</span> <span class="s2">"user_email"</span> <span class="n">with</span> <span class="s2">"mymail@mail.com"</span>
+<span class="no">And</span> <span class="no">I</span> <span class="n">fill</span> <span class="k">in</span> <span class="s2">"user_password"</span> <span class="n">with</span> <span class="s2">"anotherpassword"</span>
+<span class="no">When</span> <span class="no">I</span> <span class="n">press</span> <span class="s2">"Sign in"</span>
+<span class="no">Then</span> <span class="no">I</span> <span class="n">shouldn</span><span class="err">'</span><span class="n">t</span> <span class="n">be</span> <span class="n">authenticated</span></code></pre></figure>
+
+<p>Comme vous pouvez le voir, on ne croirait pas voir des tests mais bien l’extrait d’un cahier des charges! (En anglais ;) )</p>
+
+<p>Voici le fichier contenant les <em>steps</em> associées a cette <em>feature</em>:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">authentication_steps</span><span class="p">.</span><span class="nf">rb</span>
+
+<span class="no">Given</span><span class="p">(</span><span class="sr">/^I'm a guest on the sign in page\$/</span><span class="p">)</span> <span class="k">do</span>
+<span class="n">visit</span> <span class="n">new_user_session_path</span>
+<span class="k">end</span>
+
+<span class="no">Given</span><span class="p">(</span><span class="sr">/^I fill in "(._?)" with "(._?)"\$/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">field</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+<span class="n">fill_in</span> <span class="n">field</span><span class="p">,</span> <span class="ss">with: </span><span class="n">value</span>
+<span class="k">end</span>
+
+<span class="no">Given</span><span class="p">(</span><span class="sr">/^I should be redirect on the Sign up page\$/</span><span class="p">)</span> <span class="k">do</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_content</span> <span class="s1">'Inscription'</span>
+<span class="k">end</span>
+
+<span class="no">When</span><span class="p">(</span><span class="sr">/^I press "(.\*?)"\$/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">button</span><span class="o">|</span>
+<span class="n">click_button</span> <span class="n">button</span>
+<span class="k">end</span>
+
+<span class="no">Then</span><span class="p">(</span><span class="sr">/^I should be authenticate\$/</span><span class="p">)</span> <span class="k">do</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_content</span> <span class="s1">'You are now authenticate'</span>
+<span class="k">end</span>
+
+<span class="no">Then</span><span class="p">(</span><span class="sr">/^I shouldn't be authenticated\$/</span><span class="p">)</span> <span class="k">do</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_content</span> <span class="s1">'Authentication error'</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>On peut observer qu’une <em>step</em> n’est composée ici que d’une action élémentaire. Ce n’est pas une règle mais plutôt une bonne pratique. Nous utilisons ici la gem <strong>capybara</strong> pour simuler des événements navigateur comme un clique sur un bouton ou encore le remplissage d’un champs de formulaire.</p>
+
+<p>En lançant la commande suivante:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">cucumber</code></pre></figure>
+
+<p>Nous devrions voir le résultat de nos tests.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">2 scenarios <span class="o">(</span>0 failed, 2 passed<span class="o">)</span>
+10 steps <span class="o">(</span>0 failed, 0 skipped, 10 passed<span class="o">)</span></code></pre></figure>
+
+<h1 id="pour-aller-plus-loin-les-tags-et-hooks">Pour aller plus loin: les tags et hooks</h1>
+
+<p>Un peu à la manière de <strong>rspec</strong>, il est parfois nécessaire d’effectuer des actions précise avant l’execution de nos tests pour les faire fonctionner.</p>
+
+<p>Typiquement, dans le cadre d’une authentification, nous avons besoin d’un utilisateur dans la base de données qui possède l’email et le mot de passe correspondant a notre scénario.</p>
+
+<p>C’est ainsi qu’interviennent les <em>tags</em> et les <em>hooks</em>. Ce sont des manières d’indiquer a <strong>cucumber</strong> qu’il faut effectuer certaines actions avant (ou après) l’exécution d’un scénario.</p>
+
+<p>Il suffit de placer un <em>@</em> suivi du nom d’identifier de votre choix. Ici j’ai choisi <em>@authentication_form</em>.
+Vous pourrez voir où ce place les <em>tags</em> en regardant l’extrait de code du fichier <em>Authentication.feature</em>.</p>
+
+<p>Le code de notre <em>hook</em> se placera dans le dossier <em>support</em>, contenu dans le dossier <em>features</em>, à la racine de notre application.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">authentication_hooks</span><span class="p">.</span><span class="nf">rb</span>
+
+<span class="no">Before</span><span class="p">(</span><span class="s1">'@authentication_form'</span><span class="p">)</span> <span class="k">do</span>
+<span class="no">FactoryGirl</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">:user</span><span class="p">,</span> <span class="ss">email: </span><span class="s2">"mymail@mail.com"</span><span class="p">,</span> <span class="ss">password: </span><span class="s2">"mysecretpassword"</span><span class="p">)</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Ici rien de particulier, cela ressembles fortement a la directive <em>before</em>, utilisable avec <strong>rspec</strong>. Sachez tout de même qu’il existe d’autres types de block, comme <em>After</em>.</p>
+
+		</div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+			<li><i class="fa fa-folder-open"></i></li>
+			
+			
+			
+			<li><a href="/categories.html#tutoriel-ref">
+					tutoriel <span>(32)</span>
+					,
+				</a></li>
+			
+			<li><a href="/categories.html#Ruby-ref">
+					Ruby <span>(1)</span>
+					
+				</a></li>
+			
+			
+		</ul>
+		
+
+		
+		<ul class="list-inline">
+			<li><i class="fa fa-tags"></i></li>
+			
+			
+			
+			<li>
+				<a href="/tags.html#cucumber-ref">
+					cucumber <span>(1)</span>
+					,
+				</a>
+			</li>
+			
+			<li>
+				<a href="/tags.html#bdd-ref">
+					bdd <span>(1)</span>
+					,
+				</a>
+			</li>
+			
+			<li>
+				<a href="/tags.html#test-ref">
+					test <span>(1)</span>
+					
+				</a>
+			</li>
+			
+			
+			
+		</ul>
+		
+
+		<hr>
+
+		<div>
+			<section class="share col-sm-6">
+				<h4 class="section-title">Partager cet article</h4>
+				<a class="btn btn-default btn-sm twitter"
+					href="http://twitter.com/share?text=Le Behavior Driven-Development avec Cucumber&via=demily_clement"
+					onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+					<i class="fa fa-twitter fa-lg"></i>
+				</a>
+				<a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+					onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+					<i class="fa fa-facebook fa-lg"></i>
+				</a>
+				<a class="btn btn-default btn-sm gplus"
+					onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+					<i class="fa fa-google-plus fa-lg"></i>
+				</a>
+
+				<a class="btn btn-default btn-sm linkedin"
+					onclick="window.open('https://www.linkedin.com/cws/share?url='+window.location.href, 'linkedin-share', 'width=490,height=530');return false;">
+					<i class="fa fa-linkedin fa-lg"></i>
+				</a>
+
+				<a class="btn btn-default btn-sm linkedin"
+					href="mailto:?subject=Article sur clement-demily.fr: Le Behavior Driven-Development avec Cucumber&body=http://localhost:4000/2014/05/23/le-behavior-driven-development-avec-cucumber.html">
+					<i class="fa fa-envelope fa-lg"></i>
+				</a>
+			</section>
+
+			<section class="col-sm-6 author">
+				<img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
+				<h4 class="section-title author-name">Clément Demily</h4>
+				<p class="author-bio">Développeur Lillois</p>
+			</section>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<ul class="pager">
+			
+			<li class="previous"><a href="/2014/05/09/l-objective-c-pour-un-developpeur-c++-les-protocols.html"
+					title="L’Objective-C pour un développeur C++ 3 – Les protocols">&larr; Précedent</a></li>
+			
+			
+			<li class="next"><a href="/2015/06/26/refonte-du-site.html" title="Refonte du site">Suivant
+					&rarr;</a></li>
+			
+		</ul>
+
+		<hr />
+
+		<div id="disqus_thread"></div>
+
+		<script type="text/javascript">
+			var disqus_shortname = 'zendev';
+			(function () {
+				var dsq = document.createElement('script');
+				dsq.type = 'text/javascript';
+				dsq.async = true;
+				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+
+		<noscript>
+			Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by
+				Disqus.</a>
+		</noscript>
+
+
+	</div>
+
+	<div class="col-sm-2 sidebar-2">
+
+	</div>
+</div>
+<div class="clearfix"></div>
+
+
+		<footer>
+			<hr />
+			<p>
+				<a href="/mentions-legales/" title="mentions-legales">Mentions légales</a>
+				|
+				<a href="/about/" title="about">À propos</a>
+				<br />
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com"
+					rel="nofollow" class="jekyll-link">Jekyll</a>.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+
+	<script type="text/javascript">
+		/* * * CONFIGURATION VARIABLES * * */
+		var disqus_shortname = 'zendev';
+
+		/* * * DON'T EDIT BELOW THIS LINE * * */
+		(function () {
+			var s = document.createElement('script');
+			s.async = true;
+			s.type = 'text/javascript';
+			s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		}());
+	</script>
+
+	<script type="text/javascript">
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-47963410-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+</body>
+
+</html>
