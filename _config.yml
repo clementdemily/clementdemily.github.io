@@ -9,7 +9,15 @@ permalink: /:year/:month/:day/:title.html
 
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
-exclude: ["README.md"] # files to exclude
+exclude: [
+    "README.md",
+    "Gemfile",
+    "Gemfile.lock",
+    "docker-compose.yml",
+    "docker-compose.dev.yml",
+    "Dockerfile",
+    "Dockerfile.dev",
+  ] # files to exclude
 highlighter: rouge
 
 BASE_PATH: ""

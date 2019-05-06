@@ -190,17 +190,17 @@
 
 <p>Il vous faut maintenant modifier les configurations de bundler sur votre serveur:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Déplacer vous dans le dossier de votre app
-cd /path/to/app
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Déplacer vous dans le dossier de votre app</span>
+<span class="nb">cd</span> /path/to/app
 
-# Configurer le nouveau path de pg_config
-bundle config build.pg --with-pg-config=/usr/lib/postgresql/9.5/bin/pg_config
+<span class="c"># Configurer le nouveau path de pg_config</span>
+bundle config build.pg <span class="nt">--with-pg-config</span><span class="o">=</span>/usr/lib/postgresql/9.5/bin/pg_config
 
-# Desinstaller toutes les gems pg en cache
-bundle exec gem uninstall pg
+<span class="c"># Desinstaller toutes les gems pg en cache</span>
+bundle <span class="nb">exec </span>gem uninstall pg
 
-# Réinstaller la gem
-bundle install
+<span class="c"># Réinstaller la gem</span>
+bundle <span class="nb">install</span>
 </code></pre></div></div>
 
 	  </div>

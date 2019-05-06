@@ -5,8 +5,8 @@
     <description>Notes d'un développeur</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 May 2019 13:16:43 +0200</pubDate>
-    <lastBuildDate>Mon, 06 May 2019 13:16:43 +0200</lastBuildDate>
+    <pubDate>Mon, 06 May 2019 13:44:50 +0200</pubDate>
+    <lastBuildDate>Mon, 06 May 2019 13:44:50 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -19,17 +19,17 @@
 
 &lt;p&gt;Il vous faut maintenant modifier les configurations de bundler sur votre serveur:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Déplacer vous dans le dossier de votre app
-cd /path/to/app
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Déplacer vous dans le dossier de votre app&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /path/to/app
 
-# Configurer le nouveau path de pg_config
-bundle config build.pg --with-pg-config=/usr/lib/postgresql/9.5/bin/pg_config
+&lt;span class=&quot;c&quot;&gt;# Configurer le nouveau path de pg_config&lt;/span&gt;
+bundle config build.pg &lt;span class=&quot;nt&quot;&gt;--with-pg-config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/lib/postgresql/9.5/bin/pg_config
 
-# Desinstaller toutes les gems pg en cache
-bundle exec gem uninstall pg
+&lt;span class=&quot;c&quot;&gt;# Desinstaller toutes les gems pg en cache&lt;/span&gt;
+bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;gem uninstall pg
 
-# Réinstaller la gem
-bundle install
+&lt;span class=&quot;c&quot;&gt;# Réinstaller la gem&lt;/span&gt;
+bundle &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 21 Apr 2016 04:01:04 +0200</pubDate>
