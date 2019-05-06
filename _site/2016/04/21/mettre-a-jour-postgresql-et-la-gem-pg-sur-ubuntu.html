@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Introduction à l'algorithmique 4 - Manipulation de variable</title>
+	<title>Mettre à jour postgresql et la gem pg sur ubuntu</title>
 	
 	<meta name="author" content="Clément Demily">
 
@@ -168,7 +168,7 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<div class="page-header">
-  <h1>Introduction à l'algorithmique 4 - Manipulation de variable </h1>
+  <h1>Mettre à jour postgresql et la gem pg sur ubuntu </h1>
 </div>
 	
 <article>
@@ -176,51 +176,32 @@
 	<div class="col-sm-10">
 	 <span class="post-date">
 	   
-	   October 
-	   23rd,
+	   April 
+	   21st,
 	     
-	   2013
+	   2016
 	 </span>
 	  <div class="article_body">
-	  <p>Bonjour à tous ! Aujourd’hui nous allons nous amuser un peu avec les variables.</p>
+	  <p>Recemment j’ai du mettre à jour Postgresql pour profiter des dernières features tel que l’indexation des données au format json (jsonb).</p>
 
-<p>Cela ne nous vous rappelle rien ? Mais si ! Souvenez-vous, j’en ai parlé <a title="Introduction à algorithmique 2 - Quelques notions" href="/2013/10/23/introduction-a-lalgorithmique-2/"><strong>ici</strong></a> ! ** **</p>
+<p>Voici un petit script qui permettra de mettre à jour postgresql (9.3 -&gt; 9.5):</p>
 
-<blockquote>
-<span style="text-decoration: underline;">Un petit rappel</span> : une variable est une entité qui nous permettra de stocker des informations. Il y a plusieurs types de variable, celles qui contiennent du texte, celles qui contiennent des nombres&hellip;</blockquote>
-<p>Je vous propose de créer une variable, de lui affecter une valeur… disons le nombre **42 **!</p>
+<script src="https://gist.github.com/clementdemily/fd45ba8b13132103f0d3da1711838e6a.js"></script>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-	NOMBRE_A_AFFICHER &lt;- 42
-	ECRIRE NOMBRE_A_AFFICHER
-FIN</code></pre></figure>
+<p>Il vous faut maintenant modifier les configurations de bundler sur votre serveur:</p>
 
-<blockquote>
-Sachez que le nom de la variable n'impacte pas avec le type de celle-ci&hellip; On pourrait très bien nommer nos variables a, b, c&hellip; mais vous avouerez que ce n'est pas très explicite !</blockquote>
-<p>Très bien ! La console nous affiche bien <strong>42</strong> ! Vous l’avez constaté, l’opérateur d’affectation se lit de <span style="text-decoration: underline;">droite à gauche</span>. Lorsque nous créons une variable, on dit qu’on <strong>initialise</strong> celle-ci.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Déplacer vous dans le dossier de votre app
+cd /path/to/app
 
-<p>Bon, et si on allait un peu plus loin ? On va utiliser la fonction <strong>LIRE</strong> pour rendre notre programme plus interactif puis nous utiliserons <strong>l’opérateur mathématique *</strong> pour multiplier notre saisie par <strong>deux</strong>.</p>
+# Configurer le nouveau path de pg_config
+bundle config build.pg --with-pg-config=/usr/lib/postgresql/9.5/bin/pg_config
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-ECRIRE <span class="s2">"Bonjour, veuillez taper un chiffre "</span>
-LIRE NOMBRE
-NOMBRE_MULTIPLIE &lt;- NOMBRE <span class="se">\*</span> 2
-ECRIRE <span class="s2">"Voilà le nombre multiplié par 2 = "</span>, NOMBRE_MULTIPLIE
-FIN</code></pre></figure>
+# Desinstaller toutes les gems pg en cache
+bundle exec gem uninstall pg
 
-<p>Une petite explication s’impose :</p>
-
-<ol>
- * Dans un premier temps, nous affichons *la chaine de caractères* qui invite l'utilisateur à entrer un chiffre à l'aide de la fonction **ECRIRE**.
- * Nous récupérons ce que l'utilisateur a entré et nous la stockons dans la variable NOMBRE  grâce à la fonction **LIRE**.
- * N'oubliez pas, l'opérateur d'affectation se lit de droite à gauche : *NOMBRE* (qui comporte la valeur du nombre entrée par l'utilisateur) est multiplié par *2* ; Le résultat est ensuite affecté dans la variable *NOMBRE_MULTIPLIE*
- * Pour finir nous affichons la variable, *concaténé* avec un petit texte.
-</ol>
-<p>Vous avez tout compris ! Parfait ! Je vous propose de faire un petit exercice de votre côté ;</p>
-
-<p>Sur le modèle du dernier <em>pseudo-code</em>, faites en sorte de laisser l’utilisateur choisir les deux nombres qui seront multipliés… Bon courage !</p>
-
-<p>A demain !</p>
+# Réinstaller la gem
+bundle install
+</code></pre></div></div>
 
 	  </div>
 
@@ -232,6 +213,11 @@ FIN</code></pre></figure>
 			 
 				<li><a href="/categories.html#tutoriel-ref">
 					tutoriel <span>(32)</span>
+					,
+				</a></li>
+			 
+				<li><a href="/categories.html#unix-ref">
+					unix <span>(5)</span>
 					
 				</a></li>
 			
@@ -246,8 +232,29 @@ FIN</code></pre></figure>
 		  
 			 
 				<li>
-					<a href="/tags.html#algorithmique-ref">
-					algorithmique <span>(16)</span>
+					<a href="/tags.html#ubuntu-ref">
+					ubuntu <span>(4)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#postgresql-ref">
+					postgresql <span>(2)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#ruby-ref">
+					ruby <span>(1)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#gem-ref">
+					gem <span>(1)</span>
 					
 					</a>
 				</li>
@@ -262,7 +269,7 @@ FIN</code></pre></figure>
 		<div>
       <section class="share col-sm-6">
         <h4 class="section-title">Partager cet article</h4>
-        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Introduction à l'algorithmique 4 - Manipulation de variable&via=demily_clement"
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Mettre à jour postgresql et la gem pg sur ubuntu&via=demily_clement"
            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
           <i class="fa fa-twitter fa-lg"></i>
         </a>
@@ -280,7 +287,7 @@ FIN</code></pre></figure>
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 4 - Manipulation de variable&body=http://localhost:4000/2013/10/23/introduction-a-lalgorithmique-4-manipulation-de-variable.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Mettre à jour postgresql et la gem pg sur ubuntu&body=http://localhost:4000/2016/04/21/mettre-a-jour-postgresql-et-la-gem-pg-sur-ubuntu.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -296,10 +303,10 @@ FIN</code></pre></figure>
 
 		<ul class="pager">
 		  
-		  <li class="previous"><a href="/2013/10/22/introduction-a-lalgorithmique-3.html" title="Introduction à l'algorithmique 3 - Les fonctions LIRE et ECRIRE">&larr; Précedent</a></li>
+		  <li class="previous"><a href="/2015/10/15/migrer-aws-s3-azure-blob.html" title="Migrer de Amazon Web Service S3 vers Microsoft Azure Blob">&larr; Précedent</a></li>
 		  
 		  
-		  <li class="next"><a href="/2013/10/24/introduction-a-lalgorithmique-5-les-structures-conditionnelles.html" title="Introduction à l'algorithmique 5 - Les structures conditionnelles">Suivant &rarr;</a></li>
+			<li class="next disabled"><a>Suivant &rarr;</a>
 		  
 		</ul>
 

@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -193,6 +193,7 @@
 <p>Je vous propose donc un algorithme qui vous rappellera quelques cours de mathématique de collège : calculer le <strong>PGCD</strong> d’un nombre !</p>
 
 <p>Avant de se lancer, il est important de se renseigner sur la nature du problème.</p>
+
 <blockquote>
 PGCD est l'acronyme de "Plus Grand Commun Diviseur " en ancien français. Il se calcule entre deux nombres (nous choisirons des nombres entiers non nuls)  a et b. Il permet de calculer, comme son nom l'indique, le plus grand diviseur commun de deux nombres.</blockquote>
 <p>Au collège, nous avons appris une <strong>méthode</strong> pour le calculer. <strong>L’algorithme d’Euclide</strong>, ça vous rappelle quelque chose ? ;)</p>
@@ -211,29 +212,31 @@ PGCD est l'acronyme de "Plus Grand Commun Diviseur " en ancien français. Il se 
 
 <p>Cela devrait nous bien nous aider à mettre en place un algorithme ! <em>Astuce : l’opérateur % (modulo) retourne le reste d’une division.</em></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    ECRIRE <span class="s2">&quot;Bonjour, veuillez entrer deux nombres entiers non nuls (a &gt; b)&quot;</span>
-    LIRE a
-    LIRE b
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+ECRIRE <span class="s2">"Bonjour, veuillez entrer deux nombres entiers non nuls (a &gt; b)"</span>
+LIRE a
+LIRE b
 
     afixe &lt;- a
     bfixe &lt;- b
 
-    SI <span class="o">(</span>a &lt; <span class="m">1</span> OU b &lt; 1<span class="o">)</span> OU <span class="o">(</span>a &lt; b<span class="o">)</span> ALORS
-        ECRIRE <span class="s2">&quot;Mauvaise saisie&quot;</span>
+    SI <span class="o">(</span>a &lt; 1 OU b &lt; 1<span class="o">)</span> OU <span class="o">(</span>a &lt; b<span class="o">)</span> ALORS
+        ECRIRE <span class="s2">"Mauvaise saisie"</span>
     SINON
         reste &lt;- 1
-        TANTQUE reste !<span class="o">=</span> <span class="m">0</span> FAIRE
+        TANTQUE reste <span class="o">!=</span> 0 FAIRE
             reste &lt;- a % b
-            ECRIRE a,<span class="s2">&quot;,&quot;</span>,b,<span class="s2">&quot;,&quot;</span>,reste
+            ECRIRE a,<span class="s2">","</span>,b,<span class="s2">","</span>,reste
             a &lt;- b
             b &lt;- reste
         FINTANTQUE
-        ECRIRE <span class="s2">&quot;Le PGCD de&quot;</span>, afixe, <span class="s2">&quot;et de&quot;</span>, bfixe, <span class="s2">&quot;est&quot;</span>, a
+        ECRIRE <span class="s2">"Le PGCD de"</span>, afixe, <span class="s2">"et de"</span>, bfixe, <span class="s2">"est"</span>, a
     FINSI
-FIN</code></pre></div>
+
+FIN</code></pre></figure>
 
 <p>Une petite explication :</p>
+
 <ol>
  * J'écris les consignes, puis je récupère deux variables *a* et *b*.
  * Je les sauvegarde dans deux autres variables car *a* et b vont être amenés à changer au cours de l'exécution.
@@ -305,7 +308,7 @@ FIN</code></pre></div>
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 7 - Calculer le PGCD de deux nombres&body=http://clement-demily.fr/2013/10/26/introduction-a-l-algorithmique-7.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 7 - Calculer le PGCD de deux nombres&body=http://localhost:4000/2013/10/26/introduction-a-l-algorithmique-7.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -313,7 +316,7 @@ FIN</code></pre></div>
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -363,7 +366,7 @@ FIN</code></pre></div>
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

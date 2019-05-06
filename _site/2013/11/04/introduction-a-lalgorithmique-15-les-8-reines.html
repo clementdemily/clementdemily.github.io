@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -209,61 +209,61 @@
 
 <p>Pseudo-code de la fonction principale:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DéBUT
-    lignes &lt;- <span class="o">[</span>0, 0, 0, 0, 0, 0, 0, 0<span class="o">]</span>
-    HUIT_REINES<span class="o">(</span>lignes, 1<span class="o">)</span>
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DéBUT
+lignes &lt;- <span class="o">[</span>0, 0, 0, 0, 0, 0, 0, 0]
+HUIT_REINES<span class="o">(</span>lignes, 1<span class="o">)</span>
+FIN</code></pre></figure>
 
 <p>Pseudo-code de la fonction <em>HUIT_REINES</em></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER lignes, y
-POUR x &lt;- <span class="m">1</span> JUSQU<span class="err">&#39;</span>à COMPTER<span class="o">(</span>lignes<span class="o">)</span> FAIRE
-    SI PEUT_POSER<span class="o">(</span>lignes, x, y<span class="o">)</span> <span class="o">=</span> <span class="m">1</span> ALORS
-         lignes<span class="o">[</span>y<span class="o">]</span> &lt;- x
-         SI <span class="nv">y</span> <span class="o">=</span> <span class="m">7</span> ALORS
-            AFFICHER_ECHIQUIER<span class="o">(</span>lignes<span class="o">)</span>
-         SINON
-            HUIT_REINES<span class="o">(</span>lignes, y + 1<span class="o">)</span>
-         FINSI
-    FINSI
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER lignes, y
+POUR x &lt;- 1 JUSQU<span class="s1">'à COMPTER(lignes) FAIRE
+SI PEUT_POSER(lignes, x, y) = 1 ALORS
+lignes[y] &lt;- x
+SI y = 7 ALORS
+AFFICHER_ECHIQUIER(lignes)
+SINON
+HUIT_REINES(lignes, y + 1)
+FINSI
+FINSI
 FINPOUR
-RETOURNER</code></pre></div>
+RETOURNER</span></code></pre></figure>
 
 <p>Pseudo-code de la fonction <em>PEUT_POSER</em></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER lignes, x, y
-    boucler &lt;- 1
-    i &lt;- 1
-    ret &lt;- 1
-    TANTQUE i &lt; y ET <span class="nv">boucler</span> <span class="o">=</span> <span class="m">1</span> FAIRE
-        SI lignes<span class="o">[</span>y-i<span class="o">]</span> <span class="o">=</span> x OU lignes<span class="o">[</span>y-i<span class="o">]</span> <span class="o">=</span> x-i OU lignes<span class="o">[</span>y-i<span class="o">]</span> <span class="o">=</span> x+i ALORS
-            boucler &lt;- 0
-            ret &lt;- 0
-        FINSI
-        i &lt;- i + 1
-    FINTANTQUE
-RETOURNER ret</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER lignes, x, y
+boucler &lt;- 1
+i &lt;- 1
+ret &lt;- 1
+TANTQUE i &lt; y ET boucler <span class="o">=</span> 1 FAIRE
+SI lignes[y-i] <span class="o">=</span> x OU lignes[y-i] <span class="o">=</span> x-i OU lignes[y-i] <span class="o">=</span> x+i ALORS
+boucler &lt;- 0
+ret &lt;- 0
+FINSI
+i &lt;- i + 1
+FINTANTQUE
+RETOURNER ret</code></pre></figure>
 
 <p>Pseudo-code de la fonction <em>AFFICHER_ECHIQUIER</em></p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER lignes
-    output &lt;- <span class="s2">&quot;&quot;</span>
-    ECRIRE <span class="s2">&quot;Une solution possible:&quot;</span>
-    ECRIRE <span class="s2">&quot;-------------------------&quot;</span>
-    POUR y &lt;- <span class="m">1</span> JUSQU<span class="s1">&#39;à 8 FAIRE</span>
-<span class="s1">        POUR x &lt;- 1 JUSQU&#39;</span>à <span class="m">8</span> FAIRE
-            SI <span class="nv">x</span> <span class="o">=</span> lignes<span class="o">[</span>y<span class="o">]</span> ALORS
-                output &lt;- output + <span class="s2">&quot;| Q&quot;</span>
-            SINON
-                output &lt;- output + <span class="s2">&quot;|  &quot;</span>
-            FINSI
-        FINPOUR
-        output &lt;- output + <span class="s2">&quot;|&quot;</span>
-        ECRIRE output
-        ECRIRE <span class="s2">&quot;-------------------------&quot;</span>
-        output &lt;- <span class="s2">&quot;&quot;</span>
-    FINPOUR
-RETOURNER</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER lignes
+output &lt;- <span class="s2">""</span>
+ECRIRE <span class="s2">"Une solution possible:"</span>
+ECRIRE <span class="s2">"-------------------------"</span>
+POUR y &lt;- 1 JUSQU<span class="s1">'à 8 FAIRE
+POUR x &lt;- 1 JUSQU'</span>à 8 FAIRE
+SI x <span class="o">=</span> lignes[y] ALORS
+output &lt;- output + <span class="s2">"| Q"</span>
+SINON
+output &lt;- output + <span class="s2">"| "</span>
+FINSI
+FINPOUR
+output &lt;- output + <span class="s2">"|"</span>
+ECRIRE output
+ECRIRE <span class="s2">"-------------------------"</span>
+output &lt;- <span class="s2">""</span>
+FINPOUR
+RETOURNER</code></pre></figure>
 
 <p>à demain!</p>
 
@@ -325,7 +325,7 @@ RETOURNER</code></pre></div>
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 15 - Les 8 reines&body=http://clement-demily.fr/2013/11/04/introduction-a-lalgorithmique-15-les-8-reines.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 15 - Les 8 reines&body=http://localhost:4000/2013/11/04/introduction-a-lalgorithmique-15-les-8-reines.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -333,7 +333,7 @@ RETOURNER</code></pre></div>
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -383,7 +383,7 @@ RETOURNER</code></pre></div>
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

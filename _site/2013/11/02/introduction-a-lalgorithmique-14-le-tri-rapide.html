@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -192,38 +192,40 @@
 
 <p>Pseudo-code de la fonction principale:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DéBUT
-    tab &lt;- <span class="o">[</span>5, 6, 42, 1, 5, 2, 121, 9, 8, 7, 3, 12, 0, 38, 33, 25, 23, 87, 96<span class="o">]</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DéBUT
+tab &lt;- <span class="o">[</span>5, 6, 42, 1, 5, 2, 121, 9, 8, 7, 3, 12, 0, 38, 33, 25, 23, 87, 96]
 
-    ECRIRE <span class="s2">&quot;Voici le tableau a trier&quot;</span>, tab
-    ECRIRE <span class="s2">&quot;Voici le tableau trié&quot;</span>, QUICK_SORT<span class="o">(</span>tab, 1, COMPTER<span class="o">(</span>tab<span class="o">))</span>
-FIN</code></pre></div>
+    ECRIRE <span class="s2">"Voici le tableau a trier"</span>, tab
+    ECRIRE <span class="s2">"Voici le tableau trié"</span>, QUICK_SORT<span class="o">(</span>tab, 1, COMPTER<span class="o">(</span>tab<span class="o">))</span>
+
+FIN</code></pre></figure>
 
 <p>Pseudo-code de la fonction PARTITIONNER:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER REFERENCE tab, index_debut, taille
-    pivot &lt;- tab<span class="o">[</span>index_debut<span class="o">]</span>
-    index_gauche &lt;- p - 1
-    index_droite &lt;- taille + 1
-    boucler &lt;- 1
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER REFERENCE tab, index_debut, taille
+pivot &lt;- tab[index_debut]
+index_gauche &lt;- p - 1
+index_droite &lt;- taille + 1
+boucler &lt;- 1
 
-    TANTQUE <span class="nv">boucler</span> <span class="o">=</span> <span class="m">1</span> FAIRE
+    TANTQUE boucler <span class="o">=</span> 1 FAIRE
         RéPéTER
             index_droite &lt;- index_droite - 1
-        JUSQU<span class="s1">&#39;à tab[index_droite] &lt;= pivot</span>
-<span class="s1">        RéPéTER</span>
-<span class="s1">            index_gauche &lt;- index_gauche + 1</span>
-<span class="s1">        JUSQU&#39;</span>à tab<span class="o">[</span>index_gauche<span class="o">]</span> &gt;<span class="o">=</span> pivot
+        JUSQU<span class="s1">'à tab[index_droite] &lt;= pivot
+        RéPéTER
+            index_gauche &lt;- index_gauche + 1
+        JUSQU'</span>à tab[index_gauche] <span class="o">&gt;=</span> pivot
         SI index_gauche &lt; index_droite ALORS
-            tmp &lt;- tab<span class="o">[</span>index_gauche<span class="o">]</span>
-            tab<span class="o">[</span>index_gauche<span class="o">]</span> &lt;- tab<span class="o">[</span>index_droite<span class="o">]</span>
-            tab<span class="o">[</span>index_droite<span class="o">]</span> &lt;- tmp
+            tmp &lt;- tab[index_gauche]
+            tab[index_gauche] &lt;- tab[index_droite]
+            tab[index_droite] &lt;- tmp
         SINON
             boucler &lt;- 0
         FINSI
 
     FINTANTQUE
-RETOURNER index_droite</code></pre></div>
+
+RETOURNER index_droite</code></pre></figure>
 
 <p>Comme expliqué plus haut, le principe de l’algorithme réside en partie dans cette fonction.</p>
 
@@ -237,13 +239,13 @@ RETOURNER index_droite</code></pre></div>
 
 <p>Pseudo-code de la fonction QUICK_SORT:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER tab, index_debut, taille
-    SI index_debut &lt; taille ALORS
-        index_droite &lt;- PARTITIONNER<span class="o">(</span>tab, index_debut, taille<span class="o">)</span>
-        QUICK_SORT<span class="o">(</span>tab, index_debut, index_droite<span class="o">)</span>
-        QUICK_SORT<span class="o">(</span>tab, index_droite + 1, taille<span class="o">)</span>
-    FINSI
-RETOURNER tab</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER tab, index_debut, taille
+SI index_debut &lt; taille ALORS
+index_droite &lt;- PARTITIONNER<span class="o">(</span>tab, index_debut, taille<span class="o">)</span>
+QUICK_SORT<span class="o">(</span>tab, index_debut, index_droite<span class="o">)</span>
+QUICK_SORT<span class="o">(</span>tab, index_droite + 1, taille<span class="o">)</span>
+FINSI
+RETOURNER tab</code></pre></figure>
 
 <p>J’ai essayé de donner un nom clair à mes variables, afin que ça soit le plus simple possible à comprendre.</p>
 
@@ -325,7 +327,7 @@ La récursivité est certainement l'une des notions les plus délicates à appr�
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 14 - Le tri rapide&body=http://clement-demily.fr/2013/11/02/introduction-a-lalgorithmique-14-le-tri-rapide.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 14 - Le tri rapide&body=http://localhost:4000/2013/11/02/introduction-a-lalgorithmique-14-le-tri-rapide.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -333,7 +335,7 @@ La récursivité est certainement l'une des notions les plus délicates à appr�
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -383,7 +385,7 @@ La récursivité est certainement l'une des notions les plus délicates à appr�
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

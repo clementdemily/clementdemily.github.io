@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -186,25 +186,25 @@
 
 <p>Nous allons voir ici comment créer un utilisateur et comment ajouter cet utilisateur à un groupe.</p>
 
-<h2 id="cration-dun-nouvel-utilisateur-sous-unix">Création d’un nouvel utilisateur sous unix</h2>
+<h2 id="création-dun-nouvel-utilisateur-sous-unix">Création d’un nouvel utilisateur sous unix</h2>
 
 <p>Nous allons tout d’abord créer un nouvel utilsateur et lui attribuer un mot de passe. Nous prendrons pour exemple l’utilisateur “clement”.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo useradd clement 
-sudo passwd clement</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>useradd clement
+<span class="nb">sudo </span>passwd clement</code></pre></figure>
 
 <p>Pour verifier les informations de cet utilisateur, vous pourrez utiliser les commandes suivantes:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">id clement
-groups clement</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">id </span>clement
+<span class="nb">groups </span>clement</code></pre></figure>
 
-<h2 id="ajouter-lutilisateur--un-groupe-existant">Ajouter l’utilisateur à un groupe existant</h2>
+<h2 id="ajouter-lutilisateur-à-un-groupe-existant">Ajouter l’utilisateur à un groupe existant</h2>
 
 <p>Certains dossiers et fichiers ne peuvent être modifier ou executer seulement par les utilisateurs membre d’un groupe particulier.</p>
 
 <p>Pour ajouter l’utilisateur clement à un groupe, nous pouvons utiliser la commande suivante:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo usermod -a -G www-data clement</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>usermod <span class="nt">-a</span> <span class="nt">-G</span> www-data clement</code></pre></figure>
 
 
 	  </div>
@@ -221,7 +221,7 @@ groups clement</code></pre></div>
 				</a></li>
 			 
 				<li><a href="/categories.html#unix-ref">
-					unix <span>(4)</span>
+					unix <span>(5)</span>
 					
 				</a></li>
 			
@@ -277,7 +277,7 @@ groups clement</code></pre></div>
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Ajouter un utilisateur au groupe www-data&body=http://clement-demily.fr/2015/06/29/ajouter-un-utilisateur-au-groupe-www-data.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Ajouter un utilisateur au groupe www-data&body=http://localhost:4000/2015/06/29/ajouter-un-utilisateur-au-groupe-www-data.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -285,7 +285,7 @@ groups clement</code></pre></div>
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -335,7 +335,7 @@ groups clement</code></pre></div>
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

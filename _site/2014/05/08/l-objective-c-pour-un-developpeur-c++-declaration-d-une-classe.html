@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -184,32 +184,34 @@
 	  <div class="article_body">
 	  <p>Nous allons voir dans ce billet quelques différences entre la déclaration des classes en Objective-C et en C++.</p>
 
-<h2 id="cration-dune-classe">Création d’une classe</h2>
+<h2 id="création-dune-classe">Création d’une classe</h2>
 
 <p>En <strong>C++</strong> nous avons besoin de deux fichiers pour créer une classe: un fichier header (.h ou .hh) qui contiendra la description de la classe et un fichier d’implémentation (.cpp) qui contiendra le corps des méthodes définies dans le header. Pour l’<strong>Objective-C</strong>, cela est fortement similaire, excepté l’extension du fichier d’implémentation (.m au lieu de .cpp)</p>
 
 <p>MyClass.h (C++)</p>
 
-<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">class</span> <span class="nc">MyClass</span> <span class="o">:</span> <span class="k">public</span> <span class="n">BaseClass</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">class</span> <span class="nc">MyClass</span> <span class="o">:</span> <span class="k">public</span> <span class="n">BaseClass</span> <span class="p">{</span>
 <span class="k">private</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="kt">int</span> <span class="n">getNumber</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-    <span class="kt">void</span> <span class="nf">setNumber</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">);</span>
-    <span class="kt">void</span> <span class="nf">otherMethod</span><span class="p">();</span>
-    <span class="kt">int</span> <span class="nf">addNumberAToNumberB</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">getNumber</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="kt">void</span> <span class="n">setNumber</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">);</span>
+<span class="kt">void</span> <span class="n">otherMethod</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">addNumberAToNumberB</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="k">static</span> <span class="kt">int</span> <span class="n">staticMethod</span><span class="p">();</span>
-<span class="p">};</span></code></pre></div>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">staticMethod</span><span class="p">();</span>
+<span class="p">};</span></code></pre></figure>
 
 <p>MyClass.h (Objective-C)</p>
 
-<div class="highlight"><pre><code class="language-objective-c" data-lang="objective-c"><span class="p">@</span><span class="n">inteface</span> <span class="nl">MyClass</span> <span class="p">:</span> <span class="bp">NSObject</span>
-  <span class="k">@property</span> <span class="kt">int</span> <span class="n">number</span><span class="p">;</span>
-  <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">otherMethod</span><span class="p">;</span>
-  <span class="o">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="nl">addNumberA</span><span class="p">:</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">a</span> <span class="nl">toNumberB</span><span class="p">:</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">b</span><span class="p">;</span>
-  <span class="o">+</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">staticMethod</span><span class="p">;</span>
-<span class="k">@end</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c">@inteface MyClass : NSObject
+@property int number;
+
+- (void) otherMethod;
+- (int) addNumberA: (int)a toNumberB: (int)b;
+
+* (int) staticMethod;
+  @end</code></pre></figure>
 
 <p>Vous pouvez voir quelques différences: Tout d’abord la syntaxe: <em>@interface</em> et <em>@end</em> qui délimite la définition de la classe.</p>
 
@@ -227,45 +229,47 @@
 
 <p>Comme en <strong>C++</strong>, l’héritage se fait après le nom de la classe suivi des deux points.Il est important de préciser que contrairement au <strong>C++</strong>, avec l’<strong>Objective-C</strong> nous ne pouvons pas faire d’héritages multiple.</p>
 
-<h2 id="implmentation">Implémentation</h2>
+<h2 id="implémentation">Implémentation</h2>
 
 <p>L’implémentation est assez similaire dans les deux langages:</p>
 
 <p>MyClass.cpp</p>
 
-<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &quot;MyClass.h&quot;</span>
- 
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include "MyClass.h"
+</span>
 <span class="kt">int</span> <span class="n">MyClass</span><span class="o">::</span><span class="n">getNumber</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
-  <span class="c1">// content</span>
+<span class="c1">// content</span>
 <span class="p">}</span>
- 
+
 <span class="kt">void</span> <span class="n">MyClass</span><span class="o">::</span><span class="n">setNumber</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">){</span>
-  <span class="c1">// content</span>
+<span class="c1">// content</span>
 <span class="p">}</span>
- 
+
 <span class="kt">void</span> <span class="n">MyClass</span><span class="o">::</span><span class="n">otherMethod</span><span class="p">(){</span>
-  <span class="c1">// content</span>
+<span class="c1">// content</span>
 <span class="p">}</span>
- 
+
 <span class="kt">int</span> <span class="n">MyClass</span><span class="o">::</span><span class="n">addNumberAToNumberB</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
-  <span class="c1">// content</span>
-<span class="p">}</span></code></pre></div>
+<span class="c1">// content</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>MyClass.m</p>
 
-<div class="highlight"><pre><code class="language-objective-c" data-lang="objective-c"><span class="cp">#import &quot;MyClass.h&quot;</span>
- 
-<span class="k">@implementation</span> <span class="nc">MyClass</span>
-  <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">otherMethod</span> <span class="p">{</span>
-    <span class="c1">// content</span>
-  <span class="p">}</span>
-  <span class="o">-</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="nl">addNumberA</span><span class="p">:</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">a</span> <span class="nl">toNumberB</span><span class="p">:</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">b</span> <span class="p">{</span>
-    <span class="c1">// content</span>
-  <span class="p">}</span>
-  <span class="o">+</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">staticMethod</span> <span class="p">{</span>
-    <span class="c1">// content</span>
-  <span class="p">}</span>
-<span class="k">@end</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c">#import "MyClass.h"
+
+@implementation MyClass
+
+- (void) otherMethod {
+  // content
+  }
+- (int) addNumberA: (int)a toNumberB: (int)b {
+  // content
+  }
+
+* (int) staticMethod {
+  // content
+  }
+  @end</code></pre></figure>
 
 <p>La qualification des fonctions est toutefois nécessaire au <strong>C++</strong>, alors qu’en <strong>Objective-C</strong> seul le nom des fonctions est requis.
 Le <em>@implementation</em> défini un scope un peu comme un namespace.</p>
@@ -283,8 +287,8 @@ Le <em>@implementation</em> défini un scope un peu comme un namespace.</p>
 					,
 				</a></li>
 			 
-				<li><a href="/categories.html#objective-c-ref">
-					objective-c <span>(3)</span>
+				<li><a href="/categories.html#Objective-C-ref">
+					Objective-C <span>(3)</span>
 					
 				</a></li>
 			
@@ -354,7 +358,7 @@ Le <em>@implementation</em> défini un scope un peu comme un namespace.</p>
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: L'Objective-C pour un développeur C++ 2 – déclaration de classe&body=http://clement-demily.fr/2014/05/08/l-objective-c-pour-un-developpeur-c++-declaration-d-une-classe.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: L'Objective-C pour un développeur C++ 2 – déclaration de classe&body=http://localhost:4000/2014/05/08/l-objective-c-pour-un-developpeur-c++-declaration-d-une-classe.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -362,7 +366,7 @@ Le <em>@implementation</em> défini un scope un peu comme un namespace.</p>
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -412,7 +416,7 @@ Le <em>@implementation</em> défini un scope un peu comme un namespace.</p>
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

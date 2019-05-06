@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -190,28 +190,28 @@
 
 <p>Installation de awscli sur mac (via homebrew):</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> brew install awscli</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="se">\$</span><span class="o">&gt;</span> brew <span class="nb">install </span>awscli</code></pre></figure>
 
 <p>Installation de awscli sur unix (via pip):</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> pip install awscli</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="se">\$</span><span class="o">&gt;</span> pip <span class="nb">install </span>awscli</code></pre></figure>
 
 <p>Une fois installé, configurons notre utilitaire:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> aws configure
-AWS Access Key ID <span class="o">[</span>None<span class="o">]</span>:
-AWS Secret Access Key <span class="o">[</span>None<span class="o">]</span>:
-Default region name <span class="o">[</span>None<span class="o">]</span>:
-Default output format <span class="o">[</span>None<span class="o">]</span>:</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="se">\$</span><span class="o">&gt;</span> aws configure
+AWS Access Key ID <span class="o">[</span>None]:
+AWS Secret Access Key <span class="o">[</span>None]:
+Default region name <span class="o">[</span>None]:
+Default output format <span class="o">[</span>None]:</code></pre></figure>
 
 <p>Vous devez ici remplir les champs avec leur valeur correspondantes.
 <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html">lien vers la documentation</a></p>
 
 <p>Vous pouvez dès à présent créer un nouveau dossier et effectuer une copie locale de vos buckets:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> mkdir buckets-backup
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> <span class="nb">mkdir </span>buckets-backup
 <span class="nv">$&gt;</span> <span class="nb">cd </span>buckets-backup
-<span class="nv">$&gt;</span> aws s3 sync s3://mon-bucket .</code></pre></div>
+<span class="se">\$</span><span class="o">&gt;</span> aws s3 <span class="nb">sync </span>s3://mon-bucket .</code></pre></figure>
 
 <p>Si un message d’erreur en rapport avec une erreur de droit apparait (<em>AccessDenied</em>), verifier bien que l’utilisateur associé a votre configuration dispose des droits nécessaire sur le service <strong>S3</strong> de votre compte <strong>AWS</strong>. <a href="https://console.aws.amazon.com/iam/home">Lien vers IAM</a>.</p>
 
@@ -237,7 +237,7 @@ Les informations à saisir se trouve sur votre portail azure.</p>
 
 <p>Une fois la connexion établie, il ne vous restera plus qu’a effectuer un “glisser-déposer” dans la fenêtre qui est apparue.</p>
 
-<p>Pour finir, aller sur votre portail et verifier que vos <strong>Containers</strong> (alias buckets) ont bien les droits que vous souhaitez attribuer. 
+<p>Pour finir, aller sur votre portail et verifier que vos <strong>Containers</strong> (alias buckets) ont bien les droits que vous souhaitez attribuer.
 Les containers sont privés par défaut, si vous désirer les rendre public, changer la règle d’accès du container avec la valeur “Container”.</p>
 
 <p><img src="/img/2015/10/containers.png" alt="containers" class="center-image" /></p>
@@ -319,7 +319,7 @@ Les containers sont privés par défaut, si vous désirer les rendre public, cha
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Migrer de Amazon Web Service S3 vers Microsoft Azure Blob&body=http://clement-demily.fr/2015/10/15/migrer-aws-s3-azure-blob.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Migrer de Amazon Web Service S3 vers Microsoft Azure Blob&body=http://localhost:4000/2015/10/15/migrer-aws-s3-azure-blob.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -327,7 +327,7 @@ Les containers sont privés par défaut, si vous désirer les rendre public, cha
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -338,7 +338,7 @@ Les containers sont privés par défaut, si vous désirer les rendre public, cha
 		  <li class="previous"><a href="/2015/10/15/creer-un-serveur-postgresql-sur-microsoft-azure.html" title="Créer un serveur postgresql sur microsoft azure">&larr; Précedent</a></li>
 		  
 		  
-			<li class="next disabled"><a>Suivant &rarr;</a>
+		  <li class="next"><a href="/2016/04/21/mettre-a-jour-postgresql-et-la-gem-pg-sur-ubuntu.html" title="Mettre à jour postgresql et la gem pg sur ubuntu">Suivant &rarr;</a></li>
 		  
 		</ul>
 
@@ -377,7 +377,7 @@ Les containers sont privés par défaut, si vous désirer les rendre public, cha
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

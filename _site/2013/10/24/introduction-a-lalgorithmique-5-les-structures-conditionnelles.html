@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -183,27 +183,29 @@
 	 </span>
 	  <div class="article_body">
 	  <p>Bonjour ! Aujourd’hui nous allons aborder les premières difficultés de l’algorithmique : Les structures conditionnelles !</p>
+
 <blockquote>
 <span style="text-decoration: underline;">Rappel</span> : nous allons avoir besoin des opérateurs logique pour continuer, je vous invite à jeter un rapide coup d'&oelig;il <a title="Introduction à l'algorithmique 2 - Quelques notions-clé" href="/2013/10/21/introduction-a-lalgorithmique-2/">ici</a>, partie opérateurs de comparaison et opérateurs logique.</blockquote>
 <p><span style="text-decoration: underline;">Qu’est-ce que c’est ?</span> C’est une <strong>instruction **qui permet de tester si une condition est **VRAIE</strong> ou <strong>FAUSSE</strong> (en informatique ça se traduit par <strong>1</strong> ou <strong>0</strong>).</p>
 
 <p><span style="text-decoration: underline;">A quoi ça sert ?</span> Cela va nous permettre d’adapter le comportement de notre algorithme en fonction de la valeur de nos variables.</p>
 
-<p><span style="text-decoration: underline;">A quoi ça ressemble </span>? Il existe deux syntaxes la plus commune étant le <em>*SI **</em>conditions* **ALORS **… **FINSI **; L’autre étant plus rare, j’en donnerai un exemple plus tard dans cet article.</p>
+<p><span style="text-decoration: underline;">A quoi ça ressemble </span>? Il existe deux syntaxes la plus commune étant le <strong>SI *</strong>conditions* **ALORS **… **FINSI **; L’autre étant plus rare, j’en donnerai un exemple plus tard dans cet article.</p>
 
 <p>Plutôt que de me lancer dans de longues explications, je vous propose de voir ensemble un petit bout de <em>pseudo-code</em> :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    ECRIRE <span class="s2">&quot;Quel est votre âge?&quot;</span>
-    LIRE AGE
-    SI AGE &gt;<span class="o">=</span> <span class="m">18</span> ALORS
-        ECRIRE <span class="s2">&quot;Vous êtes majeur!&quot;</span>
-    SINON
-        ECRIRE <span class="s2">&quot;Vous êtes mineur!&quot;</span>
-    FINSI
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+ECRIRE <span class="s2">"Quel est votre âge?"</span>
+LIRE AGE
+SI AGE <span class="o">&gt;=</span> 18 ALORS
+ECRIRE <span class="s2">"Vous êtes majeur!"</span>
+SINON
+ECRIRE <span class="s2">"Vous êtes mineur!"</span>
+FINSI
+FIN</code></pre></figure>
 
 <p>Analysons ça ensemble :</p>
+
 <ol>
  * Vous commencez à être familier avec la fonction **ECRIRE**, je ne vais pas revenir là-dessus ; on affiche juste un texte invitant l'utilisateur à entrer son âge.
  * Nous stockons dans la variable *AGE* la valeur récupérée à l'aide de la fonction **LIRE**
@@ -213,23 +215,24 @@ FIN</code></pre></div>
 
 <p>Je vous propose un autre algorithme pour vous montrer les **structures conditionnelles imbriquées **:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    ECRIRE <span class="s2">&quot;Bonjour, veuillez taper un chiffre en 1 et 3&quot;</span>
-    LIRE CHIFFRE
-    SI CHIFFRE &lt; <span class="m">1</span> OU CHIFFRE &gt; <span class="m">3</span> ALORS
-        ECRIRE <span class="s2">&quot;Ce n&#39;est pas un chiffre entre 1 et 3!&quot;</span>
-    SINON
-        SI <span class="nv">CHIFFRE</span> <span class="o">=</span> <span class="m">1</span> ALORS
-            ECRIRE <span class="s2">&quot;Vous avez tapé le chiffre 1&quot;</span>
-        SINON SI <span class="nv">CHIFFRE</span> <span class="o">=</span> <span class="m">2</span> ALORS
-            ECRIRE <span class="s2">&quot;Vous avez tapé le chiffre 2&quot;</span>
-        SINON
-            ECRIRE <span class="s2">&quot;Vous avez tapé le chiffre 3&quot;</span>
-        FINSI
-    FINSI
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+ECRIRE <span class="s2">"Bonjour, veuillez taper un chiffre en 1 et 3"</span>
+LIRE CHIFFRE
+SI CHIFFRE &lt; 1 OU CHIFFRE <span class="o">&gt;</span> 3 ALORS
+ECRIRE <span class="s2">"Ce n'est pas un chiffre entre 1 et 3!"</span>
+SINON
+SI CHIFFRE <span class="o">=</span> 1 ALORS
+ECRIRE <span class="s2">"Vous avez tapé le chiffre 1"</span>
+SINON SI CHIFFRE <span class="o">=</span> 2 ALORS
+ECRIRE <span class="s2">"Vous avez tapé le chiffre 2"</span>
+SINON
+ECRIRE <span class="s2">"Vous avez tapé le chiffre 3"</span>
+FINSI
+FINSI
+FIN</code></pre></figure>
 
 <p>Une petite explication :</p>
+
 <ol>
  * Comme pour l'algorithme précédent, nous demandons a l'utilisateur de saisir une donnée ; en l'occurrence ici c'est un chiffre entre 1 et 3.
  * Cette saisie est stockée dans la variable *CHIFFRE*.
@@ -238,26 +241,26 @@ FIN</code></pre></div>
 </ol>
 <p>Vous trouvez ça peu lisible et pas forcément compréhensible (de premier abord ?) ? Moi aussi ! Mais heureusement, il existe une structure conditionnelle pour palier a ce genre d’écriture fastidieuse… et j’ai l’exemple parfait pour illustrer tout ça !</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    ECRIRE <span class="s2">&quot;Bonjour, veuillez séléctionner le plat que vous désirez: (1-6)&quot;</span>
-    ECRIRE <span class="s2">&quot;1. Pâtes à la bolognaise&quot;</span>
-    ECRIRE <span class="s2">&quot;2. Steak Frites&quot;</span>
-    ECRIRE <span class="s2">&quot;3. Pizza&quot;</span>
-    ECRIRE <span class="s2">&quot;4. Hot-Dog&quot;</span>
-    ECRIRE <span class="s2">&quot;5. Soupe&quot;</span>
-    ECRIRE <span class="s2">&quot;6. Quitter&quot;</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+    ECRIRE <span class="s2">"Bonjour, veuillez séléctionner le plat que vous désirez: (1-6)"</span>
+    ECRIRE <span class="s2">"1. Pâtes à la bolognaise"</span>
+    ECRIRE <span class="s2">"2. Steak Frites"</span>
+    ECRIRE <span class="s2">"3. Pizza"</span>
+    ECRIRE <span class="s2">"4. Hot-Dog"</span>
+    ECRIRE <span class="s2">"5. Soupe"</span>
+    ECRIRE <span class="s2">"6. Quitter"</span>
     LIRE PLAT
     SÉLECTIONNER PLAT
-        <span class="s1">&#39;1&#39;</span> : RESULTAT &lt;- <span class="s2">&quot;Des pâtes? Pas de problème!&quot;</span>
-        <span class="s1">&#39;2&#39;</span> : RESULTAT &lt;- <span class="s2">&quot;Saignant le steak?&quot;</span>
-        <span class="s1">&#39;3&#39;</span> : RESULTAT &lt;- <span class="s2">&quot;Et une bonne pizza, une!&quot;</span>
-        <span class="s1">&#39;4&#39;</span> : RESULTAT &lt;- <span class="s2">&quot;Miam un bon Hot-dog!&quot;</span>
-        <span class="s1">&#39;5&#39;</span> : RESULTAT &lt;- <span class="s2">&quot;Une bonne soupe maison, il n&#39;y a que ça de vrai!&quot;</span>
+        <span class="s1">'1'</span> : RESULTAT &lt;- <span class="s2">"Des pâtes? Pas de problème!"</span>
+        <span class="s1">'2'</span> : RESULTAT &lt;- <span class="s2">"Saignant le steak?"</span>
+        <span class="s1">'3'</span> : RESULTAT &lt;- <span class="s2">"Et une bonne pizza, une!"</span>
+        <span class="s1">'4'</span> : RESULTAT &lt;- <span class="s2">"Miam un bon Hot-dog!"</span>
+        <span class="s1">'5'</span> : RESULTAT &lt;- <span class="s2">"Une bonne soupe maison, il n'y a que ça de vrai!"</span>
      SINON
-        RESULTAT &lt;- <span class="s2">&quot;Rien du tout?&quot;</span>
+        RESULTAT &lt;- <span class="s2">"Rien du tout?"</span>
     FINSÉLECTIONNER
     ECRIRE RESULTAT
-FIN</code></pre></div>
+FIN</code></pre></figure>
 
 <p>Voyons ensemble :</p>
 <ol>
@@ -328,7 +331,7 @@ FIN</code></pre></div>
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 5 - Les structures conditionnelles&body=http://clement-demily.fr/2013/10/24/introduction-a-lalgorithmique-5-les-structures-conditionnelles.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 5 - Les structures conditionnelles&body=http://localhost:4000/2013/10/24/introduction-a-lalgorithmique-5-les-structures-conditionnelles.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -336,7 +339,7 @@ FIN</code></pre></div>
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -386,7 +389,7 @@ FIN</code></pre></div>
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

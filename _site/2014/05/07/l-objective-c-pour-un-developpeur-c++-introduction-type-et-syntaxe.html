@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -188,7 +188,7 @@
 
 <h2 id="historique">Historique</h2>
 
-<p>L’Objective-C, comme le C++ est un langage orienté objet basé sur le C. Il est utilisé par la société NeXT (fondée par Steve Jobs) pour créer l’OS nommé NeXTSTEP. NeXT fut racheté par Apple et l’OS  deviendra la base de Mac OS X. Source</p>
+<p>L’Objective-C, comme le C++ est un langage orienté objet basé sur le C. Il est utilisé par la société NeXT (fondée par Steve Jobs) pour créer l’OS nommé NeXTSTEP. NeXT fut racheté par Apple et l’OS deviendra la base de Mac OS X. Source</p>
 
 <p>Quelques différences au niveau des types du langage</p>
 
@@ -198,18 +198,18 @@
 
 <p>nil est préférable a NULL.</p>
 
-<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="kt">bool</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
- 
-<span class="kt">void</span> <span class="o">*</span><span class="n">voidPointer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span></code></pre></div>
+
+<span class="kt">void</span> <span class="err">\</span><span class="o">*</span><span class="n">voidPointer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span></code></pre></figure>
 
 <p>versus</p>
 
-<div class="highlight"><pre><code class="language-objective-c" data-lang="objective-c"><span class="kt">BOOL</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">YES</span><span class="p">;</span>
-<span class="kt">BOOL</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span>
- 
-<span class="kt">id</span> <span class="n">MyObject</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSString</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">integerPointer</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c">BOOL b = YES;
+BOOL b = NO;
+
+id MyObject = [[NSString alloc] init];
+int \*integerPointer = nil;</code></pre></figure>
 
 <h2 id="cocoa">Cocoa</h2>
 
@@ -221,17 +221,16 @@
 
 <p>prog.cpp</p>
 
-<div class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="n">MyClass</span> <span class="o">*</span><span class="n">my</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">();</span>
-<span class="n">my</span><span class="o">-&gt;</span><span class="n">method</span><span class="p">();</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="n">MyClass</span> <span class="err">\</span><span class="o">*</span><span class="n">my</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">();</span>
+<span class="n">my</span><span class="o">-&gt;</span><span class="n">method</span><span class="p">();</span></code></pre></figure>
 
 <p>versus</p>
 
 <p>prog.m</p>
 
-<div class="highlight"><pre><code class="language-objective-c" data-lang="objective-c"><span class="n">MyClass</span> <span class="o">*</span><span class="n">my</span> <span class="o">=</span> <span class="p">[[</span><span class="n">MyClass</span> <span class="n">alloc</span><span class="p">]</span><span class="n">init</span><span class="p">]</span>
-<span class="p">[</span><span class="n">my</span> <span class="n">method</span><span class="p">]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c">MyClass \*my = [[MyClass alloc]init][my method]</code></pre></figure>
 
-<h2 id="la-gestion-de-mmoire">La gestion de mémoire</h2>
+<h2 id="la-gestion-de-mémoire">La gestion de mémoire</h2>
 
 <p>Le compilateur de l’Objective-C nous propose une feature plutôt cool: l’Automatic Reference Counting (ARC pour les intimes)</p>
 
@@ -239,7 +238,6 @@
 <em>CE N’EST PAS UN GARBAGE COLLECTOR!</em> Le compilateur sait avec certitude a quel moment votre objet n’est plus utilisé et donc libérer son allocation mémoire en toute sécurité. L’avantage est que vous n’aurez pas à vous souciez de savoir si vous avez bien delete toutes vos resources, le défaut est que vous perdez totalement la main sur la dés-allocation mémoire.</p>
 
 <p>Nous verrons dans un prochain billet la création de classe en Objective-C.</p>
-
 
 	  </div>
 
@@ -254,8 +252,8 @@
 					,
 				</a></li>
 			 
-				<li><a href="/categories.html#objective-c-ref">
-					objective-c <span>(3)</span>
+				<li><a href="/categories.html#Objective-C-ref">
+					Objective-C <span>(3)</span>
 					
 				</a></li>
 			
@@ -325,7 +323,7 @@
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: L’Objective-C pour un développeur C++ 1 – Introduction, types et syntaxe&body=http://clement-demily.fr/2014/05/07/l-objective-c-pour-un-developpeur-c++-introduction-type-et-syntaxe.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: L’Objective-C pour un développeur C++ 1 – Introduction, types et syntaxe&body=http://localhost:4000/2014/05/07/l-objective-c-pour-un-developpeur-c++-introduction-type-et-syntaxe.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -333,7 +331,7 @@
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -383,7 +381,7 @@
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

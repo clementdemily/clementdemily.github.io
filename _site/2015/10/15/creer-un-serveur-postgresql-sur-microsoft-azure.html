@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -182,7 +182,7 @@
 	   2015
 	 </span>
 	  <div class="article_body">
-	  <h2 id="cration-et-configuration-de-linstance">Création et configuration de l’instance</h2>
+	  <h2 id="création-et-configuration-de-linstance">Création et configuration de l’instance</h2>
 
 <p>Rendez-vous sur le <a href="https://portal.azure.com">portail azure</a>
 Pour cet exemple, j’ai choisi de prendre une image ubuntu.</p>
@@ -201,23 +201,23 @@ J’ai choisi d’exposer le port part défaut de postgresql (5432), mais libre 
 
 <p><img src="/img/2015/10/open-port.png" alt="open-port" class="center-image" /></p>
 
-<h2 id="connexion--la-machine-et-installation-des-packages">Connexion à la machine et installation des packages</h2>
+<h2 id="connexion-à-la-machine-et-installation-des-packages">Connexion à la machine et installation des packages</h2>
 
 <p>Une fois l’instance créée et configurée, vous pourrez vous connecter en SSH à l’aide la commande suivante:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh username@ip</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="se">\$</span><span class="o">&gt;</span> ssh username@ip</code></pre></figure>
 
 <p>Téléchargeons le package postgresql (9.3) ainsi que les extensions correspondantes:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">username@ip&gt; sudo apt-get install -y postgresql postgresql-contrib-9.3</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">username@ip&gt; <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> postgresql postgresql-contrib-9.3</code></pre></figure>
 
-<h2 id="cration-des-donnes-de-tests">Création des données de tests</h2>
+<h2 id="création-des-données-de-tests">Création des données de tests</h2>
 
 <p>Créons un nouvel utilisateur et une nouvelle base de donnée:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">username@ip&gt; sudo -u postgres createuser -r -d -s my_user
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">username@ip&gt; <span class="nb">sudo</span> <span class="nt">-u</span> postgres createuser <span class="nt">-r</span> <span class="nt">-d</span> <span class="nt">-s</span> my_user
 username@ip&gt; createdb my_new_db
-username@ip&gt; <span class="nb">echo</span> <span class="s2">&quot;ALTER ROLE my_user WITH ENCRYPTED PASSWORD &#39;password&#39;;&quot;</span>  <span class="p">|</span> psql my_new_db</code></pre></div>
+username@ip&gt; <span class="nb">echo</span> <span class="s2">"ALTER ROLE my_user WITH ENCRYPTED PASSWORD 'password';"</span> | psql my_new_db</code></pre></figure>
 
 <h2 id="configuration-de-postgresql">Configuration de postgresql</h2>
 
@@ -229,7 +229,7 @@ La valeur <strong>IP_MACHINE_CLIENT</strong> doit être remplacée par l’adres
 
 <p>Cette commande permettra de configurer le fichier sans l’éditer.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">username@ip&gt; sudo <span class="nb">echo</span> <span class="s2">&quot;host    my_new_db    my_user    IP_MACHINE_CLIENT/24    trust&quot;</span> &gt;&gt; /etc/postgresql/9.3/main/pg_hba.conf</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">username@ip&gt; <span class="nb">sudo echo</span> <span class="s2">"host my_new_db my_user IP_MACHINE_CLIENT/24 trust"</span> <span class="o">&gt;&gt;</span> /etc/postgresql/9.3/main/pg_hba.conf</code></pre></figure>
 
 <p>Nous devons configurer postgresql pour qu’il écoute d’autre adresse que localhost.
 Pour cela, nous devons trouver le champ “listen_address” dans le fichier postgresql.conf. ( /etc/postgresql/9.3/main/postgresql.conf)
@@ -240,17 +240,17 @@ Dans cet exemple, j’utilise la valeur ‘*’ pour écouter toutes les adresse
 
 <p>Le champ “listen_address” est commenté par défaut (9.3), cette commande permettra de configurer le fichier sans l’éditer.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">username@ip&gt; sudo <span class="nb">echo</span> ‘listen_address<span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="err">&#39;</span> &gt;&gt; /etc/postgresql/9.3/main/postgresql.conf</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">username@ip&gt; <span class="nb">sudo echo</span> ‘listen_address<span class="o">=</span><span class="s2">"</span><span class="se">\*</span><span class="s2">"</span><span class="s1">' &gt;&gt; /etc/postgresql/9.3/main/postgresql.conf</span></code></pre></figure>
 
 <p>Pour finir, nous devons redémarrer le service:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">username@ip&gt; sudo service postgresql restart</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">username@ip&gt; <span class="nb">sudo </span>service postgresql restart</code></pre></figure>
 
 <h2 id="test">Test</h2>
 
 <p>Depuis votre machine (celle qui a l’IP <strong>IP_MACHINE_CLIENT</strong>), vous pourrez vous connecter à l’aide de la commande suivante:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">IP_MACHINE_CLIENT&gt; psql -h IP_INSTANCE_DB -p <span class="m">5432</span> -u my_new_db my_user</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">IP_MACHINE_CLIENT&gt; psql <span class="nt">-h</span> IP_INSTANCE_DB <span class="nt">-p</span> 5432 <span class="nt">-u</span> my_new_db my_user</code></pre></figure>
 
 <p>IP_INSTANCE_DB correspond à l’IP de votre instance serveur postgresql, celle que nous avons créé au début de cet article.</p>
 
@@ -291,7 +291,7 @@ Dans cet exemple, j’utilise la valeur ‘*’ pour écouter toutes les adresse
 			 
 				<li>
 					<a href="/tags.html#postgresql-ref">
-					postgresql <span>(1)</span>
+					postgresql <span>(2)</span>
 					,
 					</a>
 				</li>
@@ -331,7 +331,7 @@ Dans cet exemple, j’utilise la valeur ‘*’ pour écouter toutes les adresse
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Créer un serveur postgresql sur microsoft azure&body=http://clement-demily.fr/2015/10/15/creer-un-serveur-postgresql-sur-microsoft-azure.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Créer un serveur postgresql sur microsoft azure&body=http://localhost:4000/2015/10/15/creer-un-serveur-postgresql-sur-microsoft-azure.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -339,7 +339,7 @@ Dans cet exemple, j’utilise la valeur ‘*’ pour écouter toutes les adresse
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -389,7 +389,7 @@ Dans cet exemple, j’utilise la valeur ‘*’ pour écouter toutes les adresse
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

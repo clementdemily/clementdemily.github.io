@@ -32,7 +32,7 @@ Voici un petit script qui permettra de mettre à jour postgresql (9.3 -> 9.5):
 
 Il vous faut maintenant modifier les configurations de bundler sur votre serveur:
 
-```
+```bash
 # Déplacer vous dans le dossier de votre app
 cd /path/to/app
 

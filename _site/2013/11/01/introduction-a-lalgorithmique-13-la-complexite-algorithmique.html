@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -183,6 +183,7 @@
 	 </span>
 	  <div class="article_body">
 	  <p>Bonjour ! Aujourd’hui nous allons voir quelque chose d’un peu plus théorique que d’habitude : la <strong>complexité algorithmique</strong>.</p>
+
 <blockquote>
 Je me permets de faire un aparté : n'étant pas un spécialiste de la **complexité algorithmique**, je ne rentrerai pas dans les détails des opérations mathématiques.</blockquote>
 <p>La <strong>complexité algorithmique</strong> est un moyen mathématique de déterminer la performance d’un algorithme en fonction de la taille et de la nature des données.</p>
@@ -216,43 +217,43 @@ Je me permets de faire un aparté : n'étant pas un spécialiste de la **complex
 
 <p>Je vous propose de regarder ensemble quelques petits exemples pour illustrer tout ça:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    n &lt;- 100
-    POUR compteur &lt;- <span class="m">0</span> JUSQU<span class="err">&#39;</span>À n FAIRE
-        ECRIRE compteur
-    FINPOUR
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+n &lt;- 100
+POUR compteur &lt;- 0 JUSQU<span class="s1">'À n FAIRE
+ECRIRE compteur
+FINPOUR
+FIN</span></code></pre></figure>
 
 <p>La complexité de cet algorithme est en O(n) car il faut n instructions pour arriver à la fin de l’algorithme.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    n &lt;- 100
-    POUR i &lt;- <span class="m">0</span> JUSQU<span class="s1">&#39;À n FAIRE</span>
-<span class="s1">        POUR j &lt;- 0 JUSQU&#39;</span>À n FAIRE
-            ECRIRE <span class="s2">&quot;i:&quot;</span>, i,<span class="s2">&quot;j:&quot;</span>,j
-        FINPOUR
-    FINPOUR
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+n &lt;- 100
+POUR i &lt;- 0 JUSQU<span class="s1">'À n FAIRE
+POUR j &lt;- 0 JUSQU'</span>À n FAIRE
+ECRIRE <span class="s2">"i:"</span>, i,<span class="s2">"j:"</span>,j
+FINPOUR
+FINPOUR
+FIN</code></pre></figure>
 
 <p>Voici une complexité de O(n²), de manière générale, les boucles imbriquées sont en O(n²).</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    n &lt;- 100
-    POUR i &lt;- <span class="m">0</span> JUSQU<span class="err">&#39;</span>À <span class="m">10000</span> FAIRE
-        ECRIRE <span class="s2">&quot;i:&quot;</span>, i
-    FINPOUR
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+n &lt;- 100
+POUR i &lt;- 0 JUSQU<span class="s1">'À 10000 FAIRE
+ECRIRE "i:", i
+FINPOUR
+FIN</span></code></pre></figure>
 
 <p>Voici une complexité de O(1), en effet peu importe la taille des données, le nombre d’opérations élémentaires reste constant.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    n &lt;- 20
-    POUR i &lt;- <span class="m">0</span> JUSQU<span class="s1">&#39;À n FAIRE</span>
-<span class="s1">        POUR j &lt;- 0 JUSQU&#39;</span>À <span class="o">(</span>n * n<span class="o">)</span> FAIRE
-            ECRIRE <span class="s2">&quot;i:&quot;</span>,i, <span class="s2">&quot;j:&quot;</span>,j
-        FINPOUR
-    FINPOUR
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+n &lt;- 20
+POUR i &lt;- 0 JUSQU<span class="s1">'À n FAIRE
+POUR j &lt;- 0 JUSQU'</span>À <span class="o">(</span>n <span class="k">*</span> n<span class="o">)</span> FAIRE
+ECRIRE <span class="s2">"i:"</span>,i, <span class="s2">"j:"</span>,j
+FINPOUR
+FINPOUR
+FIN</code></pre></figure>
 
 <p>Cet algorithme est en O(n^3). Regardez bien la condition d’arrêt de la boucle *POUR *imbriquée: il faut effectuer n² opérations pour satisfaire la condition.</p>
 
@@ -326,7 +327,7 @@ FIN</code></pre></div>
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 13 - La complexité algorithmique&body=http://clement-demily.fr/2013/11/01/introduction-a-lalgorithmique-13-la-complexite-algorithmique.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 13 - La complexité algorithmique&body=http://localhost:4000/2013/11/01/introduction-a-lalgorithmique-13-la-complexite-algorithmique.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -334,7 +335,7 @@ FIN</code></pre></div>
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -384,7 +385,7 @@ FIN</code></pre></div>
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

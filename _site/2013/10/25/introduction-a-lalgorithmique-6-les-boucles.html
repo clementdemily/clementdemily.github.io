@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -191,47 +191,47 @@
 <p>C’est pour ce genre de problème que les <strong>boucles</strong> ont été inventées. Il existe trois types de boucles, ayant tous la même fonction à quelques subtilités près :</p>
 
 <ul>
-  <li>La boucle <strong>TANTQUE</strong> ‘conditions’ <strong>FAIRE … FINTANTQUE **;</strong></li>
-  <li>Cette boucle répétera le bloc de <em>pseudo-code *(entre le *FAIRE</em> et le <em>FINTANTQUE</em>) tant que les <em>conditions</em> seront <strong>vraies</strong>.</li>
+  <li>La boucle <strong>TANTQUE</strong> ‘conditions’ **FAIRE … FINTANTQUE **;**</li>
+  <li>Cette boucle répétera le bloc de <em>pseudo-code _(entre le _FAIRE</em> et le <em>FINTANTQUE</em>) tant que les <em>conditions</em> seront <strong>vraies</strong>.</li>
 </ul>
 
 <p><a style="line-height: 1.5;" href="/img/2013/10/while.gif"><img class="aligncenter" alt="boucle tant que" src="/img/2013/10/while.gif" width="231" height="297" /></a><a href="/img/2013/10/flowchart_structure_loop.png">
 </a></p>
 
 <ul>
-  <li>La boucle <strong>RÉPÉTER **… **JUSQU’À **<em>conditions ;</em> Cette boucle répétera le bloc de <em>pseudo-code *(entre le *REPETER *et le *JUSQU’À)</em> jusqu’à ce que les <em>conditions</em> deviennent **vraies</strong>. La réelle différence entre la boucle <em>TANTQUE</em> et <em>REPETER JUSQU’À</em> est que cette dernière exécute le bloc de code au <strong>moins une fois</strong> (les conditions étant testées à la fin de l’exécution du bloc).</li>
+  <li>La boucle <strong>RÉPÉTER **… **JUSQU’À *</strong>conditions ;* Cette boucle répétera le bloc de <em>pseudo-code *(entre le *REPETER *et le *JUSQU’À)</em> jusqu’à ce que les <em>conditions</em> deviennent <strong>vraies</strong>. La réelle différence entre la boucle <em>TANTQUE</em> et *REPETER JUSQU’À* est que cette dernière exécute le bloc de code au <strong>moins une fois</strong> (les conditions étant testées à la fin de l’exécution du bloc).</li>
 </ul>
 
 <p><a style="line-height: 1.5;" href="/img/2013/10/flowchart_structure_loop.png"><img class="aligncenter" alt="boucle repeter jusqu'a" src="/img/2013/10/flowchart_structure_loop.png" width="266" height="398" /></a></p>
 
 <ul>
-  <li>La boucle <strong>POUR **<em>variable = valeur initiale **</em>JUSQU’À **<em>valeur finale **</em>FAIRE … FINPOUR</strong>; La boucle POUR est certainement la boucle la plus facile à appréhender : en effet, on définit une variable ayant une valeur initiale, puis on boucle jusqu’à ce que cette variable atteigne la valeur finale.</li>
+  <li>La boucle <strong>POUR *</strong>variable = valeur initiale <strong>_JUSQU’À _</strong>valeur finale <strong>*FAIRE … FINPOUR</strong>; La boucle POUR est certainement la boucle la plus facile à appréhender : en effet, on définit une variable ayant une valeur initiale, puis on boucle jusqu’à ce que cette variable atteigne la valeur finale.</li>
 </ul>
 
 <p><a style="line-height: 1.5;" href="/img/2013/10/flowchart_structure_for_loop.png"><img class="size-full wp-image-274 aligncenter" alt="boucle pour" src="/img/2013/10/flowchart_structure_for_loop.png" width="245" height="592" /></a></p>
 
 <p>Reprenons notre exemple de tout à l’heure, comptons de 0 à 9 avec l’aide de la boucle **TANTQUE **!</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    COMPTEUR &lt;- 0
-    TANTQUE COMPTEUR &lt; <span class="m">10</span> FAIRE
-        ECRIRE COMPTEUR
-    FINTANTQUE
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+COMPTEUR &lt;- 0
+TANTQUE COMPTEUR &lt; 10 FAIRE
+ECRIRE COMPTEUR
+FINTANTQUE
+FIN</code></pre></figure>
 
-<p>Mmh ? Il  y a un problème ? Vous ne voyez que des 0 à l’infini ? C’est normal ! Je vous ai délibérément donné un code <span style="text-decoration: underline;">incomplet</span>. Vous venez d’expérimenter votre première **boucle infinie **!</p>
+<p>Mmh ? Il y a un problème ? Vous ne voyez que des 0 à l’infini ? C’est normal ! Je vous ai délibérément donné un code <span style="text-decoration: underline;">incomplet</span>. Vous venez d’expérimenter votre première **boucle infinie **!</p>
 
 <p>Mais qu’est-ce qui cloche au juste ? Si vous regardez bien le bloc au cœur de la boucle, la variable *COMPTEUR *n’est pas modifiée, et donc par conséquent <strong>la condition d’arrêt</strong> n’est jamais atteinte ! Il faut donc ajouter <strong>1</strong> a cette variable, et ce à chaque tour de boucle ! L’action d’augmenter la valeur d’une variable de <strong>1</strong> est appelée <strong>incrémentation</strong>.</p>
 
 <p><strong>La boucle infinie</strong> un problème qui va être très récurent lors de vos premières expériences en programmation. Je préfère vous mettre face à l’erreur tout de suite, pour que vous sachiez à quoi vous en tenir pour la suite ! Corrigeons ça toute de suite !</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    COMPTEUR &lt;- 0
-    TANTQUE COMPTEUR &lt; <span class="m">10</span> FAIRE
-        ECRIRE COMPTEUR
-        COMPTEUR &lt;- COMPTEUR + 1
-    FINTANTQUE
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+COMPTEUR &lt;- 0
+TANTQUE COMPTEUR &lt; 10 FAIRE
+ECRIRE COMPTEUR
+COMPTEUR &lt;- COMPTEUR + 1
+FINTANTQUE
+FIN</code></pre></figure>
 
 <p>C’est quand même beaucoup mieux ! Je vous invite à faire une exécution pas à pas (la flèche verte la plus à droite) pour comprendre exactement ce qu’il se passe.</p>
 
@@ -239,49 +239,50 @@ FIN</code></pre></div>
 
 <p>Pour mettre en pratique la boucle <strong>RÉPÉTER JUSQU’ À</strong>, je vous propose de reprendre l’algorithme du menu d’hier et de l’adapter pour qu’il ne quitte qu’après avoir saisie l’une des 6 possibilités offertes à l’utilisateur :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    ECRIRE <span class="s2">&quot;Bonjour, veuillez séléctionner le plat que vous désirez: (1-6)&quot;</span>
-    ECRIRE <span class="s2">&quot;1. Pâtes à la bolognaise&quot;</span>
-    ECRIRE <span class="s2">&quot;2. Steak Frites&quot;</span>
-    ECRIRE <span class="s2">&quot;3. Pizza&quot;</span>
-    ECRIRE <span class="s2">&quot;4. Hot-Dog&quot;</span>
-    ECRIRE <span class="s2">&quot;5. Soupe&quot;</span>
-    ECRIRE <span class="s2">&quot;6. Quitter&quot;</span>
-    ENCORE &lt;- 1
-    RÉPÉTER
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+ECRIRE <span class="s2">"Bonjour, veuillez séléctionner le plat que vous désirez: (1-6)"</span>
+ECRIRE <span class="s2">"1. Pâtes à la bolognaise"</span>
+ECRIRE <span class="s2">"2. Steak Frites"</span>
+ECRIRE <span class="s2">"3. Pizza"</span>
+ECRIRE <span class="s2">"4. Hot-Dog"</span>
+ECRIRE <span class="s2">"5. Soupe"</span>
+ECRIRE <span class="s2">"6. Quitter"</span>
+ENCORE &lt;- 1
+RÉPÉTER
 
-  LIRE PLAT
+LIRE PLAT
 
        SÉLECTIONNER PLAT
-            <span class="s1">&#39;1&#39;</span> : RESULTAT &lt;- <span class="s2">&quot;Des pâtes? Pas de problème!&quot;</span>
+            <span class="s1">'1'</span> : RESULTAT &lt;- <span class="s2">"Des pâtes? Pas de problème!"</span>
             ENCORE &lt;- 0
-            <span class="s1">&#39;2&#39;</span> : RESULTAT &lt;- <span class="s2">&quot;Saignant le steak?&quot;</span>
+            <span class="s1">'2'</span> : RESULTAT &lt;- <span class="s2">"Saignant le steak?"</span>
 
            ENCORE &lt;- 0
 
-           <span class="s1">&#39;3&#39;</span> : <span class="nv">RESULTAT</span> <span class="o">=</span> <span class="s2">&quot;Et une bonne pizza, une!&quot;</span>
+           <span class="s1">'3'</span> : RESULTAT <span class="o">=</span> <span class="s2">"Et une bonne pizza, une!"</span>
             ENCORE &lt;- 0
-            <span class="s1">&#39;4&#39;</span> : RESULTAT &lt;- <span class="s2">&quot;Miam un bon Hot-dog!&quot;</span>
+            <span class="s1">'4'</span> : RESULTAT &lt;- <span class="s2">"Miam un bon Hot-dog!"</span>
             ENCORE &lt;- 0
-            <span class="s1">&#39;5&#39;</span> : RESULTAT &lt;- <span class="s2">&quot;Une bonne soupe maison, il n&#39;y a que ça de vrai!&quot;</span>
+            <span class="s1">'5'</span> : RESULTAT &lt;- <span class="s2">"Une bonne soupe maison, il n'y a que ça de vrai!"</span>
             ENCORE &lt;- 0
-            <span class="s1">&#39;6&#39;</span> : RESULTAT &lt;- <span class="s2">&quot;Rien du tout?&quot;</span>
+            <span class="s1">'6'</span> : RESULTAT &lt;- <span class="s2">"Rien du tout?"</span>
             ENCORE &lt;- 0
          SINON
-            RESULTAT &lt;- <span class="s2">&quot;Veuiller saisir un chiffre entre 1 et 6.&quot;</span>
+            RESULTAT &lt;- <span class="s2">"Veuiller saisir un chiffre entre 1 et 6."</span>
 
-    FINSÉLECTIONNER                   
+    FINSÉLECTIONNER
 
     ECRIRE RESULTAT
-   JUSQU<span class="err">&#39;</span>À <span class="nv">ENCORE</span> <span class="o">=</span> 0
-FIN</code></pre></div>
+
+JUSQU<span class="s1">'À ENCORE = 0
+FIN</span></code></pre></figure>
 
 <p>Explication :</p>
 
 <ul>
   <li>L’habituelle fonction <strong>ECRIRE</strong> toujours au rendez-vous qui présente le menu à l’utilisateur.</li>
   <li>On peut voir que j’initialise une variable <em>ENCORE</em> à 1. Nous verrons pourquoi par la suite.</li>
-  <li>On voit le début de la boucle <strong>RÉPÉTER JUSQU’</strong>À<strong>** ; ce qui veut dire que le bloc entre **RÉPÉTER</strong> et <strong>JUSQU’</strong>À<strong>** sera répété. Il faut directement aller jusqu’au mot-clef **JUSQU’</strong>À** <strong>pour voir la **condition d’arrêt</strong> que j’ai choisi : ENCORE = 0 ;</li>
+  <li>On voit le début de la boucle <strong>RÉPÉTER JUSQU’</strong>À*<strong>* ; ce qui veut dire que le bloc entre **RÉPÉTER</strong> et <strong>JUSQU’</strong>À**** sera répété. Il faut directement aller jusqu’au mot-clef <strong>JUSQU’</strong>À** **pour voir la **condition d’arrêt** que j’ai choisi : ENCORE = 0 ;</li>
   <li>Le bloc de <em>pseudo-code</em> contenu dans la boucle à proprement parler fonctionne exactement comme l’algorithme de base d’hier, mise à part qu’on a ajouté une instruction pour les cas valides de saisies (1-6) : ENCORE &lt;- 0 ; Ce qui veut dire que pour chaque cas valide, nous allons changer la valeur de ENCORE pour la faire basculer à 0.</li>
   <li>On écrit la valeur de la variable <em>RESULTAT.</em></li>
   <li>Un <span style="text-decoration: underline;">test </span>est effectué, si la variable *ENCORE *vaut 0, alors on peut s’arrêter ; sinon on est reparti pour un tour ! :)</li>
@@ -291,26 +292,27 @@ FIN</code></pre></div>
 
 <p>… Déjà fini ? Eh bien ! Voyons la correction ensemble !</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    ECRIRE <span class="s2">&quot;Bonjour, veuillez entrer un nombre entre 1 et 10&quot;</span>
-    LIRE NOMBRE
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+ECRIRE <span class="s2">"Bonjour, veuillez entrer un nombre entre 1 et 10"</span>
+LIRE NOMBRE
 
-    SI NOMBRE &gt; <span class="m">0</span> ET NOMBRE &lt; <span class="m">11</span> ALORS
-    POUR COMPTEUR &lt;- <span class="m">1</span> JUSQU<span class="err">&#39;</span>À <span class="m">10</span> INCRÉMENT <span class="m">1</span> FAIRE
-        ECRIRE NOMBRE, <span class="s2">&quot;*&quot;</span>, COMPTEUR, <span class="s2">&quot;=&quot;</span>, NOMBRE * COMPTEUR
+    SI NOMBRE <span class="o">&gt;</span> 0 ET NOMBRE &lt; 11 ALORS
+    POUR COMPTEUR &lt;- 1 JUSQU<span class="s1">'À 10 INCRÉMENT 1 FAIRE
+        ECRIRE NOMBRE, "*", COMPTEUR, "=", NOMBRE * COMPTEUR
     FINPOUR
 
     SINON
-        ECRIRE <span class="s2">&quot;mauvaise saisie&quot;</span>
+        ECRIRE "mauvaise saisie"
     FINSI
-FIN</code></pre></div>
+
+FIN</span></code></pre></figure>
 
 <p>Je vais passer très brièvement sur cet algorithme, les deux lignes qui nous intéressent sont la ligne du <strong>POUR</strong> et le bloc compris dans la boucle.</p>
 
 <ul>
   <li>Dans un premier temps, je vérifie que le chiffre saisie par l’utilisateur est bien compris entre 1 et 10.</li>
   <li>La syntaxe de la boucle <strong>POUR</strong> est assez particulière ; on crée une variable <em>COMPTEUR</em>, que nous <strong>initialisons à 1</strong>, nous définissons la valeur que doit avoir la variable pour arrêter de boucler (<strong>10</strong>) puis nous fixons l’<strong>incrémentation à 1</strong>.</li>
-  <li>Pour la ligne suivante,  je fais appel à la fonction <strong>ECRIRE</strong> en <strong>concaténant</strong> les différentes informations.
+  <li>Pour la ligne suivante, je fais appel à la fonction <strong>ECRIRE</strong> en <strong>concaténant</strong> les différentes informations.
 Et voilà ! S’en est fini des boucles, sur ce je vous laisse vous entraîner afin de les maitriser sur le bout des doigts. ;)</li>
 </ul>
 
@@ -374,7 +376,7 @@ Et voilà ! S’en est fini des boucles, sur ce je vous laisse vous entraîner a
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 6 - Les boucles&body=http://clement-demily.fr/2013/10/25/introduction-a-lalgorithmique-6-les-boucles.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 6 - Les boucles&body=http://localhost:4000/2013/10/25/introduction-a-lalgorithmique-6-les-boucles.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -382,7 +384,7 @@ Et voilà ! S’en est fini des boucles, sur ce je vous laisse vous entraîner a
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -432,7 +434,7 @@ Et voilà ! S’en est fini des boucles, sur ce je vous laisse vous entraîner a
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

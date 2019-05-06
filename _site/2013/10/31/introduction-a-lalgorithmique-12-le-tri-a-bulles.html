@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -185,6 +185,7 @@
 	  <p>Bonjour à tous ! Aujourd’hui nous allons aborder notre premier algorithme de tri ! Grâce à cet algorithme nous allons revoir les notions suivantes : Les structures conditionnelles, les boucles, les tableaux et les fonctions. C’est un bon exercice !</p>
 
 <p>Tout d’abord, un algorithme de tri permet de trier une structure de données (ici un tableau). Le tri à bulles et l’un des algorithmes de tri les plus connu, son principe est simple.</p>
+
 <ol>
  * L'algorithme parcourt le tableau et compare des pairs de valeurs. (tab[0] et tab[1], puis tab[1] et tab[2]&hellip;)
  * Lorsque deux éléments successifs ne sont pas dans l'ordre, on les échanges.
@@ -200,28 +201,28 @@
 
 <p>Pseudo-code du module principal :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    atrier &lt;- <span class="o">[</span>6, 5, 1, 2, 8, 9, 3, 7, 4<span class="o">]</span>
-    ECRIRE <span class="s2">&quot;Voici le tableau a trier: &quot;</span>, atrier
-    ECRIRE <span class="s2">&quot;Voici le tableau trié:&quot;</span>, TRI_A_BULLES<span class="o">(</span>atrier<span class="o">)</span>
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+atrier &lt;- <span class="o">[</span>6, 5, 1, 2, 8, 9, 3, 7, 4]
+ECRIRE <span class="s2">"Voici le tableau a trier: "</span>, atrier
+ECRIRE <span class="s2">"Voici le tableau trié:"</span>, TRI_A_BULLES<span class="o">(</span>atrier<span class="o">)</span>
+FIN</code></pre></figure>
 
 <p>Pseudo-code du module TRI_A_BULLES</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER tab
-    echange &lt;- 1
-    TANTQUE <span class="nv">echange</span> <span class="o">=</span> <span class="m">1</span> FAIRE
-           echange &lt;- 0
-           POUR <span class="nv">compteur</span> <span class="o">=</span> <span class="m">1</span> JUSQU<span class="err">&#39;</span>À COMPTER<span class="o">(</span>tab<span class="o">)</span> - <span class="m">1</span> FAIRE
-               SI tab<span class="o">[</span>compteur<span class="o">]</span> &gt; tab<span class="o">[</span>compteur + 1<span class="o">]</span> ALORS
-                    tmp &lt;- tab<span class="o">[</span>compteur + 1<span class="o">]</span>
-                    tab<span class="o">[</span>compteur + 1<span class="o">]</span> &lt;- tab<span class="o">[</span>compteur<span class="o">]</span>
-                    tab<span class="o">[</span>compteur<span class="o">]</span> &lt;- tmp
-                    echange &lt;- 1
-               FINSI
-           FINPOUR
-    FINTANTQUE
-RETOURNER tab</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER tab
+echange &lt;- 1
+TANTQUE echange <span class="o">=</span> 1 FAIRE
+echange &lt;- 0
+POUR compteur <span class="o">=</span> 1 JUSQU<span class="s1">'À COMPTER(tab) - 1 FAIRE
+SI tab[compteur] &gt; tab[compteur + 1] ALORS
+tmp &lt;- tab[compteur + 1]
+tab[compteur + 1] &lt;- tab[compteur]
+tab[compteur] &lt;- tmp
+echange &lt;- 1
+FINSI
+FINPOUR
+FINTANTQUE
+RETOURNER tab</span></code></pre></figure>
 
 <p>L’algorithme du tri à bulles est l’un des premiers vrais algorithmes que vous apprendrez en cours de programmation. Toutefois sa <strong>complexité</strong> informatique est élevée. Nous verrons ce que cela signifie… demain !</p>
 
@@ -283,7 +284,7 @@ RETOURNER tab</code></pre></div>
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 12 - Le tri à bulles&body=http://clement-demily.fr/2013/10/31/introduction-a-lalgorithmique-12-le-tri-a-bulles.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 12 - Le tri à bulles&body=http://localhost:4000/2013/10/31/introduction-a-lalgorithmique-12-le-tri-a-bulles.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -291,7 +292,7 @@ RETOURNER tab</code></pre></div>
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -341,7 +342,7 @@ RETOURNER tab</code></pre></div>
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

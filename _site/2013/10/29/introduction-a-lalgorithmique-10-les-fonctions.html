@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -185,6 +185,7 @@
 	  <p>Bonjours à tous ! Aujourd’hui nous allons parler des fonctions.</p>
 
 <p>J’avais déjà introduit le terme fonction dans <a title="cet article" href="/2013/10/21/introduction-a-lalgorithmique-2">cet article</a>, un petit rappel:</p>
+
 <blockquote>
 Une fonction est un bloc de pseudo-code. Elle est souvent assimilée à une tâche bien distincte du reste du programme et renvoie généralement une valeur.</blockquote>
 <p>Une fonction prend en général une ou plusieurs variables, appelées <strong>paramètre</strong>.</p>
@@ -194,20 +195,20 @@ Une fonction est un bloc de pseudo-code. Elle est souvent assimilée à une tâc
 
 <p>Pseudo-code du module principal:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    notes &lt;- <span class="o">[</span>20, 15<span class="o">]</span>
-    ECRIRE MOYENNE<span class="o">(</span>notes<span class="o">)</span>
-FIN</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+notes &lt;- <span class="o">[</span>20, 15]
+ECRIRE MOYENNE<span class="o">(</span>notes<span class="o">)</span>
+FIN</code></pre></figure>
 
 <p>Pseudo-code du module MOYENNE:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER tab
-    moy &lt;- 0
-POUR compteur &lt;- <span class="m">1</span> JUSQU<span class="err">&#39;</span>À COMPTER<span class="o">(</span>tab<span class="o">)</span> FAIRE
-    moy &lt;- moy + tab<span class="o">[</span>compteur<span class="o">]</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER tab
+moy &lt;- 0
+POUR compteur &lt;- 1 JUSQU<span class="s1">'À COMPTER(tab) FAIRE
+moy &lt;- moy + tab[compteur]
 FINPOUR
-    moy &lt;- moy / COMPTER<span class="o">(</span>tab<span class="o">)</span>
-RETOURNER moy</code></pre></div>
+moy &lt;- moy / COMPTER(tab)
+RETOURNER moy</span></code></pre></figure>
 
 <ul>
   <li>L’exécution commence dans le module principal, on demande d’écrire le résultat de la fonction <strong>MOYENNE</strong> qui <strong>prend en paramètre</strong> un tableau d’entiers.</li>
@@ -222,25 +223,26 @@ RETOURNER moy</code></pre></div>
 <p>Les variables contenues dans les fonctions ne sont pas accessibles depuis bloc d’exécution principale. Le “ scope “ n’est pas le même ;</p>
 
 <p>Je vous propose de faire un petit exercice :</p>
+
 <blockquote>
 Faites une fonction qui calculera la factorielle d'un nombre entier positif. Rappel : factorielle(0) = 1 ; factorielle(4) = 4*3*2*1 = 24.</blockquote>
 <p>Pseudo-code du module principal:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
      ECRIRE FACTORIELLE<span class="o">(</span>4<span class="o">)</span>
-FIN</code></pre></div>
+FIN</code></pre></figure>
 
 <p>Pseudo-code du module FACTORIELLE</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER n
-    SI <span class="o">(</span>n &gt; 1<span class="o">)</span> ALORS
-        POUR <span class="nv">compteur</span> <span class="o">=</span> <span class="m">1</span> JUSQU<span class="err">&#39;</span>À <span class="o">(</span>n - 1<span class="o">)</span> FAIRE
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ENTRER n
+    SI <span class="o">(</span>n <span class="o">&gt;</span> 1<span class="o">)</span> ALORS
+        POUR compteur <span class="o">=</span> 1 JUSQU<span class="s1">'À (n - 1) FAIRE
             n &lt;- n * compteur
         FINPOUR
     SINON
         n &lt;- 1
     FINSI
-RETOURNER n</code></pre></div>
+RETOURNER n</span></code></pre></figure>
 
 <p>Parfait ! Ce dernier exemple servira de tremplin pour le sujet de demain, les <strong>fonctions récursives</strong> !</p>
 
@@ -304,7 +306,7 @@ RETOURNER n</code></pre></div>
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 10 - Les fonctions&body=http://clement-demily.fr/2013/10/29/introduction-a-lalgorithmique-10-les-fonctions.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 10 - Les fonctions&body=http://localhost:4000/2013/10/29/introduction-a-lalgorithmique-10-les-fonctions.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -312,7 +314,7 @@ RETOURNER n</code></pre></div>
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -362,7 +364,7 @@ RETOURNER n</code></pre></div>
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

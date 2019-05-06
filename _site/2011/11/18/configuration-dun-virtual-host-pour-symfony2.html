@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -184,23 +184,23 @@
 	  <div class="article_body">
 	  <p>Editez un fichier dans le dossier /etc/apache2/sites-available/ que vous nommerez symfony2.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">NameVirtualHost 127.0.0.1
-  &lt;VirtualHost 127.0.0.1:80&gt;
-    ServerName symfony2
-    DocumentRoot <span class="s2">&quot;/var/www/symfony2/web&quot;</span>
-    DirectoryIndex app_dev.php
-    &lt;Directory <span class="s2">&quot;/var/www/symfony2/web&quot;</span>&gt;
-            Options Indexes FollowSymLinks MultiViews
-            AllowOverride None
-            Order allow,deny
-            allow from all
-    &lt;/Directory&gt;
-    ErrorLog <span class="k">${</span><span class="nv">APACHE_LOG_DIR</span><span class="k">}</span>/error.log
-   &lt;/VirtualHost&gt;</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">NameVirtualHost 127.0.0.1
+&lt;VirtualHost 127.0.0.1:80&gt;
+ServerName symfony2
+DocumentRoot <span class="s2">"/var/www/symfony2/web"</span>
+DirectoryIndex app_dev.php
+&lt;Directory <span class="s2">"/var/www/symfony2/web"</span><span class="o">&gt;</span>
+Options Indexes FollowSymLinks MultiViews
+AllowOverride None
+Order allow,deny
+allow from all
+&lt;/Directory&gt;
+ErrorLog <span class="se">\$</span><span class="o">{</span>APACHE_LOG_DIR<span class="o">}</span>/error.log
+&lt;/VirtualHost&gt;</code></pre></figure>
 
 <p>Activer le via la commande</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo a2ensites symfony2</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>a2ensites symfony2</code></pre></figure>
 
 <p>Editez votre fichier hosts ( /etc/hosts ) et ajouter la ligne 127.0.0.1 symfony2</p>
 
@@ -242,7 +242,7 @@
 			 
 				<li>
 					<a href="/tags.html#ubuntu-ref">
-					ubuntu <span>(3)</span>
+					ubuntu <span>(4)</span>
 					,
 					</a>
 				</li>
@@ -289,7 +289,7 @@
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Configuration d'un virtual host pour symfony2&body=http://clement-demily.fr/2011/11/18/configuration-dun-virtual-host-pour-symfony2.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Configuration d'un virtual host pour symfony2&body=http://localhost:4000/2011/11/18/configuration-dun-virtual-host-pour-symfony2.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -297,7 +297,7 @@
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -347,7 +347,7 @@
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

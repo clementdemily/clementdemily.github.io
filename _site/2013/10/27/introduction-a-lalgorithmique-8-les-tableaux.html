@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -194,31 +194,33 @@
 
 <p>On vous demande dans un programme de calculer une moyenne basée sur des notes. Chaque note sera contenue dans une variable. Dans notre <em>pseudo-code</em>, nous aurions à déclarer autant de variables que de notes comme ici :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    note_a &lt;- 17
-    note_b &lt;- 20
-    note_c &lt;- 11
-    note_d &lt;- 15
-    note_e &lt;- 13
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+note_a &lt;- 17
+note_b &lt;- 20
+note_c &lt;- 11
+note_d &lt;- 15
+note_e &lt;- 13
 
-    ECRIRE <span class="s2">&quot;La moyenne des notes 17, 20, 11, 15 et 13:&quot;</span>
+    ECRIRE <span class="s2">"La moyenne des notes 17, 20, 11, 15 et 13:"</span>
     moyenne &lt;- <span class="o">(</span>note_a + note_b + note_c + note_d + note_e<span class="o">)</span> / 5
     ECRIRE moyenne
-FIN</code></pre></div>
+
+FIN</code></pre></figure>
 
 <p>Voici le même <em>pseudo-code</em> avec l’utilisation d’un tableau :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
-    notes &lt;- <span class="o">[</span>17, 20, 11, 15, 13<span class="o">]</span>
-    moyenne &lt;- 0
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DÉBUT
+notes &lt;- <span class="o">[</span>17, 20, 11, 15, 13]
+moyenne &lt;- 0
 
-    POUR <span class="nv">compteur</span> <span class="o">=</span> <span class="m">1</span> JUSQU<span class="err">&#39;</span>À COMPTER<span class="o">(</span>notes<span class="o">)</span> FAIRE
-        moyenne &lt;- moyenne + notes<span class="o">[</span>compteur<span class="o">]</span>
+    POUR compteur <span class="o">=</span> 1 JUSQU<span class="s1">'À COMPTER(notes) FAIRE
+        moyenne &lt;- moyenne + notes[compteur]
     FINPOUR
 
-    moyenne &lt;- moyenne / COMPTER<span class="o">(</span>notes<span class="o">)</span>
+    moyenne &lt;- moyenne / COMPTER(notes)
     ECRIRE moyenne
-FIN</code></pre></div>
+
+FIN</span></code></pre></figure>
 
 <ul>
   <li>La fonction <strong>COMPTER</strong> nous sert à compter le nombre d’élément d’un tableau.</li>
@@ -226,6 +228,7 @@ FIN</code></pre></div>
 </ul>
 
 <p>ça peut paraitre plus compliqué au premier abord, mais très pratique à l’utilisation !</p>
+
 <blockquote>
 ! ATTENTION !Sur LARP vous pouvez constater que l'indice d'un tableau commence à 1. Or, dans la majorité (si ce n'est la totalité) des langages de programmation l'indice d'un tableau commence à 0. Soyez donc vigilent quand vous manipulerez des tableaux à l'avenir.
 </blockquote>
@@ -289,7 +292,7 @@ FIN</code></pre></div>
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 8 - Les tableaux&body=http://clement-demily.fr/2013/10/27/introduction-a-lalgorithmique-8-les-tableaux.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Introduction à l'algorithmique 8 - Les tableaux&body=http://localhost:4000/2013/10/27/introduction-a-lalgorithmique-8-les-tableaux.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -297,7 +300,7 @@ FIN</code></pre></div>
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -347,7 +350,7 @@ FIN</code></pre></div>
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>

@@ -52,7 +52,7 @@
 			</a>
 			
 			
-			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement@gmail.com">
+			<a type="button" class="navbar-toggle nav-link" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope"></i>
 			</a>
 			
@@ -139,7 +139,7 @@
 		
 		
 		<li>
-			<a class="btn btn-default btn-sm" href="mailto:demily.clement@gmail.com">
+			<a class="btn btn-default btn-sm" href="mailto:demily.clement+blog@gmail.com">
 				<i class="fa fa-envelope fa-lg"></i>
 			</a>
 		</li>
@@ -200,94 +200,94 @@
 
 <p>Tout d’abord, installons <strong>cucumber</strong> et <strong>capybara</strong> via notre gemfile:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">group</span> <span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span> <span class="k">do</span>
-  <span class="n">gem</span> <span class="s1">&#39;cucumber-rails&#39;</span><span class="p">,</span> <span class="s1">&#39;~&gt; 1.4.1&#39;</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="kp">false</span>
-  <span class="n">gem</span> <span class="s1">&#39;database_cleaner&#39;</span><span class="p">,</span> <span class="s1">&#39;~&gt; 1.2.0&#39;</span>
-  <span class="n">gem</span> <span class="s1">&#39;capybara&#39;</span><span class="p">,</span> <span class="s1">&#39;~&gt; 2.2.1&#39;</span>
-<span class="k">end</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">group</span> <span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span> <span class="k">do</span>
+<span class="n">gem</span> <span class="s1">'cucumber-rails'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.1'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+<span class="n">gem</span> <span class="s1">'database_cleaner'</span><span class="p">,</span> <span class="s1">'~&gt; 1.2.0'</span>
+<span class="n">gem</span> <span class="s1">'capybara'</span><span class="p">,</span> <span class="s1">'~&gt; 2.2.1'</span>
+<span class="k">end</span></code></pre></figure>
 
 <p>Noter que j’utilise <strong>cucumber</strong> dans un projet <strong>rails</strong>, je peux donc directement utiliser la gem <strong>cucumber-rails</strong>. On nous renseigne sur le dépôt github qu’il est fortement recommandé d’installer la gem <strong>database_cleaner</strong>.</p>
 
 <p>Installer les nouvelles gems via la commande suivante:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">bundle install</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">bundle <span class="nb">install</span></code></pre></figure>
 
 <p>Ensuite, vous pouvez exécuter la commande suivante :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">rails g cucumber:install</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">rails g cucumber:install</code></pre></figure>
 
 <p>Cette commande installeras les fichiers et dossiers nécessaire au fonctionnement de <strong>cucumber</strong>.</p>
 
 <p>En exécutant la commande cucumber vous pourrez lancer les tests d’acceptation que vous aurez préalablement rédigé.</p>
 
-<h1 id="notre-premire-feature">Notre première feature</h1>
+<h1 id="notre-première-feature">Notre première feature</h1>
 
-<p>Pour illustrer le fonctionnement de cucumber je vais utiliser l’exemple d’un formulaire d’authentification. 
+<p>Pour illustrer le fonctionnement de cucumber je vais utiliser l’exemple d’un formulaire d’authentification.
 Nous partons du postulat que nous avons un formulaire d’authentification fonctionnel et que celui à besoin d’être testé et de figurer dans notre répertoire de tests d’acceptations.</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Authentication</span><span class="o">.</span><span class="n">feature</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Authentication</span><span class="p">.</span><span class="nf">feature</span>
 
-<span class="ss">Feature</span><span class="p">:</span> <span class="no">Authentication</span>
-  <span class="no">In</span> <span class="n">order</span> <span class="n">to</span> <span class="n">be</span> <span class="n">authenticated</span> <span class="n">on</span> <span class="n">the</span> <span class="n">website</span>
-  <span class="n">A</span> <span class="n">visitor</span>
-  <span class="no">Should</span> <span class="n">use</span> <span class="n">an</span> <span class="n">authentication</span> <span class="n">form</span>
+<span class="no">Feature</span><span class="p">:</span> <span class="no">Authentication</span>
+<span class="no">In</span> <span class="n">order</span> <span class="n">to</span> <span class="n">be</span> <span class="n">authenticated</span> <span class="n">on</span> <span class="n">the</span> <span class="n">website</span>
+<span class="no">A</span> <span class="n">visitor</span>
+<span class="no">Should</span> <span class="n">use</span> <span class="n">an</span> <span class="n">authentication</span> <span class="n">form</span>
 
-  <span class="vi">@authentication_form</span>
-  <span class="ss">Scenario</span><span class="p">:</span> <span class="no">Authentication</span> <span class="n">via</span> <span class="n">sign</span> <span class="k">in</span> <span class="n">form</span>
-    <span class="no">Given</span> <span class="n">I</span><span class="s1">&#39;m a guest on the sign in page</span>
-<span class="s1">    And I fill in &quot;user_email&quot; with &quot;mymail@mail.com&quot;</span>
-<span class="s1">    And I fill in &quot;user_password&quot; with &quot;mysecretpassword&quot;</span>
-<span class="s1">    When I press &quot;Sign in&quot;</span>
-<span class="s1">    Then I should be authenticate</span>
+<span class="vi">@authentication_form</span>
+<span class="no">Scenario</span><span class="p">:</span> <span class="no">Authentication</span> <span class="n">via</span> <span class="n">sign</span> <span class="k">in</span> <span class="n">form</span>
+<span class="no">Given</span> <span class="no">I</span><span class="s1">'m a guest on the sign in page
+And I fill in "user_email" with "mymail@mail.com"
+And I fill in "user_password" with "mysecretpassword"
+When I press "Sign in"
+Then I should be authenticate
 
-<span class="s1">  @authentication_form</span>
-<span class="s1">  Scenario: Authentication attempt via sign in form (password error)</span>
-<span class="s1">    Given I&#39;</span><span class="n">m</span> <span class="n">a</span> <span class="n">guest</span> <span class="n">on</span> <span class="n">the</span> <span class="n">sign</span> <span class="k">in</span> <span class="n">page</span>
-    <span class="no">And</span> <span class="n">I</span> <span class="n">fill</span> <span class="k">in</span> <span class="s2">&quot;user_email&quot;</span> <span class="n">with</span> <span class="s2">&quot;mymail@mail.com&quot;</span>
-    <span class="no">And</span> <span class="n">I</span> <span class="n">fill</span> <span class="k">in</span> <span class="s2">&quot;user_password&quot;</span> <span class="n">with</span> <span class="s2">&quot;anotherpassword&quot;</span>
-    <span class="no">When</span> <span class="n">I</span> <span class="n">press</span> <span class="s2">&quot;Sign in&quot;</span>
-    <span class="no">Then</span> <span class="n">I</span> <span class="n">shouldn</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">be</span> <span class="n">authenticated</span></code></pre></div>
+@authentication_form
+Scenario: Authentication attempt via sign in form (password error)
+Given I'</span><span class="n">m</span> <span class="n">a</span> <span class="n">guest</span> <span class="n">on</span> <span class="n">the</span> <span class="n">sign</span> <span class="k">in</span> <span class="n">page</span>
+<span class="no">And</span> <span class="no">I</span> <span class="n">fill</span> <span class="k">in</span> <span class="s2">"user_email"</span> <span class="n">with</span> <span class="s2">"mymail@mail.com"</span>
+<span class="no">And</span> <span class="no">I</span> <span class="n">fill</span> <span class="k">in</span> <span class="s2">"user_password"</span> <span class="n">with</span> <span class="s2">"anotherpassword"</span>
+<span class="no">When</span> <span class="no">I</span> <span class="n">press</span> <span class="s2">"Sign in"</span>
+<span class="no">Then</span> <span class="no">I</span> <span class="n">shouldn</span><span class="err">'</span><span class="n">t</span> <span class="n">be</span> <span class="n">authenticated</span></code></pre></figure>
 
 <p>Comme vous pouvez le voir, on ne croirait pas voir des tests mais bien l’extrait d’un cahier des charges! (En anglais ;) )</p>
 
 <p>Voici le fichier contenant les <em>steps</em> associées a cette <em>feature</em>:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">authentication_steps</span><span class="o">.</span><span class="n">rb</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">authentication_steps</span><span class="p">.</span><span class="nf">rb</span>
 
-<span class="no">Given</span><span class="p">(</span><span class="sr">/^I&#39;m a guest on the sign in page$/</span><span class="p">)</span> <span class="k">do</span>
-  <span class="n">visit</span> <span class="n">new_user_session_path</span>
+<span class="no">Given</span><span class="p">(</span><span class="sr">/^I'm a guest on the sign in page\$/</span><span class="p">)</span> <span class="k">do</span>
+<span class="n">visit</span> <span class="n">new_user_session_path</span>
 <span class="k">end</span>
 
-<span class="no">Given</span><span class="p">(</span><span class="sr">/^I fill in &quot;(.*?)&quot; with &quot;(.*?)&quot;$/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">field</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
-  <span class="n">fill_in</span> <span class="n">field</span><span class="p">,</span> <span class="ss">with</span><span class="p">:</span> <span class="n">value</span>
+<span class="no">Given</span><span class="p">(</span><span class="sr">/^I fill in "(._?)" with "(._?)"\$/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">field</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+<span class="n">fill_in</span> <span class="n">field</span><span class="p">,</span> <span class="ss">with: </span><span class="n">value</span>
 <span class="k">end</span>
 
-<span class="no">Given</span><span class="p">(</span><span class="sr">/^I should be redirect on the Sign up page$/</span><span class="p">)</span> <span class="k">do</span>
-  <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_content</span> <span class="s1">&#39;Inscription&#39;</span>
+<span class="no">Given</span><span class="p">(</span><span class="sr">/^I should be redirect on the Sign up page\$/</span><span class="p">)</span> <span class="k">do</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_content</span> <span class="s1">'Inscription'</span>
 <span class="k">end</span>
 
-<span class="no">When</span><span class="p">(</span><span class="sr">/^I press &quot;(.*?)&quot;$/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">button</span><span class="o">|</span>
-  <span class="n">click_button</span> <span class="n">button</span>
+<span class="no">When</span><span class="p">(</span><span class="sr">/^I press "(.\*?)"\$/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">button</span><span class="o">|</span>
+<span class="n">click_button</span> <span class="n">button</span>
 <span class="k">end</span>
 
-<span class="no">Then</span><span class="p">(</span><span class="sr">/^I should be authenticate$/</span><span class="p">)</span> <span class="k">do</span>
-  <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_content</span> <span class="s1">&#39;You are now authenticate&#39;</span>
+<span class="no">Then</span><span class="p">(</span><span class="sr">/^I should be authenticate\$/</span><span class="p">)</span> <span class="k">do</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_content</span> <span class="s1">'You are now authenticate'</span>
 <span class="k">end</span>
 
-<span class="no">Then</span><span class="p">(</span><span class="sr">/^I shouldn&#39;t be authenticated$/</span><span class="p">)</span> <span class="k">do</span>
-  <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_content</span> <span class="s1">&#39;Authentication error&#39;</span>
-<span class="k">end</span></code></pre></div>
+<span class="no">Then</span><span class="p">(</span><span class="sr">/^I shouldn't be authenticated\$/</span><span class="p">)</span> <span class="k">do</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_content</span> <span class="s1">'Authentication error'</span>
+<span class="k">end</span></code></pre></figure>
 
 <p>On peut observer qu’une <em>step</em> n’est composée ici que d’une action élémentaire. Ce n’est pas une règle mais plutôt une bonne pratique. Nous utilisons ici la gem <strong>capybara</strong> pour simuler des événements navigateur comme un clique sur un bouton ou encore le remplissage d’un champs de formulaire.</p>
 
 <p>En lançant la commande suivante:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">cucumber</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">cucumber</code></pre></figure>
 
 <p>Nous devrions voir le résultat de nos tests.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="m">2</span> scenarios <span class="o">(</span><span class="m">0</span> failed, <span class="m">2</span> passed<span class="o">)</span>
-<span class="m">10</span> steps <span class="o">(</span><span class="m">0</span> failed, <span class="m">0</span> skipped, <span class="m">10</span> passed<span class="o">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">2 scenarios <span class="o">(</span>0 failed, 2 passed<span class="o">)</span>
+10 steps <span class="o">(</span>0 failed, 0 skipped, 10 passed<span class="o">)</span></code></pre></figure>
 
 <h1 id="pour-aller-plus-loin-les-tags-et-hooks">Pour aller plus loin: les tags et hooks</h1>
 
@@ -302,11 +302,11 @@ Vous pourrez voir où ce place les <em>tags</em> en regardant l’extrait de cod
 
 <p>Le code de notre <em>hook</em> se placera dans le dossier <em>support</em>, contenu dans le dossier <em>features</em>, à la racine de notre application.</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">authentication_hooks</span><span class="o">.</span><span class="n">rb</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">authentication_hooks</span><span class="p">.</span><span class="nf">rb</span>
 
-<span class="no">Before</span><span class="p">(</span><span class="s1">&#39;@authentication_form&#39;</span><span class="p">)</span> <span class="k">do</span>
-  <span class="no">FactoryGirl</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:user</span><span class="p">,</span> <span class="ss">email</span><span class="p">:</span> <span class="s2">&quot;mymail@mail.com&quot;</span><span class="p">,</span> <span class="ss">password</span><span class="p">:</span> <span class="s2">&quot;mysecretpassword&quot;</span><span class="p">)</span>
-<span class="k">end</span></code></pre></div>
+<span class="no">Before</span><span class="p">(</span><span class="s1">'@authentication_form'</span><span class="p">)</span> <span class="k">do</span>
+<span class="no">FactoryGirl</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">:user</span><span class="p">,</span> <span class="ss">email: </span><span class="s2">"mymail@mail.com"</span><span class="p">,</span> <span class="ss">password: </span><span class="s2">"mysecretpassword"</span><span class="p">)</span>
+<span class="k">end</span></code></pre></figure>
 
 <p>Ici rien de particulier, cela ressembles fortement a la directive <em>before</em>, utilisable avec <strong>rspec</strong>. Sachez tout de même qu’il existe d’autres types de block, comme <em>After</em>.</p>
 
@@ -323,8 +323,8 @@ Vous pourrez voir où ce place les <em>tags</em> en regardant l’extrait de cod
 					,
 				</a></li>
 			 
-				<li><a href="/categories.html#ruby-ref">
-					ruby <span>(2)</span>
+				<li><a href="/categories.html#Ruby-ref">
+					Ruby <span>(1)</span>
 					
 				</a></li>
 			
@@ -387,7 +387,7 @@ Vous pourrez voir où ce place les <em>tags</em> en regardant l’extrait de cod
           <i class="fa fa-linkedin fa-lg"></i>
         </a>
 
-        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Le Behavior Driven-Development avec Cucumber&body=http://clement-demily.fr/2014/05/23/le-behavior-driven-development-avec-cucumber.html">
+        <a class="btn btn-default btn-sm linkedin" href="mailto:?subject=Article sur clement-demily.fr: Le Behavior Driven-Development avec Cucumber&body=http://localhost:4000/2014/05/23/le-behavior-driven-development-avec-cucumber.html">
           <i class="fa fa-envelope fa-lg"></i>
         </a>
       </section>
@@ -395,7 +395,7 @@ Vous pourrez voir où ce place les <em>tags</em> en regardant l’extrait de cod
       <section class="col-sm-6 author">
         <img src="http://www.gravatar.com/avatar/a4c48bb0b9e041ad0a5299f82b2b16d9" class="img-rounded author-image" />
         <h4 class="section-title author-name">Clément Demily</h4>
-        <p class="author-bio">Développeur Freelance</p>
+        <p class="author-bio">Développeur Lillois</p>
       </section>
     </div>
 
@@ -445,7 +445,7 @@ Vous pourrez voir où ce place les <em>tags</em> en regardant l’extrait de cod
 				|
 				<a href="/about/" title="about">À propos</a>
 				<br />
-				&copy; 2015 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
+				&copy; 2019 Clément Demily powered by <a href="http://jekyllrb.com" rel="nofollow" class="jekyll-link">Jekyll</a>.
 			</p>
 		</footer>
 	</div>
