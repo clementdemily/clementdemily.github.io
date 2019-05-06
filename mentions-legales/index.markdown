@@ -28,7 +28,7 @@ comments: []
   <h4>Hébergement</h4>
 
   <p>
-    L'hébergement de ce site est assuré par OVH, 2 rue Kellermann 59100 Roubaix - France
+    L'hébergement de ce site est assuré par GITHUB
   </p>
 
   <h4>Propriété intellectuelle</h4>
@@ -43,7 +43,7 @@ comments: []
     <strong>
       Le site
       <a href="{{ site.url }}" title="{{ site.url }}">{{ site.url }}</a>
-      est la propriété de Clément Demily (N&deg; SIREN : 790681480), domicilié 2 rue des Nations / 02430 Gauchy / France.
+      est la propriété de Clément Demily
     </strong>
   </p>
 </article>
