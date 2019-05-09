@@ -24,7 +24,7 @@ tags:
 comments: []
 ---
 
-Bonjour à tous 👋
+Bonjour à tous ! 👋
 
 Nous allons aujourd'hui voir comment utiliser Docker et Traefik afin d'avoir des noms de domaines personnalisés pour nos applications en développement. Pour se faire, nous allons utiliser traefik.
 
