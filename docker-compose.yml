@@ -14,7 +14,7 @@ services:
       - "traefik.backend=clement-blog"
       - "traefik.frontend.rule=Host:clement.test"
       - "traefik.port=4000"
-      - "traefik.frontend.entryPoints=http"
+      - "traefik.frontend.entryPoints=http,https"
       - "traefik.docker.network=traefik"
     volumes:
       - .:/app
